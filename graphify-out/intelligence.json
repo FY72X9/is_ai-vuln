@@ -1,0 +1,36 @@
+{
+  "hotspots": [
+    {
+      "label": "validate_references()",
+      "risk": 0.633,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "CheckpointManager",
+      "risk": 0.593,
+      "type": "CLASS"
+    },
+    {
+      "label": "decontaminate_cicids2017()",
+      "risk": 0.505,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "is_ai-vuln Project Overview",
+      "risk": 0.428,
+      "type": "UNKNOWN"
+    },
+    {
+      "label": "fit_fold_isolated_pipeline()",
+      "risk": 0.338,
+      "type": "FUNCTION"
+    }
+  ],
+  "blast_radius": {
+    "is_ai-vuln Project Overview": 12,
+    "CheckpointManager": 10,
+    "Visualization and journal-grade layouting modules.": 7,
+    "PureNumPyStandardScaler": 7,
+    "fit_fold_isolated_pipeline()": 5
+  }
+}
