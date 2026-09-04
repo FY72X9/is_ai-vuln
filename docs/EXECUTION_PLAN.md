@@ -86,7 +86,7 @@ LOCAL_DATA_DIR = Path('/content/data') if IS_COLAB else Path('./data')
 LOCAL_DATA_DIR.mkdir(parents=True, exist_ok=True)
 ```
 
-### 2.3 📓 Hybrid Script-to-Notebook Architecture (`src/` → `notebooks/*.ipynb`)
+### 2.3 📓 Hybrid Script-to-Notebook Architecture (`src/` → `src/notebook/*.ipynb`)
 > [!IMPORTANT]
 > **Colab-First Computational Paradigm**: **No heavy machine learning or simulation workloads are executed on the local development machine.** The local environment functions strictly as an IDE for development, modular scaffolding, git version control, and repository maintenance. 
 >
@@ -94,17 +94,17 @@ LOCAL_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 #### Two-Tier Structural Paradigm:
 1. **Tier 1 — Core Modular Library (`src/`)**: Clean, PEP8-compliant, typed Python modules defining reusable algorithms, anti-leakage data splitters, model wrappers, metrics collectors, and the closed-loop Fuzzy DEMATEL causal engine.
-2. **Tier 2 — Interactive Execution Notebooks (`notebooks/*.ipynb` & root shortcuts)**: Fully self-contained Jupyter notebooks that mount Google Drive, install necessary packages via `pip`, import `src/` modules, execute experiments with live progress logging, and serialize versioned artifacts (`manifest.json`, `.pt` model weights, LaTeX tables, and publication vector PDFs) directly into persistent Google Drive storage.
+2. **Tier 2 — Interactive Execution Notebooks (`src/notebook/*.ipynb`)**: Fully self-contained Jupyter notebooks located under `src/notebook/` that mount Google Drive, install necessary packages via `pip`, import `src/` modules, execute experiments with live progress logging, and serialize versioned artifacts (`manifest.json`, `.pt` model weights, LaTeX tables, and publication vector PDFs) directly into persistent Google Drive storage.
 
-#### Official Google Colab Notebook Suite:
+#### Official Google Colab Notebook Suite (`src/notebook/`):
 | Phase | Google Colab Notebook Deliverable | Focus & Execution Scope | Status |
 |---|---|---|---|
-| **Phase 1** | `notebooks/01_phase1_pipeline_colab.ipynb` | Drive mount, git safeguards, 35-reference audit, data cleaning, anti-leakage splitting, graph builder. | ✅ Completed |
-| **Phase 2A** | `notebooks/02_phase2_track_a_benchmark_colab.ipynb` | Track A Few-Shot ($N \le 10\text{k}$) 5-fold CV for 8 models with `CheckpointManager` autorecovery. | ⏳ Ready for Dev |
-| **Phase 2B** | `notebooks/03_phase2_track_b_scalability_colab.ipynb` | Track B Industrial Scalability ($N \ge 100\text{k}$) with VRAM and latency profiling. | ⏳ Ready for Dev |
-| **Phase 3** | `notebooks/04_phase3_statistical_ablation_colab.ipynb` | Friedman test, Nemenyi CD diagram, Mambular/FT-Transformer parameter ablations, noise tests. | ⏳ Ready for Dev |
-| **Phase 4** | `notebooks/05_phase4_fuzzy_dematel_lingam_colab.ipynb` | Autonomous Fuzzy DEMATEL engine, 10,000-run Monte Carlo proof ($W \ge 0.95$), DirectLiNGAM triangulation. | ⏳ Ready for Dev |
-| **Phase 5** | `notebooks/06_phase5_manuscript_figures_tables_colab.ipynb` | Automated LaTeX table generation, 300+ DPI vector PDF figures, Zenodo artifact packaging. | ⏳ Ready for Dev |
+| **Phase 1** | `src/notebook/01_phase1_pipeline_colab.ipynb` | Drive mount, git safeguards, 35-reference audit, data cleaning, anti-leakage splitting, graph builder. | ✅ Completed |
+| **Phase 2A** | `src/notebook/02_phase2_track_a_benchmark_colab.ipynb` | Track A Few-Shot ($N \le 10\text{k}$) 5-fold CV for 8 models with `CheckpointManager` autorecovery. | ⏳ Ready for Dev |
+| **Phase 2B** | `src/notebook/03_phase2_track_b_scalability_colab.ipynb` | Track B Industrial Scalability ($N \ge 100\text{k}$) with VRAM and latency profiling. | ⏳ Ready for Dev |
+| **Phase 3** | `src/notebook/04_phase3_statistical_ablation_colab.ipynb` | Friedman test, Nemenyi CD diagram, Mambular/FT-Transformer parameter ablations, noise tests. | ⏳ Ready for Dev |
+| **Phase 4** | `src/notebook/05_phase4_fuzzy_dematel_lingam_colab.ipynb` | Autonomous Fuzzy DEMATEL engine, 10,000-run Monte Carlo proof ($W \ge 0.95$), DirectLiNGAM triangulation. | ⏳ Ready for Dev |
+| **Phase 5** | `src/notebook/06_phase5_manuscript_figures_tables_colab.ipynb` | Automated LaTeX table generation, 300+ DPI vector PDF figures, Zenodo artifact packaging. | ⏳ Ready for Dev |
 
 ---
 
@@ -469,15 +469,15 @@ experiment_output/
 
 | Week | Phase | Operational Tasks & Deliverables | Google Colab Notebook (.ipynb) | Milestone Deliverable |
 |---|---|---|---|---|
-| **W1** | **Setup & Infrastructure** | Initialize `src/` modules, configure Google Drive symlinks, execute `.gitignore` automation. | `notebooks/01_phase1_pipeline_colab.ipynb` | Pipeline Scaffold Verified |
-| **W2** | **Literature Validation** | Run `references_harvester.py` & `references_validator.py` on 35 citations; verify DOIs. | `notebooks/01_phase1_pipeline_colab.ipynb` | `references/validation_report.json` |
-| **W3** | **Data Cleaning** | Ingest 5 datasets via `drive_downloader.py`, execute decontamination on CICIDS2017. | `notebooks/01_phase1_pipeline_colab.ipynb` | Clean Datasets in Drive Cache |
-| **W4–W5** | **Track A Experiments** | Run 5-fold CV for 8 models on Track A ($N \le 10\text{k}$) with `CheckpointManager`. | `notebooks/02_phase2_track_a_benchmark_colab.ipynb` | Track A Metric Matrices |
-| **W6–W7** | **Track B Experiments** | Run 5-fold CV for scalable models on Track B ($N \ge 100\text{k}$) with VRAM profiling. | `notebooks/03_phase2_track_b_scalability_colab.ipynb` | Track B Metric Matrices |
-| **W8** | **Statistical Testing** | Compute Friedman test and generate Nemenyi CD diagrams via `publication_styler.py`. | `notebooks/04_phase3_statistical_ablation_colab.ipynb` | CD Diagram & Statistical Table |
-| **W9** | **Ablation & Robustness** | Execute grid ablation (depth/width) and Gaussian noise degradation tests. | `notebooks/04_phase3_statistical_ablation_colab.ipynb` | Degradation Slopes & Heatmaps |
-| **W10** | **Fuzzy DEMATEL Engine** | Synthesize $W_{\text{theory}} + W_{\text{empirical}}$, calculate CFCS defuzzification and $(D+R, D-R)$. | `notebooks/05_phase4_fuzzy_dematel_lingam_colab.ipynb` | Causal Digraph & Prominence Table |
-| **W11** | **Causal Triangulation** | Run 10,000-iteration Monte Carlo stability test and DirectLiNGAM validation ($SHD \le 2$). | `notebooks/05_phase4_fuzzy_dematel_lingam_colab.ipynb` | Monte Carlo Concordance $W \ge 0.95$ |
-| **W12** | **Manuscript Drafting** | Compile IMRAD sections, format LaTeX tables, embed 300 DPI vector figures. | `notebooks/06_phase5_manuscript_figures_tables_colab.ipynb` | Complete First Draft (.tex) |
-| **W13** | **Internal Review & Audit** | Cross-check manuscript against Q1 Readiness Audit (10 gaps) and TTF design propositions. | `notebooks/06_phase5_manuscript_figures_tables_colab.ipynb` | Polished Pre-Submission Manuscript |
+| **W1** | **Setup & Infrastructure** | Initialize `src/` modules, configure Google Drive symlinks, execute `.gitignore` automation. | `src/notebook/01_phase1_pipeline_colab.ipynb` | Pipeline Scaffold Verified |
+| **W2** | **Literature Validation** | Run `references_harvester.py` & `references_validator.py` on 35 citations; verify DOIs. | `src/notebook/01_phase1_pipeline_colab.ipynb` | `references/validation_report.json` |
+| **W3** | **Data Cleaning** | Ingest 5 datasets via `drive_downloader.py`, execute decontamination on CICIDS2017. | `src/notebook/01_phase1_pipeline_colab.ipynb` | Clean Datasets in Drive Cache |
+| **W4–W5** | **Track A Experiments** | Run 5-fold CV for 8 models on Track A ($N \le 10\text{k}$) with `CheckpointManager`. | `src/notebook/02_phase2_track_a_benchmark_colab.ipynb` | Track A Metric Matrices |
+| **W6–W7** | **Track B Experiments** | Run 5-fold CV for scalable models on Track B ($N \ge 100\text{k}$) with VRAM profiling. | `src/notebook/03_phase2_track_b_scalability_colab.ipynb` | Track B Metric Matrices |
+| **W8** | **Statistical Testing** | Compute Friedman test and generate Nemenyi CD diagrams via `publication_styler.py`. | `src/notebook/04_phase3_statistical_ablation_colab.ipynb` | CD Diagram & Statistical Table |
+| **W9** | **Ablation & Robustness** | Execute grid ablation (depth/width) and Gaussian noise degradation tests. | `src/notebook/04_phase3_statistical_ablation_colab.ipynb` | Degradation Slopes & Heatmaps |
+| **W10** | **Fuzzy DEMATEL Engine** | Synthesize $W_{\text{theory}} + W_{\text{empirical}}$, calculate CFCS defuzzification and $(D+R, D-R)$. | `src/notebook/05_phase4_fuzzy_dematel_lingam_colab.ipynb` | Causal Digraph & Prominence Table |
+| **W11** | **Causal Triangulation** | Run 10,000-iteration Monte Carlo stability test and DirectLiNGAM validation ($SHD \le 2$). | `src/notebook/05_phase4_fuzzy_dematel_lingam_colab.ipynb` | Monte Carlo Concordance $W \ge 0.95$ |
+| **W12** | **Manuscript Drafting** | Compile IMRAD sections, format LaTeX tables, embed 300 DPI vector figures. | `src/notebook/06_phase5_manuscript_figures_tables_colab.ipynb` | Complete First Draft (.tex) |
+| **W13** | **Internal Review & Audit** | Cross-check manuscript against Q1 Readiness Audit (10 gaps) and TTF design propositions. | `src/notebook/06_phase5_manuscript_figures_tables_colab.ipynb` | Polished Pre-Submission Manuscript |
 | **W14** | **Packaging & Submission** | Seal Zenodo artifact package, verify GitHub public repository, submit to target Q1 journal. | GitHub Repo + Zenodo Bundle | **Formal Journal Submission** |

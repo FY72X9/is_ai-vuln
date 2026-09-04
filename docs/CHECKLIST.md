@@ -19,7 +19,7 @@
 - [x] **W1.2 Google Drive Integration**: Verify `google.colab.drive.mount('/content/drive')` and establish persistent path via `src/utils/environment.py`.
 - [x] **W1.3 Git Safeguards**: Execute `src/data/drive_downloader.py` to automatically update `.gitignore` with all heavy dataset patterns (`*.csv`, `*.pcap`, `*.parquet`, `/data/`, `drive_cache/`).
 - [x] **W1.4 Dependency Verification**: Validate installation of core packages (`scikit-learn`, `imbalanced-learn`, `scipy`, `pandas`, `numpy`, `networkx`, `matplotlib`, `seaborn`) in `requirements.txt`.
-- [x] **W1.5 Google Colab Notebook Delivery**: Generate and verify interactive Google Colab notebook (`phase1_pipeline_colab.ipynb` & `notebooks/01_phase1_pipeline_colab.ipynb`) for 1-click execution on Google Colab Free Tier.
+- [x] **W1.5 Google Colab Notebook Delivery**: Generate and verify interactive Google Colab notebook (`src/notebook/01_phase1_pipeline_colab.ipynb`) for 1-click execution on Google Colab Free Tier.
 - [x] **W2.1 References Harvesting**: Run `src/utils/references_harvester.py` to retrieve verified metadata via OpenAlex and CrossRef APIs for all 35 citations.
 - [x] **W2.2 References Validation**: Execute `src/utils/references_validator.py` to confirm 100% active DOI resolution, Scopus indexing status, and absence from CrossRef Retraction Watch database.
 - [x] **W2.3 BibTeX Archiving**: Confirm `references/library.bib` and `references/validation_report.json` are generated and sealed (`audit_passed: true`).
@@ -31,7 +31,7 @@
 ---
 
 ### Phase 2: Core 2-Track Benchmark Execution (Weeks 4–7)
-- [ ] **W4.0 Track A Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`notebooks/02_phase2_track_a_benchmark_colab.ipynb`) for Track A 5-fold CV across 8 models.
+- [ ] **W4.0 Track A Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/02_phase2_track_a_benchmark_colab.ipynb`) for Track A 5-fold CV across 8 models.
 - [ ] **W4.1 CheckpointManager Bootstrap**: Verify `CheckpointManager` initializes `checkpoint_state.json` on Google Drive.
 - [ ] **W4.2 Track A — Foundation Models ($N \le 10\text{k}$)**:
   - [ ] Evaluate **TabPFN v3** across 5 folds ($N \in \{1\text{k}, 5\text{k}, 10\text{k}\}$).
@@ -44,7 +44,7 @@
   - [ ] Optimize & evaluate **XGBoost** baseline with Optuna (50 trials).
   - [ ] Optimize & evaluate **LightGBM** baseline with Optuna (50 trials).
 - [ ] **W5.2 Track A Verification**: Confirm all 8 models have completed 5 folds and metrics are committed to `checkpoint_state.json`.
-- [ ] **W6.0 Track B Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`notebooks/03_phase2_track_b_scalability_colab.ipynb`) for Track B high-throughput scalability.
+- [ ] **W6.0 Track B Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/03_phase2_track_b_scalability_colab.ipynb`) for Track B high-throughput scalability.
 - [ ] **W6.1 Track B — Scalable Deep Learning ($N \ge 100\text{k}$)**:
   - [ ] Execute **Mambular SSM** on $N \in \{100\text{k}, 500\text{k}, 1\text{M}\}$ samples; log VRAM and throughput.
   - [ ] Execute **FT-Transformer** on scalable mini-batches; record attention memory wall.
@@ -57,7 +57,7 @@
 ---
 
 ### Phase 3: Q1 Rigorous Testing — Statistical, Ablation & Robustness (Weeks 8–9)
-- [ ] **W8.0 Statistical & Ablation Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`notebooks/04_phase3_statistical_ablation_colab.ipynb`) for non-parametric tests, ablations, and noise tests.
+- [ ] **W8.0 Statistical & Ablation Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/04_phase3_statistical_ablation_colab.ipynb`) for non-parametric tests, ablations, and noise tests.
 - [ ] **W8.1 Non-Parametric Friedman Test**:
   - [ ] Compute Friedman test across $k=8$ models and $N=5$ datasets ($\chi_F^2$ statistic).
   - [ ] Verify null hypothesis rejection ($p < 0.01$).
@@ -78,7 +78,7 @@
 ---
 
 ### Phase 4: Autonomous Closed-Loop Fuzzy DEMATEL & Causal Triangulation (Weeks 10–11)
-- [ ] **W10.0 Fuzzy DEMATEL & Causal Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`notebooks/05_phase4_fuzzy_dematel_lingam_colab.ipynb`) for closed-loop simulation & DirectLiNGAM.
+- [ ] **W10.0 Fuzzy DEMATEL & Causal Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/05_phase4_fuzzy_dematel_lingam_colab.ipynb`) for closed-loop simulation & DirectLiNGAM.
 - [ ] **W10.1 Axiomatic Prior Derivation**: Construct $8 \times 8$ theoretical prior matrix $W_{\text{theory}}$ derived from Big-O complexity and statistical learning bounds.
 - [ ] **W10.2 Empirical Telemetry Extraction**: Run `src/dematel/empirical_mapper.py` to extract Normalized Mutual Information (NMI) and cross-fold variance from 5-fold metric matrices.
 - [ ] **W10.3 Triangular Fuzzy Synthesis**: Formulate $\tilde{A} = (L, M, U)$ combining $W_{\text{theory}}$ and $W_{\text{empirical}}$.
@@ -98,7 +98,7 @@
 ---
 
 ### Phase 5: Manuscript Preparation, LaTeX Formatting & Packaging (Weeks 12–14)
-- [ ] **W12.0 Publication Artifacts Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`notebooks/06_phase5_manuscript_figures_tables_colab.ipynb`) for automated LaTeX table & vector figure export.
+- [ ] **W12.0 Publication Artifacts Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/06_phase5_manuscript_figures_tables_colab.ipynb`) for automated LaTeX table & vector figure export.
 - [ ] **W12.1 IMRAD Drafting**: Draft Introduction, TTF Theoretical Framework, Methodology, Results, and Causal Discussion.
 - [ ] **W12.2 Task-Technology Fit Synthesis**: Calculate empirical TTF utility scores across $T_1, T_2, T_3$ and formally validate Design Propositions (DP1–DP4).
 - [ ] **W12.3 High-Resolution Figures**: Compile all figures in vector PDF and 300+ DPI format into LaTeX document.
@@ -115,7 +115,7 @@
 
 ### Colab-First Non-Local Execution Mandate
 - [x] **Non-Local Execution Principle**: Verified that 0 heavy training or simulation workloads run on local PC; local workspace is solely an IDE and git staging environment.
-- [x] **Modular Script-to-Notebook Pipeline**: Verified that every phase delivers both modular Python files (`src/`) and standalone interactive Jupyter notebooks (`notebooks/*.ipynb`).
+- [x] **Modular Script-to-Notebook Pipeline**: Verified that every phase delivers both modular Python files (`src/`) and standalone interactive Jupyter notebooks (`src/notebook/*.ipynb`).
 - [x] **Self-Contained Notebook Cells**: Confirmed each notebook includes Google Drive mounting, package installations (`!pip install`), and GPU verification.
 
 ### Runtime & Autorecovery Controls
