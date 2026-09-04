@@ -1,0 +1,36 @@
+# Core Dependencies for IS-CS Q1 Research Pipeline
+# Task-Technology Fit Analysis of Modern AI-Driven Intrusion Detection
+
+# Data Handling & Scientific Computing
+numpy>=1.26.0
+pandas>=2.0.0
+scipy>=1.11.0
+scikit-learn>=1.4.0
+imbalanced-learn>=0.12.0
+requests>=2.31.0
+tqdm>=4.66.0
+
+# Visualization & Styling (IEEE/Nature standard 300+ DPI)
+matplotlib>=3.8.0
+seaborn>=0.13.0
+networkx>=3.2.0
+
+# Statistical Analysis & Post-hoc Tests
+scikit-posthocs>=0.8.0
+
+# Multi-Criteria Decision Analysis & Causal Discovery (DEMATEL / LiNGAM)
+# Note: pyDEMATEL and lingam can also be installed in Colab via pip
+pyDEMATEL>=1.0.0
+lingam>=1.8.0
+
+# Machine Learning & Deep Learning (Standard Baselines)
+xgboost>=2.0.0
+lightgbm>=4.3.0
+optuna>=3.5.0
+
+# Tabular Deep Learning & Foundation Models (Installed in Colab GPU runtime)
+# torch>=2.2.0
+# torch-geometric>=2.5.0
+# tabpfn>=0.1.10
+# tabicl>=0.1.0
+# mambular>=0.1.0

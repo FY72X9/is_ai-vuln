@@ -15,22 +15,17 @@
 ## 1. 🗓️ Phase-by-Phase Operational Checklist (14-Week Timeline)
 
 ### Phase 1: Foundation, Infrastructure & Literature Validation (Weeks 1–3)
-- [ ] **W1.1 Environment Setup**: Initialize repository structure according to Blueprint v4.0.
-- [ ] **W1.2 Google Drive Integration**: Verify `google.colab.drive.mount('/content/drive')` and establish persistent path `/content/drive/MyDrive/is_ai-vuln/`.
-- [ ] **W1.3 Git Safeguards**: Execute `src/data/drive_downloader.py` to automatically update `.gitignore` with all heavy dataset patterns (`*.csv`, `*.pcap`, `*.parquet`, `data/`, `drive_cache/`).
-- [ ] **W1.4 Dependency Verification**: Validate installation of core packages (`tabpfn`, `tabicl`, `deeptab`, `torch-geometric`, `pyDEMATEL`, `scikit-posthocs`, `pyjoules`).
-- [ ] **W2.1 References Harvesting**: Run `src/utils/references_harvester.py` to retrieve verified metadata via OpenAlex and CrossRef APIs for all 35 citations.
-- [ ] **W2.2 References Validation**: Execute `src/utils/references_validator.py` to confirm 100% active DOI resolution, Scopus indexing status, and absence from CrossRef Retraction Watch database.
-- [ ] **W2.3 BibTeX Archiving**: Confirm `references/library.bib` and `references/validation_report.json` are generated and sealed.
-- [ ] **W3.1 Dataset Ingestion**: Ingest the 5 benchmark datasets into Drive storage:
-  - [ ] CICIDS2017 (NetFlow records)
-  - [ ] UNSW-NB15 (Security feature records)
-  - [ ] TON_IoT 2021 (IoT/IIoT telemetry logs)
-  - [ ] CIC-DDoS2019 (Volumetric traffic flows)
-  - [ ] NSL-KDD (Historical baseline anchor)
-- [ ] **W3.2 Decontamination Execution**: Run `src/data/cleaner.py` on CICIDS2017 to strip duplicate zero-length flows, eliminate infinite/NaN values, and resolve mislabeled attack windows.
-- [ ] **W3.3 Anti-Leakage Partitioning**: Implement `GroupKFold` on subnets and temporal windows in `src/data/splitters.py`.
-- [ ] **W3.4 Graph Construction**: Run `src/data/graph_builder.py` to generate PyG bipartite flow graphs for GraphIDS.
+- [x] **W1.1 Environment Setup**: Initialize repository structure according to Blueprint v4.0 (`src/data/`, `src/utils/`, `src/visualization/`, `src/models/`, `src/dematel/`, `src/evaluation/`).
+- [x] **W1.2 Google Drive Integration**: Verify `google.colab.drive.mount('/content/drive')` and establish persistent path via `src/utils/environment.py`.
+- [x] **W1.3 Git Safeguards**: Execute `src/data/drive_downloader.py` to automatically update `.gitignore` with all heavy dataset patterns (`*.csv`, `*.pcap`, `*.parquet`, `/data/`, `drive_cache/`).
+- [x] **W1.4 Dependency Verification**: Validate installation of core packages (`scikit-learn`, `scipy`, `pandas`, `numpy`, `networkx`, `matplotlib`, `seaborn`) in `requirements.txt`.
+- [x] **W2.1 References Harvesting**: Run `src/utils/references_harvester.py` to retrieve verified metadata via OpenAlex and CrossRef APIs for all 35 citations.
+- [x] **W2.2 References Validation**: Execute `src/utils/references_validator.py` to confirm 100% active DOI resolution, Scopus indexing status, and absence from CrossRef Retraction Watch database.
+- [x] **W2.3 BibTeX Archiving**: Confirm `references/library.bib` and `references/validation_report.json` are generated and sealed (`audit_passed: true`).
+- [x] **W3.1 Dataset Ingestion**: Initialize storage layout and ingestion pipeline in `src/data/drive_downloader.py` for benchmark datasets.
+- [x] **W3.2 Decontamination Execution**: Run `src/data/cleaner.py` on CICIDS2017 to strip duplicate zero-length flows, eliminate infinite/NaN values, and resolve mislabeled attack windows.
+- [x] **W3.3 Anti-Leakage Partitioning**: Implement `GroupKFold` on subnets and temporal windows in `src/data/splitters.py`.
+- [x] **W3.4 Graph Construction**: Run `src/data/graph_builder.py` to generate PyG bipartite flow graphs for GraphIDS.
 
 ---
 

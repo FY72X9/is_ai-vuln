@@ -48,3 +48,12 @@ desktop.ini
 *.parquet
 *.tar.gz
 *.zip
+# === Automated Dataset & Checkpoint Exclusions ===
+*.csv
+*.pcap
+/data/
+!src/data/
+workspace_drive/
+drive_cache/
+checkpoints/*.pt
+experiment_output/**/checkpoints/

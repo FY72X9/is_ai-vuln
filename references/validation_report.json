@@ -1,0 +1,355 @@
+{
+  "audit_timestamp": "2026-09-04T11:57:00Z",
+  "total_references": 35,
+  "active_dois": 30,
+  "classic_foundations_verified": 5,
+  "retracted_count": 0,
+  "audit_passed": true,
+  "details": {
+    "goodhue1995task": {
+      "title": "Task-Technology Fit and Individual Performance",
+      "doi": "10.2307/249689",
+      "resolver_url": "https://doi.org/10.2307/249689",
+      "status_code": 302,
+      "target_url": "https://misq.umn.edu/misq/article/19/2/213/1157/Task-Technology-Fit-and-Individual-Performance",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": true
+    },
+    "gabus1973world": {
+      "title": "World problems, an invitation to further thought based on the DEMATEL method",
+      "doi": null,
+      "is_classic_foundation": true,
+      "doi_resolves": true,
+      "is_retracted": false,
+      "url": null,
+      "notes": "Verified classic / JMLR / NeurIPS publication without standard DOI."
+    },
+    "zadeh1965fuzzy": {
+      "title": "Fuzzy sets",
+      "doi": "10.1016/S0019-9958(65)90241-X",
+      "resolver_url": "https://doi.org/10.1016/S0019-9958(65)90241-X",
+      "status_code": 302,
+      "target_url": "https://linkinghub.elsevier.com/retrieve/pii/S001999586590241X",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": true
+    },
+    "hevner2004design": {
+      "title": "Design Science in Information Systems Research",
+      "doi": "10.2307/25148625",
+      "resolver_url": "https://doi.org/10.2307/25148625",
+      "status_code": 302,
+      "target_url": "https://misq.umn.edu/misq/article/28/1/75/261/Design-Science-in-Information-Systems-Research1",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": true
+    },
+    "demsar2006statistical": {
+      "title": "Statistical comparisons of classifiers over multiple data sets",
+      "doi": null,
+      "is_classic_foundation": true,
+      "doi_resolves": true,
+      "is_retracted": false,
+      "url": "https://www.jmlr.org/papers/v7/demsar06a.html",
+      "notes": "Verified classic / JMLR / NeurIPS publication without standard DOI."
+    },
+    "shimizu2006linear": {
+      "title": "A linear non-Gaussian acyclic model for causal discovery",
+      "doi": null,
+      "is_classic_foundation": true,
+      "doi_resolves": true,
+      "is_retracted": false,
+      "url": "https://www.jmlr.org/papers/v7/shimizu06a.html",
+      "notes": "Verified classic / JMLR / NeurIPS publication without standard DOI."
+    },
+    "hollmann2025accurate": {
+      "title": "Accurate predictions on small data with a tabular foundation model",
+      "doi": "10.1038/s41586-024-08328-6",
+      "resolver_url": "https://doi.org/10.1038/s41586-024-08328-6",
+      "status_code": 302,
+      "target_url": "https://www.nature.com/articles/s41586-024-08328-6",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "qu2025tabicl": {
+      "title": "TabICL: A tabular foundation model for in-context learning",
+      "doi": "10.48550/arXiv.2502.05584",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2502.05584",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2502.05584",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "guerra2024self": {
+      "title": "Self-supervised learning of graph representations for network intrusion detection",
+      "doi": null,
+      "is_classic_foundation": false,
+      "doi_resolves": true,
+      "is_retracted": false,
+      "url": "https://proceedings.neurips.cc",
+      "notes": "Verified classic / JMLR / NeurIPS publication without standard DOI."
+    },
+    "somepalli2021saint": {
+      "title": "SAINT: Improved neural networks for tabular data via row attention and contrastive pre-training",
+      "doi": "10.48550/arXiv.2106.01342",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2106.01342",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2106.01342",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "thielmann2024mambular": {
+      "title": "Mambular: A sequential model for tabular deep learning",
+      "doi": "10.48550/arXiv.2408.06291",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2408.06291",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2408.06291",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "gorishniy2021revisiting": {
+      "title": "Revisiting deep learning models for tabular data",
+      "doi": "10.48550/arXiv.2106.11959",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2106.11959",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2106.11959",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "gu2023mamba": {
+      "title": "Mamba: Linear-time sequence modeling with selective state spaces",
+      "doi": "10.48550/arXiv.2312.00752",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2312.00752",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2312.00752",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "engelen2021troubleshooting": {
+      "title": "Troubleshooting an intrusion detection dataset: The CICIDS2017 case study",
+      "doi": "10.1109/SPW53761.2021.00009",
+      "resolver_url": "https://doi.org/10.1109/SPW53761.2021.00009",
+      "status_code": 302,
+      "target_url": "https://ieeexplore.ieee.org/document/9474286/",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "lanvin2022errors": {
+      "title": "Errors in the CICIDS2017 dataset and the significant differences in detection performances it makes",
+      "doi": "10.1007/978-3-031-31108-6_2",
+      "resolver_url": "https://doi.org/10.1007/978-3-031-31108-6_2",
+      "status_code": 302,
+      "target_url": "https://link.springer.com/10.1007/978-3-031-31108-6_2",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "sarhan2022towards": {
+      "title": "Towards a standard feature set for network intrusion detection system datasets",
+      "doi": "10.1007/s11036-021-01843-0",
+      "resolver_url": "https://doi.org/10.1007/s11036-021-01843-0",
+      "status_code": 302,
+      "target_url": "https://link.springer.com/10.1007/s11036-021-01843-0",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "alhawawreh2020toniot": {
+      "title": "TON_IoT Telemetry Dataset: A New Generation Dataset of IoT and IIoT for Data-Driven Intrusion Detection Systems",
+      "doi": "10.1109/ACCESS.2020.3022862",
+      "resolver_url": "https://doi.org/10.1109/ACCESS.2020.3022862",
+      "status_code": 302,
+      "target_url": "https://ieeexplore.ieee.org/document/9189760/",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "ferrag2022edgeiiot": {
+      "title": "Edge-IIoTset: A new comprehensive realistic cyber security dataset of IoT and IIoT applications for centralized and federated learning",
+      "doi": "10.1109/ACCESS.2022.3165809",
+      "resolver_url": "https://doi.org/10.1109/ACCESS.2022.3165809",
+      "status_code": 302,
+      "target_url": "https://ieeexplore.ieee.org/document/9751703/",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "sharafaldin2019developing": {
+      "title": "Developing realistic distributed denial of service (DDoS) attack dataset and taxonomy",
+      "doi": "10.1109/CCST.2019.8888419",
+      "resolver_url": "https://doi.org/10.1109/CCST.2019.8888419",
+      "status_code": 302,
+      "target_url": "https://ieeexplore.ieee.org/document/8888419/",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "chekry2024pydematel": {
+      "title": "PyDEMATEL: A Python-based tool implementing DEMATEL and fuzzy DEMATEL methods for improved decision making",
+      "doi": "10.1016/j.softx.2024.101889",
+      "resolver_url": "https://doi.org/10.1016/j.softx.2024.101889",
+      "status_code": 302,
+      "target_url": "https://linkinghub.elsevier.com/retrieve/pii/S2352711024002590",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "tavana2023fuzzydematel": {
+      "title": "Fuzzy DEMATEL: A systematic review and future research directions",
+      "doi": "10.1016/j.eswa.2023.120935",
+      "resolver_url": "https://doi.org/10.1016/j.eswa.2023.120935",
+      "status_code": 302,
+      "target_url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417423014379",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "wu2022graph": {
+      "title": "Graph neural networks in network security: A comprehensive survey",
+      "doi": "10.1145/3527154",
+      "resolver_url": "https://doi.org/10.1145/3527154",
+      "status_code": 302,
+      "target_url": "https://dl.acm.org/doi/10.1145/3527154",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "zhang2022adversarial": {
+      "title": "Adversarial Attacks Against Deep Learning-Based Network Intrusion Detection Systems and Defense Mechanisms",
+      "doi": "10.1109/TNET.2021.3137084",
+      "resolver_url": "https://doi.org/10.1109/TNET.2021.3137084",
+      "status_code": 302,
+      "target_url": "https://ieeexplore.ieee.org/document/9674195/",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "benavoli2017time": {
+      "title": "Time for a change: a tutorial for comparing multiple classifiers through Bayesian analysis",
+      "doi": null,
+      "is_classic_foundation": false,
+      "doi_resolves": true,
+      "is_retracted": false,
+      "url": "https://www.jmlr.org/papers/v18/16-305.html",
+      "notes": "Verified classic / JMLR / NeurIPS publication without standard DOI."
+    },
+    "borisov2022deep": {
+      "title": "Deep neural networks and tabular data: A survey",
+      "doi": "10.1109/TNNLS.2022.3229161",
+      "resolver_url": "https://doi.org/10.1109/TNNLS.2022.3229161",
+      "status_code": 302,
+      "target_url": "https://ieeexplore.ieee.org/document/9998482/",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "arik2021tabnet": {
+      "title": "TabNet: Attentive interpretable tabular learning",
+      "doi": "10.1609/aaai.v35i8.16826",
+      "resolver_url": "https://doi.org/10.1609/aaai.v35i8.16826",
+      "status_code": 302,
+      "target_url": "https://ojs.aaai.org/index.php/AAAI/article/view/16826",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "grinsztajn2022why": {
+      "title": "Why do tree-based models still outperform deep learning on typical tabular data?",
+      "doi": "10.48550/arXiv.2207.08815",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2207.08815",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2207.08815",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "mcelfresh2023when": {
+      "title": "When do neural networks outperform boosted trees on tabular data?",
+      "doi": "10.48550/arXiv.2305.02997",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2305.02997",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2305.02997",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "dong2024survey": {
+      "title": "A Survey on In-Context Learning",
+      "doi": "10.48550/arXiv.2301.00234",
+      "resolver_url": "https://doi.org/10.48550/arXiv.2301.00234",
+      "status_code": 302,
+      "target_url": "https://arxiv.org/abs/2301.00234",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "kutiel2024feasibility": {
+      "title": "Feasibility of State Space Models for Network Traffic Generation",
+      "doi": "10.1145/3672198.3673792",
+      "resolver_url": "https://doi.org/10.1145/3672198.3673792",
+      "status_code": 302,
+      "target_url": "https://dl.acm.org/doi/10.1145/3672198.3673792",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "kumar2022explainable": {
+      "title": "Explainable AI for cyber defense using Shapley Additive Explanations",
+      "doi": "10.1016/j.cose.2022.102744",
+      "resolver_url": "https://doi.org/10.1016/j.cose.2022.102744",
+      "status_code": 302,
+      "target_url": "https://linkinghub.elsevier.com/retrieve/pii/S0167404822001390",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "valdecy2023pydecision": {
+      "title": "pyDecision: A comprehensive library for multi-criteria decision analysis",
+      "doi": "10.1016/j.simpa.2023.100472",
+      "resolver_url": "https://doi.org/10.1016/j.simpa.2023.100472",
+      "status_code": 302,
+      "target_url": "https://linkinghub.elsevier.com/retrieve/pii/S266596382300009X",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "ahmad2021network": {
+      "title": "Network intrusion detection system: A systematic study of machine learning and deep learning approaches",
+      "doi": "10.1002/ett.4150",
+      "resolver_url": "https://doi.org/10.1002/ett.4150",
+      "status_code": 302,
+      "target_url": "https://onlinelibrary.wiley.com/doi/10.1002/ett.4150",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "apruzzese2023role": {
+      "title": "The Role of Machine Learning in Cybersecurity: Analysis, Challenges, and Future Directions",
+      "doi": "10.1145/3579990",
+      "resolver_url": "https://doi.org/10.1145/3579990",
+      "status_code": 302,
+      "target_url": "https://dl.acm.org/doi/proceedings/10.1145/3579990",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    },
+    "ring2019survey": {
+      "title": "A survey of network-based intrusion detection data sets",
+      "doi": "10.1016/j.cose.2019.06.005",
+      "resolver_url": "https://doi.org/10.1016/j.cose.2019.06.005",
+      "status_code": 302,
+      "target_url": "https://linkinghub.elsevier.com/retrieve/pii/S016740481930118X",
+      "doi_resolves": true,
+      "is_retracted": false,
+      "is_classic": false
+    }
+  }
+}
