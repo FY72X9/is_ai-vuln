@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# IDEs & Editors
+.vscode/
+*.swp
+*.swo
+*~
+.idea/*
+!.idea/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large model artifacts & datasets
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.parquet
+*.tar.gz
+*.zip
