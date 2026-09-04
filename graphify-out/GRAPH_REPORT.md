@@ -1,7 +1,7 @@
 # Graph Report - D:\Codes\research_banks\is_ai-vuln  (2026-09-04)
 
 ## Corpus Check
-- 16 files · ~27,778 words
+- 16 files · ~28,371 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
