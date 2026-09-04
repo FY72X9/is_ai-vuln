@@ -37,9 +37,8 @@ is_ai-vuln/
 ├── docs/
 │   ├── Research_Blueprint_IS_CS_Q1_2026_V4_TTF_SIMULATION.md  # Active Master Blueprint v4.0
 │   ├── ACADEMIC_PEER_REVIEW_AND_GAP_ANALYSIS.md              # Doctoral Pre-Execution Audit
-│   ├── implementation_plan.md                                # Implementation Roadmap
-│   ├── EXECUTION_PLAN.md                                     # [Planned] Step-by-step Technical Guide
-│   ├── CHECKLIST.md                                          # [Planned] 14-Week Interactive Tracker
+│   ├── EXECUTION_PLAN.md                                     # Step-by-step Technical Operational Guide
+│   ├── CHECKLIST.md                                          # 14-Week Interactive QA & Audit Tracker
 │   └── Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md          # Archived Blueprint v3.0
 ├── src/
 │   ├── data/
@@ -87,9 +86,9 @@ is_ai-vuln/
 |---|---|---|
 | **[docs/Research_Blueprint_IS_CS_Q1_2026_V4_TTF_SIMULATION.md](docs/Research_Blueprint_IS_CS_Q1_2026_V4_TTF_SIMULATION.md)** | **Master Research Blueprint v4.0**: Complete specification covering TTF theoretical anchoring, 2-track benchmark, 100% closed-loop simulation DEMATEL, Colab free-tier execution rules, autorecovery, and 35 verified references ($>2020$). | 🟢 Active |
 | **[docs/ACADEMIC_PEER_REVIEW_AND_GAP_ANALYSIS.md](docs/ACADEMIC_PEER_REVIEW_AND_GAP_ANALYSIS.md)** | **Doctoral Academic Peer Review**: Pre-execution protocol audit detailing the 7 fatal reviewer vulnerabilities and their mathematical simulation mitigations. | 🟢 Active |
+| **[docs/EXECUTION_PLAN.md](docs/EXECUTION_PLAN.md)** | **Operational Execution Guide**: Step-by-step execution protocol for modules, Colab free-tier setup, autorecovery, 2-track benchmark, and DEMATEL simulation. | 🟢 Active |
+| **[docs/CHECKLIST.md](docs/CHECKLIST.md)** | **14-Week Interactive Checklist**: Interactive tracker (`- [ ]`) covering phase-by-phase tasks, 10 Q1 audit criteria, Colab recovery verification, and reviewer defense. | 🟢 Active |
 | **[docs/implementation_plan.md](docs/implementation_plan.md)** | **Implementation Roadmap**: Synthesis of deliverables, verification plan, and operational steps. | 🟢 Active |
-| **`docs/EXECUTION_PLAN.md`** | **Operational Execution Guide**: Step-by-step execution protocol for modules, Colab setup, and benchmark runs. | 🟡 In Queue |
-| **`docs/CHECKLIST.md`** | **14-Week Interactive Checklist**: Interactive tracker (`- [ ]`) covering 10 Q1 audit criteria, Colab recovery, and submission defense. | 🟡 In Queue |
 | **[docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md](docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md)** | **Blueprint v3.0 Archive**: Previous edition covering 6 models and 10 gap audit. | ⚪ Archive |
 
 ---
