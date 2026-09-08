@@ -69,7 +69,7 @@ class BaseIDSModel(ABC):
         # Measure PyTorch CUDA peak memory if available
         vram_peak_mb = 0.0
         try:
-            import torch
+            import torch  # type: ignore
             if torch.cuda.is_available():
                 torch.cuda.reset_peak_memory_stats()
                 torch.cuda.synchronize()
@@ -82,7 +82,7 @@ class BaseIDSModel(ABC):
             t0 = time.perf_counter()
             _ = self.predict(X_eval)
             try:
-                import torch
+                import torch  # type: ignore
                 if torch.cuda.is_available():
                     torch.cuda.synchronize()
             except ImportError:
@@ -96,7 +96,7 @@ class BaseIDSModel(ABC):
 
         # Retrieve CUDA peak VRAM
         try:
-            import torch
+            import torch  # type: ignore
             if torch.cuda.is_available():
                 vram_peak_mb = float(torch.cuda.max_memory_allocated() / (1024 * 1024))
         except ImportError:

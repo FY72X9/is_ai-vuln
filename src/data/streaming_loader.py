@@ -38,7 +38,7 @@ class StreamingChunkLoader:
         if is_parquet:
             # Chunked parquet reading via pyarrow or pandas batching
             try:
-                import pyarrow.parquet as pq
+                import pyarrow.parquet as pq  # type: ignore
                 parquet_file = pq.ParquetFile(self.filepath)
                 for batch in parquet_file.iter_batches(batch_size=self.chunk_size):
                     df_chunk = batch.to_pandas()
@@ -54,19 +54,33 @@ class StreamingChunkLoader:
                     if max_total_records and total_yielded >= max_total_records:
                         break
             except (ImportError, Exception):
-                # Fallback to in-memory slicing
-                df_full = pd.read_parquet(self.filepath)
-                for start_idx in range(0, len(df_full), self.chunk_size):
-                    df_chunk = df_full.iloc[start_idx:start_idx + self.chunk_size]
-                    X_c, y_c = self._extract_features_and_target(df_chunk)
-                    if max_total_records and (total_yielded + len(X_c)) > max_total_records:
-                        limit = max_total_records - total_yielded
-                        yield X_c[:limit], y_c[:limit]
-                        break
-                    yield X_c, y_c
-                    total_yielded += len(X_c)
-                    if max_total_records and total_yielded >= max_total_records:
-                        break
+                # If pyarrow fails, try reading paired CSV if it exists
+                csv_fallback = self.filepath.with_suffix(".csv")
+                if csv_fallback.exists():
+                    for df_chunk in pd.read_csv(csv_fallback, chunksize=self.chunk_size):
+                        X_c, y_c = self._extract_features_and_target(df_chunk)
+                        if max_total_records and (total_yielded + len(X_c)) > max_total_records:
+                            limit = max_total_records - total_yielded
+                            yield X_c[:limit], y_c[:limit]
+                            break
+                        yield X_c, y_c
+                        total_yielded += len(X_c)
+                        if max_total_records and total_yielded >= max_total_records:
+                            break
+                    return
+                else:
+                    df_full = pd.read_parquet(self.filepath)
+                    for start_idx in range(0, len(df_full), self.chunk_size):
+                        df_chunk = df_full.iloc[start_idx:start_idx + self.chunk_size]
+                        X_c, y_c = self._extract_features_and_target(df_chunk)
+                        if max_total_records and (total_yielded + len(X_c)) > max_total_records:
+                            limit = max_total_records - total_yielded
+                            yield X_c[:limit], y_c[:limit]
+                            break
+                        yield X_c, y_c
+                        total_yielded += len(X_c)
+                        if max_total_records and total_yielded >= max_total_records:
+                            break
         else:
             # CSV chunked iterator
             for df_chunk in pd.read_csv(self.filepath, chunksize=self.chunk_size):

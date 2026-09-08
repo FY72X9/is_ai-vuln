@@ -27,9 +27,9 @@ class GraphIDSModel(BaseIDSModel):
     def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> "GraphIDSModel":
         # Check if PyG and PyTorch are present
         try:
-            import torch
-            import torch.nn as nn
-            import torch_geometric.nn as pyg_nn
+            import torch  # type: ignore
+            import torch.nn as nn  # type: ignore
+            import torch_geometric.nn as pyg_nn  # type: ignore
             
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             

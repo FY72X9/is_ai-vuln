@@ -33,8 +33,8 @@ class XGBoostIDS(BaseIDSModel):
 
     def _tune_with_optuna(self, X_train: np.ndarray, y_train: np.ndarray) -> Dict[str, Any]:
         try:
-            import optuna
-            from xgboost import XGBClassifier
+            import optuna  # type: ignore
+            from xgboost import XGBClassifier  # type: ignore
             from sklearn.model_selection import train_test_split
             from sklearn.metrics import f1_score
             
@@ -71,7 +71,7 @@ class XGBoostIDS(BaseIDSModel):
 
     def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> "XGBoostIDS":
         try:
-            from xgboost import XGBClassifier
+            from xgboost import XGBClassifier  # type: ignore
             
             params = dict(self.best_params)
             if self.optuna_trials > 0:
@@ -81,7 +81,7 @@ class XGBoostIDS(BaseIDSModel):
             
             # Check for GPU
             try:
-                import torch
+                import torch  # type: ignore
                 if torch.cuda.is_available():
                     params["device"] = "cuda"
             except ImportError:
@@ -130,8 +130,8 @@ class LightGBMIDS(BaseIDSModel):
 
     def _tune_with_optuna(self, X_train: np.ndarray, y_train: np.ndarray) -> Dict[str, Any]:
         try:
-            import optuna
-            from lightgbm import LGBMClassifier
+            import optuna  # type: ignore
+            from lightgbm import LGBMClassifier  # type: ignore
             from sklearn.model_selection import train_test_split
             from sklearn.metrics import f1_score
 
@@ -164,7 +164,7 @@ class LightGBMIDS(BaseIDSModel):
 
     def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> "LightGBMIDS":
         try:
-            from lightgbm import LGBMClassifier
+            from lightgbm import LGBMClassifier  # type: ignore
             params = dict(self.best_params)
             if self.optuna_trials > 0:
                 tuned = self._tune_with_optuna(X, y)

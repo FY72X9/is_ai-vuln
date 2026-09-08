@@ -38,11 +38,11 @@ class TabPFNIDS(BaseIDSModel):
             self.y_context = y.copy()
 
         try:
-            from tabpfn import TabPFNClassifier
+            from tabpfn import TabPFNClassifier  # type: ignore
             # Initialize TabPFN
             device = "cuda"
             try:
-                import torch
+                import torch  # type: ignore
                 if not torch.cuda.is_available():
                     device = "cpu"
             except ImportError:
@@ -118,7 +118,7 @@ class TabICLIDS(BaseIDSModel):
             self.y_context = y.copy()
 
         try:
-            import tabicl
+            import tabicl  # type: ignore
             self.model = tabicl.TabICLClassifier()
             self.model.fit(self.X_context, self.y_context)
             self.is_fitted = True

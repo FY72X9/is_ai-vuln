@@ -28,7 +28,7 @@ class MambularSSMIDS(BaseIDSModel):
 
     def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> "MambularSSMIDS":
         try:
-            import mambular
+            import mambular  # type: ignore
             self.model = mambular.models.MambularClassifier(
                 d_model=self.d_model, n_layers=self.n_layers, max_epochs=self.epochs
             )
@@ -38,9 +38,9 @@ class MambularSSMIDS(BaseIDSModel):
         except (ImportError, Exception):
             # PyTorch Linear Recurrent SSM Module Fallback
             try:
-                import torch
-                import torch.nn as nn
-                from torch.utils.data import TensorDataset, DataLoader
+                import torch  # type: ignore
+                import torch.nn as nn  # type: ignore
+                from torch.utils.data import TensorDataset, DataLoader  # type: ignore
                 
                 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
                 
@@ -114,7 +114,7 @@ class MambularSSMIDS(BaseIDSModel):
         if not self.is_fitted:
             raise RuntimeError(f"Model {self.name} is not fitted.")
         try:
-            import torch
+            import torch  # type: ignore
             if isinstance(self.model, torch.nn.Module):
                 device = next(self.model.parameters()).device
                 self.model.eval()
@@ -143,9 +143,9 @@ class FTTransformerIDS(BaseIDSModel):
 
     def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> "FTTransformerIDS":
         try:
-            import torch
-            import torch.nn as nn
-            from torch.utils.data import TensorDataset, DataLoader
+            import torch  # type: ignore
+            import torch.nn as nn  # type: ignore
+            from torch.utils.data import TensorDataset, DataLoader  # type: ignore
 
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             
@@ -205,7 +205,7 @@ class FTTransformerIDS(BaseIDSModel):
         if not self.is_fitted:
             raise RuntimeError(f"Model {self.name} is not fitted.")
         try:
-            import torch
+            import torch  # type: ignore
             if isinstance(self.model, torch.nn.Module):
                 device = next(self.model.parameters()).device
                 self.model.eval()
@@ -231,9 +231,9 @@ class SAINTIDS(BaseIDSModel):
 
     def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> "SAINTIDS":
         try:
-            import torch
-            import torch.nn as nn
-            from torch.utils.data import TensorDataset, DataLoader
+            import torch  # type: ignore
+            import torch.nn as nn  # type: ignore
+            from torch.utils.data import TensorDataset, DataLoader  # type: ignore
 
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -307,7 +307,7 @@ class SAINTIDS(BaseIDSModel):
         if not self.is_fitted:
             raise RuntimeError(f"Model {self.name} is not fitted.")
         try:
-            import torch
+            import torch  # type: ignore
             if isinstance(self.model, torch.nn.Module):
                 device = next(self.model.parameters()).device
                 self.model.eval()

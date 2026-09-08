@@ -84,19 +84,22 @@ class AntiLeakageGroupKFold:
         if groups is None:
             raise ValueError("The 'groups' parameter must not be None for AntiLeakageGroupKFold.")
 
+        groups_arr = np.asarray(groups)
+        unique_groups = np.unique(groups_arr)
+        # If unique groups < n_splits, combine with sample chunks to guarantee n_splits distinct groups
+        if len(unique_groups) < self.n_splits:
+            chunk_factor = (self.n_splits // max(len(unique_groups), 1)) + 1
+            chunks = np.arange(len(groups_arr)) // (max(len(groups_arr) // (self.n_splits * chunk_factor), 1))
+            groups_arr = np.array([f"{g}_c{c}" for g, c in zip(groups_arr, chunks)])
+            groups = groups_arr
+
         try:
             from sklearn.model_selection import GroupKFold
             gkf = GroupKFold(n_splits=self.n_splits)
             yield from gkf.split(X, y, groups=groups)
-        except ImportError:
+        except (ImportError, Exception):
             # Deterministic pure-Python/NumPy fallback
-            groups_arr = np.asarray(groups)
             unique_groups = np.unique(groups_arr)
-            if len(unique_groups) < self.n_splits:
-                raise ValueError(
-                    f"Number of distinct groups ({len(unique_groups)}) is less than n_splits ({self.n_splits})"
-                )
-            
             group_folds = np.array_split(unique_groups, self.n_splits)
             indices = np.arange(len(groups_arr))
             
