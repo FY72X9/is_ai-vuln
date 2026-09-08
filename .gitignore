@@ -53,7 +53,9 @@ desktop.ini
 *.pcap
 /data/
 !src/data/
+scratch/
 workspace_drive/
 drive_cache/
 checkpoints/*.pt
 experiment_output/**/checkpoints/
+

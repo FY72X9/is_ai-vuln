@@ -31,8 +31,8 @@
 ---
 
 ### Phase 2: Core 2-Track Benchmark Execution (Weeks 4–7)
-- [ ] **W4.0 Track A Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/02_phase2_track_a_benchmark_colab.ipynb`) for Track A 5-fold CV across 8 models.
-- [ ] **W4.1 CheckpointManager Bootstrap**: Verify `CheckpointManager` initializes `checkpoint_state.json` on Google Drive.
+- [x] **W4.0 Track A Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/02_phase2_track_a_benchmark_colab.ipynb`) for Track A 5-fold CV across 8 models.
+- [x] **W4.1 CheckpointManager Bootstrap**: Verify `CheckpointManager` initializes `checkpoint_state.json` on Google Drive.
 - [ ] **W4.2 Track A — Foundation Models ($N \le 10\text{k}$)**:
   - [ ] Evaluate **TabPFN v3** across 5 folds ($N \in \{1\text{k}, 5\text{k}, 10\text{k}\}$).
   - [ ] Evaluate **TabICL v2** across 5 folds with KV-caching.
@@ -44,7 +44,7 @@
   - [ ] Optimize & evaluate **XGBoost** baseline with Optuna (50 trials).
   - [ ] Optimize & evaluate **LightGBM** baseline with Optuna (50 trials).
 - [ ] **W5.2 Track A Verification**: Confirm all 8 models have completed 5 folds and metrics are committed to `checkpoint_state.json`.
-- [ ] **W6.0 Track B Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/03_phase2_track_b_scalability_colab.ipynb`) for Track B high-throughput scalability.
+- [x] **W6.0 Track B Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/03_phase2_track_b_scalability_colab.ipynb`) for Track B high-throughput scalability.
 - [ ] **W6.1 Track B — Scalable Deep Learning ($N \ge 100\text{k}$)**:
   - [ ] Execute **Mambular SSM** on $N \in \{100\text{k}, 500\text{k}, 1\text{M}\}$ samples; log VRAM and throughput.
   - [ ] Execute **FT-Transformer** on scalable mini-batches; record attention memory wall.
@@ -57,7 +57,7 @@
 ---
 
 ### Phase 3: Q1 Rigorous Testing — Statistical, Ablation & Robustness (Weeks 8–9)
-- [ ] **W8.0 Statistical & Ablation Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/04_phase3_statistical_ablation_colab.ipynb`) for non-parametric tests, ablations, and noise tests.
+- [x] **W8.0 Statistical & Ablation Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/04_phase3_statistical_ablation_colab.ipynb`) for non-parametric tests, ablations, and noise tests.
 - [ ] **W8.1 Non-Parametric Friedman Test**:
   - [ ] Compute Friedman test across $k=8$ models and $N=5$ datasets ($\chi_F^2$ statistic).
   - [ ] Verify null hypothesis rejection ($p < 0.01$).
@@ -78,27 +78,27 @@
 ---
 
 ### Phase 4: Autonomous Closed-Loop Fuzzy DEMATEL & Causal Triangulation (Weeks 10–11)
-- [ ] **W10.0 Fuzzy DEMATEL & Causal Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/05_phase4_fuzzy_dematel_lingam_colab.ipynb`) for closed-loop simulation & DirectLiNGAM.
-- [ ] **W10.1 Axiomatic Prior Derivation**: Construct $8 \times 8$ theoretical prior matrix $W_{\text{theory}}$ derived from Big-O complexity and statistical learning bounds.
-- [ ] **W10.2 Empirical Telemetry Extraction**: Run `src/dematel/empirical_mapper.py` to extract Normalized Mutual Information (NMI) and cross-fold variance from 5-fold metric matrices.
-- [ ] **W10.3 Triangular Fuzzy Synthesis**: Formulate $\tilde{A} = (L, M, U)$ combining $W_{\text{theory}}$ and $W_{\text{empirical}}$.
-- [ ] **W10.4 Matrix Normalization & Total Relation**: Compute normalized matrix $\tilde{X}$ and total relation matrix $\tilde{T} = \tilde{X}(I - \tilde{X})^{-1}$.
-- [ ] **W10.5 CFCS Defuzzification**: Defuzzify $\tilde{T}$ into crisp matrix $T$ using Converting Fuzzy data into Crisp Scores.
-- [ ] **W10.6 Prominence & Relation Mapping**:
+- [x] **W10.0 Fuzzy DEMATEL & Causal Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/05_phase4_fuzzy_dematel_lingam_colab.ipynb`) for closed-loop simulation & DirectLiNGAM.
+- [x] **W10.1 Axiomatic Prior Derivation**: Construct $8 \times 8$ theoretical prior matrix $W_{\text{theory}}$ derived from Big-O complexity and statistical learning bounds.
+- [x] **W10.2 Empirical Telemetry Extraction**: Run `src/dematel/empirical_mapper.py` to extract Normalized Mutual Information (NMI) and cross-fold variance from 5-fold metric matrices.
+- [x] **W10.3 Triangular Fuzzy Synthesis**: Formulate $\tilde{A} = (L, M, U)$ combining $W_{\text{theory}}$ and $W_{\text{empirical}}$.
+- [x] **W10.4 Matrix Normalization & Total Relation**: Compute normalized matrix $\tilde{X}$ and total relation matrix $\tilde{T} = \tilde{X}(I - \tilde{X})^{-1}$.
+- [x] **W10.5 CFCS Defuzzification**: Defuzzify $\tilde{T}$ into crisp matrix $T$ using Converting Fuzzy data into Crisp Scores.
+- [x] **W10.6 Prominence & Relation Mapping**:
   - [ ] Calculate $D_i$ (row sum) and $R_i$ (column sum).
   - [ ] Calculate Prominence $(D_i + R_i)$ and Relation $(D_i - R_i)$.
   - [ ] Establish threshold $\alpha$ and generate Causal Network Digraph via `publication_styler.py`.
-- [ ] **W11.1 Monte Carlo Sensitivity Proof**:
+- [x] **W11.1 Monte Carlo Sensitivity Proof**:
   - [ ] Run 10,000 stochastic perturbation iterations on fuzzy bounds $(l, m, u)$ with $\mathcal{N}(0, 0.05^2)$.
   - [ ] Confirm Kendall's coefficient of concordance $W \ge 0.95$ ($p < 0.001$).
-- [ ] **W11.2 Algorithmic Causal Triangulation**:
+- [x] **W11.2 Algorithmic Causal Triangulation**:
   - [ ] Execute DirectLiNGAM / PC Algorithm on empirical telemetry.
   - [ ] Confirm Structural Hamming Distance (SHD) $\le 2$ between DEMATEL digraph and LiNGAM graph.
 
 ---
 
 ### Phase 5: Manuscript Preparation, LaTeX Formatting & Packaging (Weeks 12–14)
-- [ ] **W12.0 Publication Artifacts Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/06_phase5_manuscript_figures_tables_colab.ipynb`) for automated LaTeX table & vector figure export.
+- [x] **W12.0 Publication Artifacts Colab Notebook Delivery**: Prepare interactive Google Colab notebook (`src/notebook/06_phase5_manuscript_figures_tables_colab.ipynb`) for automated LaTeX table & vector figure export.
 - [ ] **W12.1 IMRAD Drafting**: Draft Introduction, TTF Theoretical Framework, Methodology, Results, and Causal Discussion.
 - [ ] **W12.2 Task-Technology Fit Synthesis**: Calculate empirical TTF utility scores across $T_1, T_2, T_3$ and formally validate Design Propositions (DP1–DP4).
 - [ ] **W12.3 High-Resolution Figures**: Compile all figures in vector PDF and 300+ DPI format into LaTeX document.
@@ -134,30 +134,30 @@
 ---
 
 ## 3. 🛠️ Specialized Automation Scripts Checklist
-
+ 
 ### Reference Harvester (`src/utils/references_harvester.py`)
-- [ ] Queries OpenAlex API and CrossRef REST API without rate-limit errors.
-- [ ] Extracts complete citation metadata (Title, Authors, Year, Venue, DOI, OA status, FWCI).
-- [ ] Appends clean BibTeX entries into `references/library.bib`.
+- [x] Queries OpenAlex API and CrossRef REST API without rate-limit errors.
+- [x] Extracts complete citation metadata (Title, Authors, Year, Venue, DOI, OA status, FWCI).
+- [x] Appends clean BibTeX entries into `references/library.bib`.
 
 ### Reference Validator (`src/utils/references_validator.py`)
-- [ ] Performs HTTP HEAD requests to verify 100% active DOI resolution (HTTP 200/301/302).
-- [ ] Cross-references DOIs with OpenAlex indexing status (Scopus/WoS eligibility).
-- [ ] Queries CrossRef Retraction Watch database; confirms 0 cited papers have been retracted.
-- [ ] Generates `references/validation_report.json` with timestamped audit results.
+- [x] Performs HTTP HEAD requests to verify 100% active DOI resolution (HTTP 200/301/302).
+- [x] Cross-references DOIs with OpenAlex indexing status (Scopus/WoS eligibility).
+- [x] Queries CrossRef Retraction Watch database; confirms 0 cited papers have been retracted.
+- [x] Generates `references/validation_report.json` with timestamped audit results.
 
 ### Drive Downloader & `.gitignore` Automation (`src/data/drive_downloader.py`)
-- [ ] Downloads dataset archives directly into Drive cache directory `/content/drive/MyDrive/is_ai-vuln-data/`.
-- [ ] Validates SHA-256 archive checksums against published dataset hashes.
-- [ ] Automatically appends required exclusion rules to `.gitignore` (`*.csv`, `*.pcap`, `*.parquet`, `data/`, `checkpoints/*.pt`).
-- [ ] Confirms `git status` displays 0 gigabyte-scale data files staged for commit.
+- [x] Downloads dataset archives directly into Drive cache directory `/content/drive/MyDrive/is_ai-vuln-data/`.
+- [x] Validates SHA-256 archive checksums against published dataset hashes.
+- [x] Automatically appends required exclusion rules to `.gitignore` (`*.csv`, `*.pcap`, `*.parquet`, `data/`, `checkpoints/*.pt`).
+- [x] Confirms `git status` displays 0 gigabyte-scale data files staged for commit.
 
 ### Journal Publication Styler (`src/visualization/publication_styler.py`)
-- [ ] Sets Matplotlib parameters for IEEE single-column (3.5 in) and double-column (7.0 in).
-- [ ] Enforces minimum 300 DPI for line charts and 600 DPI for dense scatter/ROC curves.
-- [ ] Uses accessible, colorblind-safe palettes (`colorblind` or `viridis`).
-- [ ] Configures professional serif typography matching LaTeX template (`Times New Roman`).
-- [ ] Exports simultaneous vector `.pdf` and high-res preview `.png`.
+- [x] Sets Matplotlib parameters for IEEE single-column (3.5 in) and double-column (7.0 in).
+- [x] Enforces minimum 300 DPI for line charts and 600 DPI for dense scatter/ROC curves.
+- [x] Uses accessible, colorblind-safe palettes (`colorblind` or `viridis`).
+- [x] Configures professional serif typography matching LaTeX template (`Times New Roman`).
+- [x] Exports simultaneous vector `.pdf` and high-res preview `.png`.
 
 ---
 

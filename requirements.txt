@@ -4,6 +4,7 @@
 # Data Handling & Scientific Computing
 numpy>=1.26.0
 pandas>=2.0.0
+pyarrow>=14.0.0
 scipy>=1.11.0
 scikit-learn>=1.4.0
 imbalanced-learn>=0.12.0
