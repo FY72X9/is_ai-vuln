@@ -1,15 +1,18 @@
 # Community 10
 
-> 6 nodes · cohesion 0.33
+> 9 nodes · cohesion 0.22
 
 ## Key Concepts
 
-- [publication_styler.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L1) (3 connections)
-- [save_publication_figure()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L39) (2 connections)
-- [set_publication_style()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L6) (2 connections)
-- [Journal-grade publication figure styling for IEEE / ACM / Elsevier Q1 venues.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L1) (1 connections)
-- [Save figure simultaneously in vector PDF format and high-res PNG preview.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L40) (1 connections)
-- [Apply IEEE/Nature publication styling to matplotlib rcParams.          Args:](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L7) (1 connections)
+- [base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L1) (5 connections)
+- [.profile_inference()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L51) (4 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L40) (3 connections)
+- [predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L36) (3 connections)
+- **ABC** (2 connections)
+- [fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L31) (1 connections)
+- [Unified Base Model Interface for Intrusion Detection Models. Standardizes traini](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L1) (1 connections)
+- [Generate prediction probability distributions. Fallback to binary indicator if u](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L41) (1 connections)
+- [Profile inference latency (ms/flow), throughput (flows/sec), and peak VRAM/RAM.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L57) (1 connections)
 
 ## Relationships
 
@@ -17,12 +20,12 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\visualization\publication_styler.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 20 (95%)
+- INFERRED: 1 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

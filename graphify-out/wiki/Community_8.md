@@ -1,28 +1,56 @@
 # Community 8
 
-> 6 nodes · cohesion 0.33
+> 14 nodes · cohesion 0.21
 
 ## Key Concepts
 
-- [graph_builder.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L1) (3 connections)
-- [build_networkx_flow_graph()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L17) (2 connections)
-- [export_to_pyg_tensors()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L66) (2 connections)
-- [Graph Construction Engine for GraphIDS. Converts tabular NetFlow records into to](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L1) (1 connections)
-- [Construct a directed network interaction graph from NetFlow DataFrame.      Args](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L24) (1 connections)
-- [Convert NetworkX flow graph to edge index and feature arrays (PyG compatible).](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L67) (1 connections)
+- [TabICLIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L99) (10 connections)
+- [TabPFNIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L16) (10 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L139) (4 connections)
+- [foundation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L1) (3 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L131) (3 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L60) (3 connections)
+- [Tabular Foundation Models for Intrusion Detection (Track A). Implements TabPFN v](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L1) (2 connections)
+- [Tabular In-Context Learning (TabICL v2) with KV-Caching.          Evaluates sequ](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L100) (2 connections)
+- [Tabular Prior-Data Fitted Network (TabPFN v3) Foundation Model.          Evaluat](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L17) (2 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L111) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L105) (2 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L29) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L23) (2 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L76) (2 connections)
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class TabICLIDS {
+        +foundation.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    class TabPFNIDS {
+        +foundation.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+```
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 4]] (2 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\graph_builder.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\foundation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 40 (82%)
+- INFERRED: 9 (18%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -1,58 +1,118 @@
 # Community 0
 
-> 19 nodes · cohesion 0.13
+> 49 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- [CheckpointManager](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L7) (10 connections)
-- [._load_or_init()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L19) (4 connections)
-- [._persist_state()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L97) (4 connections)
-- [.mark_completed()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L82) (3 connections)
-- [.record_fold_completion()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L60) (3 connections)
-- [.reset_state()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L89) (3 connections)
-- [.should_skip_fold()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L52) (3 connections)
-- [.should_skip_model()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L48) (3 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L10) (2 connections)
-- [checkpoint_manager.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L1) (2 connections)
-- [State Checkpointing & Fault-Tolerant Autorecovery Pipeline for Google Colab and](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L1) (1 connections)
-- [Load state from disk if exists, otherwise initialize clean state schema.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L20) (1 connections)
-- [Check whether all folds for a given model have been completed.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L49) (1 connections)
-- [Check whether a specific fold for a given model has already completed.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L53) (1 connections)
-- [Record the completion of a fold, update metrics, and persist to disk.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L61) (1 connections)
-- [Manages experiment state checkpointing, allowing seamless resumption across fold](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L8) (1 connections)
-- [Mark the entire track for this dataset as completed.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L83) (1 connections)
-- [Reset the checkpoint state, optionally archiving the current state.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L90) (1 connections)
-- [Atomically persist state JSON.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L98) (1 connections)
+- [BaseIDSModel](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L19) (30 connections)
+- [Visualization and journal-grade layouting modules.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/__init__.py#L1) (16 connections)
+- [LightGBMIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L114) (11 connections)
+- [XGBoostIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L16) (11 connections)
+- [FTTransformerIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L131) (10 connections)
+- [MambularSSMIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L16) (10 connections)
+- [SAINTIDS](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L221) (10 connections)
+- [Instantiate a benchmark IDS model by name.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/__init__.py#L26) (10 connections)
+- **BaseIDSModel** (8 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L306) (6 connections)
+- [deep_tabular.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L1) (4 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L165) (3 connections)
+- [._tune_with_optuna()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L131) (3 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L72) (3 connections)
+- [classical.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L1) (3 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L232) (3 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L227) (3 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L117) (2 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L186) (2 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L191) (2 connections)
+- [Classical Gradient Boosted Decision Tree (GBDT) Baselines. Implements XGBoost an](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L1) (2 connections)
+- [LightGBM Classifier Baseline with Histogram Gradient Optimization.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L115) (2 connections)
+- [XGBoost Classifier Baseline with Optuna Tuning and Hist/GPU acceleration.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L17) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L19) (2 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L103) (2 connections)
+- *... and 24 more nodes in this community*
 
 ## Class Diagram
 
 ```mermaid
 classDiagram
-    class CheckpointManager {
-        +checkpoint_manager.py()
+    class BaseIDSModel {
+        +base.py()
         +.__init__()
-        +._load_or_init()
-        +.should_skip_model()
-        +.should_skip_fold()
-        +.record_fold_completion()
-        +.mark_completed()
-        +.reset_state()
-        +._persist_state()
+        +.predict_proba()
+        +.profile_inference()
+        +.cleanup()
+        +.__repr__()
     }
+    class LightGBMIDS {
+        +classical.py()
+        +.__init__()
+        +._tune_with_optuna()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    class XGBoostIDS {
+        +classical.py()
+        +.__init__()
+        +._tune_with_optuna()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    class FTTransformerIDS {
+        +deep_tabular.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    class MambularSSMIDS {
+        +deep_tabular.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    class SAINTIDS {
+        +deep_tabular.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    BaseIDSModel --> XGBoostIDS
+    BaseIDSModel --> LightGBMIDS
+    BaseIDSModel --> MambularSSMIDS
+    BaseIDSModel --> FTTransformerIDS
+    BaseIDSModel --> SAINTIDS
+    LightGBMIDS --> BaseIDSModel
+    XGBoostIDS --> BaseIDSModel
+    FTTransformerIDS --> BaseIDSModel
+    MambularSSMIDS --> BaseIDSModel
+    SAINTIDS --> BaseIDSModel
 ```
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 4]] (12 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\checkpoint_manager.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/__init__.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/__init__.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\dematel\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/__init__.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/__init__.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/__init__.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\classical.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\deep_tabular.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/__init__.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\visualization\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/__init__.py)
 
 ## Audit Trail
 
-- EXTRACTED: 46 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 136 (69%)
+- INFERRED: 62 (31%)
 - AMBIGUOUS: 0 (0%)
 
 ---

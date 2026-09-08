@@ -1,15 +1,18 @@
 # Community 9
 
-> 6 nodes · cohesion 0.40
+> 9 nodes · cohesion 0.56
 
 ## Key Concepts
 
-- [references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (3 connections)
-- [format_bibtex_entry()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L314) (3 connections)
-- [harvest_and_build_library()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L340) (3 connections)
-- [Metadata Harvester for Academic References using OpenAlex and CrossRef REST APIs](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (1 connections)
-- [Format reference dict into a clean BibTeX entry.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L315) (1 connections)
-- [Harvest metadata from OpenAlex / CrossRef where available and build references/l](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L341) (1 connections)
+- [generate_remaining_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (8 connections)
+- [code_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L13) (6 connections)
+- [md_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L22) (6 connections)
+- [write_nb()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L29) (5 connections)
+- [build_nb03()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L49) (4 connections)
+- [build_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L174) (4 connections)
+- [build_nb05()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L277) (4 connections)
+- [build_nb06()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L356) (4 connections)
+- [Batch Generator for Google Colab Notebooks: Notebooks 03, 04, 05, 06.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (1 connections)
 
 ## Relationships
 
@@ -17,12 +20,12 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_remaining_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 40 (95%)
+- INFERRED: 2 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

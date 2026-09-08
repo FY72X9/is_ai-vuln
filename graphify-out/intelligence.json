@@ -1,36 +1,36 @@
 {
   "hotspots": [
     {
-      "label": "validate_references()",
-      "risk": 0.633,
-      "type": "FUNCTION"
-    },
-    {
-      "label": "CheckpointManager",
-      "risk": 0.593,
+      "label": "BaseIDSModel",
+      "risk": 0.53,
       "type": "CLASS"
     },
     {
-      "label": "decontaminate_cicids2017()",
-      "risk": 0.505,
+      "label": "StreamingChunkLoader",
+      "risk": 0.517,
+      "type": "CLASS"
+    },
+    {
+      "label": "run_preparation_pipeline()",
+      "risk": 0.506,
       "type": "FUNCTION"
     },
     {
-      "label": "is_ai-vuln Project Overview",
-      "risk": 0.428,
-      "type": "UNKNOWN"
+      "label": ".iter_chunks()",
+      "risk": 0.435,
+      "type": "FUNCTION"
     },
     {
-      "label": "fit_fold_isolated_pipeline()",
-      "risk": 0.338,
+      "label": "validate_references()",
+      "risk": 0.421,
       "type": "FUNCTION"
     }
   ],
   "blast_radius": {
+    "BaseIDSModel": 30,
+    "run_tests()": 16,
+    "Visualization and journal-grade layouting modules.": 16,
     "is_ai-vuln Project Overview": 12,
-    "CheckpointManager": 10,
-    "Visualization and journal-grade layouting modules.": 7,
-    "PureNumPyStandardScaler": 7,
-    "fit_fold_isolated_pipeline()": 5
+    "run_closed_loop_fuzzy_dematel()": 11
   }
 }

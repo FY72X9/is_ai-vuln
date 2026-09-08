@@ -1,30 +1,36 @@
 # Community 7
 
-> 8 nodes · cohesion 0.29
+> 14 nodes · cohesion 0.20
 
 ## Key Concepts
 
-- [environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L1) (4 connections)
-- [is_colab()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L7) (3 connections)
-- [setup_environment()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L15) (3 connections)
-- [flush_memory()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L56) (2 connections)
-- [Environment initialization and hardware-runtime abstraction for Google Colab and](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L1) (1 connections)
-- [Initialize storage directories, Google Drive mounting (if Colab), and memory saf](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L16) (1 connections)
-- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L57) (1 connections)
-- [Check if the current runtime is Google Colab.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L8) (1 connections)
+- [drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L1) (7 connections)
+- [prepare_benchmark_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L241) (6 connections)
+- [initialize_dataset_directories()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L226) (5 connections)
+- [download_file()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L118) (4 connections)
+- [ensure_gitignore_safeguards()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L79) (3 connections)
+- [generate_synthetic_benchmark_sample()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L154) (3 connections)
+- [verify_file_sha256()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L98) (3 connections)
+- [Drive Dataset Retrieval, Checksum Verification & Automatic .gitignore Safeguards](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L1) (1 connections)
+- [Download a file with retry mechanism and SHA256 verification.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L125) (1 connections)
+- [Generate realistic synthetic NetFlow records for offline pipeline testing and Co](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L160) (1 connections)
+- [Ensure data directories exist and safeguards are active.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L227) (1 connections)
+- [Retrieve benchmark dataset: attempts remote download or synthesizes representati](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L246) (1 connections)
+- [Check and automatically append required exclusion rules to .gitignore.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L80) (1 connections)
+- [Verify SHA-256 checksum of a downloaded file.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L99) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 6]] (1 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
 
 ## Audit Trail
 
-- EXTRACTED: 16 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 36 (95%)
+- INFERRED: 2 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---
