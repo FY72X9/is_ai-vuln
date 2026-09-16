@@ -62,3 +62,11 @@ checkpoints/*.pt
 experiment_output/**/checkpoints/
 
 
+
+# Automated Research Data Safeguards
+data/raw/
+data/processed/
+*.pcap_ISCX.csv
+*.txt
+.env
+*.pyc
