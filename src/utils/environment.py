@@ -12,6 +12,27 @@ def is_colab() -> bool:
     except ImportError:
         return False
 
+def resolve_project_root(candidate_roots: list = None) -> Path:
+    """Detect and return the project root directory across Colab and workstation environments."""
+    default_candidates = [
+        Path("/content/My Drive/Colab Notebooks"),
+        Path("/content/drive/My Drive/Colab Notebooks"),
+        Path("/content/drive/MyDrive/Colab Notebooks"),
+        Path("/content/drive/MyDrive/is_ai-vuln"),
+        Path("/content/is_ai-vuln"),
+        Path(".").resolve(),
+    ]
+    if candidate_roots:
+        candidates = [Path(p) for p in candidate_roots] + default_candidates
+    else:
+        candidates = default_candidates
+
+    for candidate in candidates:
+        if candidate.exists() and (candidate / "src").exists():
+            return candidate.resolve()
+
+    return Path(".").resolve()
+
 def setup_environment(base_dir: str = None) -> dict:
     """Initialize storage directories, Google Drive mounting (if Colab), and memory safeguards.
 
@@ -23,34 +44,37 @@ def setup_environment(base_dir: str = None) -> dict:
     if in_colab:
         try:
             from google.colab import drive
-            drive.mount("/content/drive")
-            drive_root = Path("/content/drive/MyDrive/is_ai-vuln")
-            drive_root.mkdir(parents=True, exist_ok=True)
-            local_cache = Path("/content/data")
-            local_cache.mkdir(parents=True, exist_ok=True)
-            print(" Google Drive mounted successfully at /content/drive/MyDrive/is_ai-vuln")
+            if not Path("/content/drive").exists() and not Path("/content/My Drive").exists():
+                drive.mount("/content/drive")
         except Exception as e:
-            print(f" Warning: Google Drive mount failed: {e}")
-            drive_root = Path("./workspace_drive")
-            drive_root.mkdir(parents=True, exist_ok=True)
-            local_cache = Path("./data")
-            local_cache.mkdir(parents=True, exist_ok=True)
-    else:
-        root = Path(base_dir) if base_dir else Path(".")
-        drive_root = root / "workspace_drive"
-        local_cache = root / "data"
-        drive_root.mkdir(parents=True, exist_ok=True)
-        local_cache.mkdir(parents=True, exist_ok=True)
-        print(f"ℹ️ Local execution environment initialized. Data cache at: {local_cache.resolve()}")
+            print(f"⚠️ Warning: Google Drive mount failed or already mounted: {e}")
 
-    output_dir = Path("experiment_output")
-    output_dir.mkdir(parents=True, exist_ok=True)
+    project_root = resolve_project_root([base_dir] if base_dir else None)
+    os.chdir(str(project_root))
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+
+    data_dir = project_root / "data"
+    raw_dir = data_dir / "raw"
+    processed_dir = data_dir / "processed"
+    output_dir = project_root / "experiment_output"
+    checkpoint_dir = project_root / "checkpoints"
+
+    for d in [data_dir, raw_dir, processed_dir, output_dir, checkpoint_dir]:
+        d.mkdir(parents=True, exist_ok=True)
+
+    print(f"✅ Environment initialized. Project root: {project_root}")
+    print(f"📁 Data directory: {data_dir.resolve()}")
+    print(f"💾 Output directory: {output_dir.resolve()}")
 
     return {
         "is_colab": in_colab,
-        "drive_dir": drive_root,
-        "data_dir": local_cache,
+        "project_root": project_root,
+        "data_dir": data_dir,
+        "raw_dir": raw_dir,
+        "processed_dir": processed_dir,
         "output_dir": output_dir,
+        "checkpoint_dir": checkpoint_dir
     }
 
 def flush_memory():
@@ -63,3 +87,4 @@ def flush_memory():
             torch.cuda.ipc_collect()
     except ImportError:
         pass
+

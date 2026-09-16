@@ -15,6 +15,7 @@ from typing import Dict, Any, Optional, Tuple
 from src.data.drive_downloader import (
     initialize_dataset_directories,
     prepare_benchmark_dataset,
+    is_synthetic_path,
     BENCHMARK_DATASET_METADATA
 )
 from src.data.cleaner import clean_dataset, clean_column_names
@@ -118,11 +119,17 @@ def run_preparation_pipeline(
             "val_attack_ratio": float(np.mean(y[val_idx])) if len(val_idx) > 0 else 0.0
         })
         
+    is_synthetic = is_synthetic_path(raw_path)
+    data_provenance = "SYNTHETIC_FALLBACK" if is_synthetic else "REAL_DATASET"
+
     # Save fold assignments metadata
     splits_meta_file = dirs["processed"] / f"{dataset_name}_splits_meta.json"
     with open(splits_meta_file, "w", encoding="utf-8") as f:
         json.dump({
             "dataset": dataset_name,
+            "is_synthetic": is_synthetic,
+            "data_provenance": data_provenance,
+            "raw_source_file": str(raw_path),
             "n_splits": n_splits,
             "feature_cols": feature_cols,
             "target_col": target_col,
@@ -159,9 +166,17 @@ def run_preparation_pipeline(
             }
             print(f"🕸️ Flow graph compiled: {graph_info['nodes']} nodes, {graph_info['edges']} edges.")
             
-    print(f"✅ Pipeline completed successfully for {dataset_name}!\n")
+    print(f"\n==========================================")
+    status_icon = "⚠️" if is_synthetic else "🛡️"
+    print(f"{status_icon} Prep Pipeline Completed: {dataset_name} [{data_provenance}]")
+    print(f"📁 Output file: {processed_file}")
+    print(f"==========================================\n")
+
     return {
         "dataset_name": dataset_name,
+        "is_synthetic": is_synthetic,
+        "data_provenance": data_provenance,
+        "raw_source_file": str(raw_path),
         "processed_file": str(processed_file),
         "metadata_file": str(splits_meta_file),
         "clean_stats": clean_stats,
@@ -170,5 +185,21 @@ def run_preparation_pipeline(
     }
 
 if __name__ == "__main__":
-    result = run_preparation_pipeline("CICIDS2017", prefer_sample=True)
-    print("Execution Summary:", json.dumps(result, indent=2))
+    import argparse
+    parser = argparse.ArgumentParser(description="Ingest, decontaminate, and partition benchmark datasets.")
+    parser.add_argument("--dataset", type=str, default="CICIDS2017", help="Dataset name (CICIDS2017, UNSW-NB15, TON_IoT, CIC-DDoS2019, NSL-KDD)")
+    parser.add_argument("--base-dir", type=str, default=".", help="Project base directory")
+    parser.add_argument("--prefer-sample", action="store_true", help="Force synthetic sample generation instead of looking for real files")
+    parser.add_argument("--n-splits", type=int, default=5, help="Number of cross-validation folds")
+    parser.add_argument("--no-graphs", action="store_true", help="Skip PyG flow graph generation")
+    args = parser.parse_args()
+
+    result = run_preparation_pipeline(
+        dataset_name=args.dataset,
+        base_dir=args.base_dir,
+        prefer_sample=args.prefer_sample,
+        n_splits=args.n_splits,
+        build_graphs=not args.no_graphs
+    )
+    print("Execution Summary:", json.dumps({k: v for k, v in result.items() if k != "clean_stats"}, indent=2))
+

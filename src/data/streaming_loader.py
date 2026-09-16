@@ -137,3 +137,50 @@ def generate_scalable_synthetic_partition(
 
     print(f"📊 Scalable partition ({n_samples} records) synthesized at: {output_file}")
     return output_file
+
+def resolve_track_b_dataset(
+    base_dir: str | Path = ".",
+    dataset_name: str = "CICIDS2017",
+    target_samples: int = 100000
+) -> Tuple[Path, bool]:
+    """Resolve the dataset file for Track B streaming benchmark: prefers real data, falls back to synthetic.
+
+    Returns:
+        Tuple[Path, bool]: (filepath, is_synthetic)
+    """
+    root = Path(base_dir)
+    data_dir = root / "data"
+    proc_dir = data_dir / "processed"
+    raw_dir = data_dir / "raw"
+
+    # Search for real cleaned files first
+    real_candidates = [
+        proc_dir / f"{dataset_name}_cleaned.parquet",
+        proc_dir / f"{dataset_name}_cleaned.csv",
+        raw_dir / f"{dataset_name}.csv",
+        raw_dir / f"{dataset_name.lower()}.csv",
+    ]
+
+    for cand in real_candidates:
+        if cand.exists():
+            print("\n" + "=" * 80)
+            print(f"🛡️ [TRACK B STREAMING STATUS: REAL DATA ACTIVE]")
+            print(f"📁 Source: {cand.resolve()}")
+            print(f"📊 Dataset: {dataset_name} (Authentic Reference Flows)")
+            print(f"✅ Streaming benchmark will profile real network traffic.")
+            print("=" * 80 + "\n")
+            return cand, False
+
+    # If real data not found, use/generate synthetic partition
+    synthetic_file = proc_dir / f"track_b_{target_samples // 1000}k_synthetic.csv"
+    if not synthetic_file.exists():
+        generate_scalable_synthetic_partition(synthetic_file, n_samples=target_samples)
+
+    print("\n" + "=" * 80)
+    print(f"⚠️ [TRACK B STREAMING STATUS: SYNTHETIC FALLBACK DATA ACTIVE]")
+    print(f"❌ Real cleaned dataset not found in '{proc_dir}' or '{raw_dir}'.")
+    print(f"📊 Streaming from synthetic partition: {synthetic_file.name}")
+    print(f"📌 TO USE REAL DATA: Upload authentic dataset (e.g. CICIDS2017.csv) to '{raw_dir}' and run Phase 1.")
+    print("=" * 80 + "\n")
+    return synthetic_file, True
+

@@ -22,6 +22,8 @@ REQUIRED_GITIGNORE = [
     "*.tar.gz",
     "/data/",
     "!src/data/",
+    "src/data/actual-data/",
+    "actual-data/",
     "workspace_drive/",
     "drive_cache/",
     "checkpoints/*.pt",
@@ -31,7 +33,22 @@ REQUIRED_GITIGNORE = [
 BENCHMARK_DATASET_METADATA = {
     "CICIDS2017": {
         "description": "Canadian Institute for Cybersecurity Intrusion Detection Evaluation Dataset 2017",
-        "primary_file": "CICIDS2017_cleaned.parquet",
+        "primary_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+        "subfolders": ["MachineLearningCVE", "TrafficLabelling"],
+        "real_candidates": [
+            "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+            "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+            "Wednesday-workingHours.pcap_ISCX.csv",
+            "Tuesday-WorkingHours.pcap_ISCX.csv",
+            "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+            "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+            "Monday-WorkingHours.pcap_ISCX.csv",
+            "Friday-WorkingHours-Morning.pcap_ISCX.csv",
+            "CICIDS2017.csv",
+            "cicids2017.csv",
+            "CICIDS2017_cleaned.parquet",
+            "CICIDS2017_cleaned.csv",
+        ],
         "sample_file": "CICIDS2017_sample.csv",
         "download_url": "https://raw.githubusercontent.com/j4305/Intrusion-Detection-Systems-Benchmark/main/sample_cicids2017.csv",
         "mirror_url": "https://huggingface.co/datasets/carlac/cicids2017/resolve/main/sample.csv",
@@ -41,24 +58,57 @@ BENCHMARK_DATASET_METADATA = {
     "UNSW-NB15": {
         "description": "UNSW Network Benchmark 2015",
         "primary_file": "UNSW_NB15_training-set.csv",
+        "subfolders": ["unsw-data-full"],
+        "real_candidates": [
+            "UNSW_NB15_training-set.csv",
+            "UNSW_NB15_testing-set.csv",
+            "UNSW-NB15_1.csv",
+            "UNSW-NB15_2.csv",
+            "UNSW-NB15_3.csv",
+            "UNSW-NB15_4.csv",
+            "UNSW_NB15.csv",
+            "unsw_nb15.csv",
+            "UNSW-NB15_cleaned.parquet",
+        ],
         "sample_file": "UNSW_NB15_sample.csv",
         "download_url": "https://raw.githubusercontent.com/defcom17/UNSW_NB15/master/UNSW_NB15_testing-set.csv",
         "mirror_url": "https://huggingface.co/datasets/carlac/unsw-nb15/resolve/main/sample.csv",
         "expected_sha256": None,
         "format": "csv"
     },
-    "TON_IoT": {
+    "TON_IOT": {
         "description": "TON_IoT Telemetry and Network Dataset 2021",
-        "primary_file": "Train_Test_Network.csv",
+        "primary_file": "train_test_network.csv",
+        "subfolders": ["ToN-IOT", "ton-iot", "ToN-IoT"],
+        "real_candidates": [
+            "train_test_network.csv",
+            "Train_Test_Network.csv",
+            "TON_IoT.csv",
+            "ton_iot.csv",
+            "Train_Test_Network_sample.csv"
+        ],
         "sample_file": "TON_IoT_sample.csv",
         "download_url": "https://raw.githubusercontent.com/network-datasets/ton-iot-samples/main/Train_Test_Network_sample.csv",
         "mirror_url": "https://huggingface.co/datasets/carlac/ton-iot/resolve/main/sample.csv",
         "expected_sha256": None,
         "format": "csv"
     },
-    "CIC-DDoS2019": {
+    "CIC-DDOS2019": {
         "description": "CIC Distributed Denial of Service 2019 Dataset",
-        "primary_file": "CIC_DDoS2019_sample.parquet",
+        "primary_file": "Syn-training.parquet",
+        "subfolders": ["CIC-DDoS2019", "cic-ddos2019"],
+        "real_candidates": [
+            "Syn-training.parquet",
+            "DNS-testing.parquet",
+            "UDP-training.parquet",
+            "LDAP-training.parquet",
+            "MSSQL-training.parquet",
+            "NetBIOS-training.parquet",
+            "CIC_DDoS2019.parquet",
+            "CIC_DDoS2019.csv",
+            "cic_ddos2019.csv",
+            "CIC_DDoS2019_sample.parquet"
+        ],
         "sample_file": "CIC_DDoS2019_sample.csv",
         "download_url": "https://raw.githubusercontent.com/j4305/Intrusion-Detection-Systems-Benchmark/main/sample_ddos2019.csv",
         "mirror_url": "https://huggingface.co/datasets/carlac/ddos2019/resolve/main/sample.csv",
@@ -68,6 +118,13 @@ BENCHMARK_DATASET_METADATA = {
     "NSL-KDD": {
         "description": "NSL-KDD Historical Baseline Dataset",
         "primary_file": "KDDTrain+.txt",
+        "subfolders": ["NSL-KDD", "nsl-kdd"],
+        "real_candidates": [
+            "KDDTrain+.txt",
+            "KDDTrain+_20Percent.txt",
+            "KDDTest+.txt",
+            "kdd_train.csv"
+        ],
         "sample_file": "KDDTrain+_sample.txt",
         "download_url": "https://raw.githubusercontent.com/defcom17/NSL_KDD/master/KDDTrain%2B.txt",
         "mirror_url": "https://raw.githubusercontent.com/j4305/Intrusion-Detection-Systems-Benchmark/main/KDDTrain%2B.txt",
@@ -238,38 +295,119 @@ def initialize_dataset_directories(base_dir: str | Path = ".") -> Dict[str, Path
         "processed": processed_dir
     }
 
+def is_synthetic_path(filepath: str | Path) -> bool:
+    """Check if the provided dataset path represents a synthetic fallback dataset."""
+    name = Path(filepath).name.lower()
+    return "synthetic" in name or "_sample" in name
+
 def prepare_benchmark_dataset(
     dataset_name: str,
     base_dir: str | Path = ".",
     prefer_sample: bool = False
 ) -> Path:
-    """Retrieve benchmark dataset: attempts remote download or synthesizes representative sample."""
+    """Retrieve benchmark dataset: checks for authentic files first, then remote download, then synthetic fallback."""
     dirs = initialize_dataset_directories(base_dir)
     meta = BENCHMARK_DATASET_METADATA.get(dataset_name.upper()) or BENCHMARK_DATASET_METADATA.get("CICIDS2017")
     
+    # 1. Search for real authentic candidate files across candidate roots & subfolders
+    real_candidates = meta.get("real_candidates", [meta["primary_file"]])
+    subfolders = meta.get("subfolders", [])
+    base_path = Path(base_dir).resolve()
+    
+    candidate_roots = [
+        dirs["processed"],
+        dirs["raw"],
+        dirs["root"],
+        base_path / "src" / "data" / "actual-data",
+        Path("/content/drive/My Drive/Colab Notebooks/data/raw"),
+        Path("/content/My Drive/Colab Notebooks/data/raw"),
+        Path("/content/drive/MyDrive/Colab Notebooks/data/raw"),
+        Path("/content/drive/My Drive/Colab Notebooks/data/processed"),
+    ]
+    
+    search_dirs = []
+    for cr in candidate_roots:
+        if cr.exists() and cr not in search_dirs:
+            search_dirs.append(cr)
+            for sub in subfolders:
+                sub_dir = cr / sub
+                if sub_dir.exists() and sub_dir not in search_dirs:
+                    search_dirs.append(sub_dir)
+            try:
+                for child in cr.iterdir():
+                    if child.is_dir() and child not in search_dirs:
+                        search_dirs.append(child)
+            except Exception:
+                pass
+
+    found_real_path = None
+    if not prefer_sample:
+        for s_dir in search_dirs:
+            for cand in real_candidates:
+                candidate_path = s_dir / cand
+                if candidate_path.exists() and not is_synthetic_path(candidate_path):
+                    found_real_path = candidate_path
+                    break
+            if found_real_path:
+                break
+
+    if found_real_path:
+        print("\n" + "=" * 80)
+        print(f"🛡️ [DATA STATUS: REAL AUTHENTIC DATASET LOADED]")
+        print(f"📁 Source: {found_real_path.resolve()}")
+        print(f"📊 Dataset: {dataset_name} (Authentic Reference Benchmark)")
+        print(f"✅ Ingestion & decontamination will operate on REAL network traffic data.")
+        print("=" * 80 + "\n")
+        return found_real_path
+
+        
+    # 2. Check if primary file already exists
     target_filename = meta["sample_file"] if prefer_sample else meta["primary_file"]
     target_path = dirs["raw"] / target_filename
     
     if target_path.exists():
-        print(f"ℹ️ Dataset already available at: {target_path}")
+        is_syn = is_synthetic_path(target_path)
+        status_tag = "SYNTHETIC FALLBACK DATA" if is_syn else "REAL AUTHENTIC DATASET"
+        icon = "⚠️" if is_syn else "🛡️"
+        print("\n" + "=" * 80)
+        print(f"{icon} [DATA STATUS: {status_tag} LOADED]")
+        print(f"📁 Source: {target_path.resolve()}")
+        if is_syn:
+            print(f"📌 NOTICE: To use real data, upload '{meta['primary_file']}' to: {dirs['raw'].resolve()}")
+        print("=" * 80 + "\n")
         return target_path
         
-    # Attempt download if URL available
+    # 3. Attempt download if URL available
     download_success = False
     if meta.get("download_url") and not prefer_sample:
         download_success = download_file(meta["download_url"], target_path, meta.get("expected_sha256"))
+        if download_success:
+            print("\n" + "=" * 80)
+            print(f"🛡️ [DATA STATUS: REAL DATASET DOWNLOADED SUCCESSFULLY]")
+            print(f"📁 Source: {target_path.resolve()}")
+            print("=" * 80 + "\n")
+            return target_path
     
-    if not download_success:
-        print(f"ℹ️ Remote source unavailable or sample requested. Generating synthetic benchmark sample...")
-        sample_path = dirs["raw"] / f"{dataset_name}_sample.csv"
+    # 4. Fallback to synthetic sample generation
+    sample_path = dirs["raw"] / f"{dataset_name}_sample.csv"
+    if not sample_path.exists():
         generate_synthetic_benchmark_sample(dataset_name, sample_path, n_samples=10000)
-        return sample_path
         
-    return target_path
+    print("\n" + "=" * 80)
+    print(f"⚠️ [DATA STATUS: SYNTHETIC FALLBACK DATA IN USE]")
+    print(f"❌ Real dataset '{dataset_name}' not found in '{dirs['raw'].resolve()}' or '{dirs['processed'].resolve()}'.")
+    print(f"📊 Active File: {sample_path.name} (Simulated 10,000 synthetic NetFlow records)")
+    print(f"📌 ACTION REQUIRED TO USE REAL DATA:")
+    print(f"   Upload your authentic dataset (e.g., {meta['primary_file']}) to Google Drive at:")
+    print(f"   📁 {dirs['raw'].resolve() / meta['primary_file']}")
+    print(f"   The pipeline will automatically detect it on the next run.")
+    print("=" * 80 + "\n")
+    return sample_path
 
 if __name__ == "__main__":
     ensure_gitignore_safeguards()
     dirs = initialize_dataset_directories()
     print(f"📁 Dataset storage initialized at: {dirs['root'].resolve()}")
-    sample_file = prepare_benchmark_dataset("CICIDS2017", prefer_sample=True)
+    sample_file = prepare_benchmark_dataset("CICIDS2017", prefer_sample=False)
+
 
