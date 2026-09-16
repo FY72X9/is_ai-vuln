@@ -8,6 +8,12 @@ import pandas as pd
 from pathlib import Path
 from typing import Iterator, Tuple, Dict, Any, Optional
 
+from src.data.drive_downloader import (
+    initialize_dataset_directories,
+    prepare_benchmark_dataset,
+    is_synthetic_path
+)
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
@@ -102,7 +108,14 @@ class StreamingChunkLoader:
             features = [c for c in df_chunk.select_dtypes(include=[np.number]).columns if c != target]
 
         X = df_chunk[features].values
-        y = df_chunk[target].values
+        # Harmonize target label to binary 0/1 if string object
+        if df_chunk[target].dtype == object:
+            y = (~df_chunk[target].astype(str).str.strip().str.upper().isin(["BENIGN", "0", "NORMAL"])).astype(int).values
+        else:
+            y = pd.to_numeric(df_chunk[target], errors="coerce").fillna(0).astype(int).values
+
+        # Clean NaN and infinite values in features
+        X = np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0)
         return X, y
 
 def generate_scalable_synthetic_partition(
@@ -149,38 +162,52 @@ def resolve_track_b_dataset(
         Tuple[Path, bool]: (filepath, is_synthetic)
     """
     root = Path(base_dir)
-    data_dir = root / "data"
-    proc_dir = data_dir / "processed"
-    raw_dir = data_dir / "raw"
+    dirs = initialize_dataset_directories(root)
+    proc_dir = dirs["processed"]
+    raw_dir = dirs["raw"]
 
-    # Search for real cleaned files first
-    real_candidates = [
+    # 1. Search for real cleaned files first
+    cleaned_candidates = [
         proc_dir / f"{dataset_name}_cleaned.parquet",
         proc_dir / f"{dataset_name}_cleaned.csv",
         raw_dir / f"{dataset_name}.csv",
         raw_dir / f"{dataset_name.lower()}.csv",
     ]
 
-    for cand in real_candidates:
-        if cand.exists():
+    for cand in cleaned_candidates:
+        if cand.exists() and not is_synthetic_path(cand) and cand.stat().st_size > 0:
             print("\n" + "=" * 80)
-            print(f"🛡️ [TRACK B STREAMING STATUS: REAL DATA ACTIVE]")
+            print(f"🛡️ [TRACK B STREAMING STATUS: REAL DECONTAMINATED DATA ACTIVE]")
             print(f"📁 Source: {cand.resolve()}")
             print(f"📊 Dataset: {dataset_name} (Authentic Reference Flows)")
             print(f"✅ Streaming benchmark will profile real network traffic.")
             print("=" * 80 + "\n")
             return cand, False
 
-    # If real data not found, use/generate synthetic partition
+    # 2. Check for real authentic raw dataset files using prepare_benchmark_dataset
+    try:
+        raw_benchmark_file = prepare_benchmark_dataset(dataset_name, base_dir=base_dir, prefer_sample=False)
+        if raw_benchmark_file.exists() and not is_synthetic_path(raw_benchmark_file):
+            print("\n" + "=" * 80)
+            print(f"🛡️ [TRACK B STREAMING STATUS: REAL AUTHENTIC RAW DATA ACTIVE]")
+            print(f"📁 Source: {raw_benchmark_file.resolve()}")
+            print(f"📊 Dataset: {dataset_name} (Authentic Reference NetFlows)")
+            print(f"✅ Streaming benchmark will profile real network traffic directly.")
+            print("=" * 80 + "\n")
+            return raw_benchmark_file, False
+    except Exception:
+        pass
+
+    # 3. If real data not found, use/generate synthetic partition
     synthetic_file = proc_dir / f"track_b_{target_samples // 1000}k_synthetic.csv"
     if not synthetic_file.exists():
         generate_scalable_synthetic_partition(synthetic_file, n_samples=target_samples)
 
     print("\n" + "=" * 80)
     print(f"⚠️ [TRACK B STREAMING STATUS: SYNTHETIC FALLBACK DATA ACTIVE]")
-    print(f"❌ Real cleaned dataset not found in '{proc_dir}' or '{raw_dir}'.")
+    print(f"❌ Real dataset not found in '{proc_dir}' or '{raw_dir}'.")
     print(f"📊 Streaming from synthetic partition: {synthetic_file.name}")
-    print(f"📌 TO USE REAL DATA: Upload authentic dataset (e.g. CICIDS2017.csv) to '{raw_dir}' and run Phase 1.")
+    print(f"📌 TO USE REAL DATA: Upload authentic dataset (e.g. into data/raw/MachineLearningCVE/) and run Phase 1.")
     print("=" * 80 + "\n")
     return synthetic_file, True
 

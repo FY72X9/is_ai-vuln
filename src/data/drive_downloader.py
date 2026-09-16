@@ -7,6 +7,8 @@ import time
 from pathlib import Path
 from typing import Dict, Any, Optional
 
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+
 if sys.stdout.encoding != 'utf-8':
     try:
         sys.stdout.reconfigure(encoding='utf-8')
@@ -79,13 +81,12 @@ BENCHMARK_DATASET_METADATA = {
     "TON_IOT": {
         "description": "TON_IoT Telemetry and Network Dataset 2021",
         "primary_file": "train_test_network.csv",
-        "subfolders": ["ToN-IOT", "ton-iot", "ToN-IoT"],
+        "subfolders": ["TON-IoT", "ToN-IOT", "ton-iot", "ToN-IoT", "ton_iot", "TON_IoT"],
         "real_candidates": [
             "train_test_network.csv",
             "Train_Test_Network.csv",
             "TON_IoT.csv",
-            "ton_iot.csv",
-            "Train_Test_Network_sample.csv"
+            "ton_iot.csv"
         ],
         "sample_file": "TON_IoT_sample.csv",
         "download_url": "https://raw.githubusercontent.com/network-datasets/ton-iot-samples/main/Train_Test_Network_sample.csv",
@@ -318,38 +319,106 @@ def prepare_benchmark_dataset(
         dirs["processed"],
         dirs["raw"],
         dirs["root"],
+        base_path / "data" / "raw",
+        base_path / "data" / "processed",
         base_path / "src" / "data" / "actual-data",
+        base_path / "actual-data",
+        REPO_ROOT / "data" / "raw",
+        REPO_ROOT / "data" / "processed",
+        REPO_ROOT / "src" / "data" / "actual-data",
+        REPO_ROOT / "actual-data",
+        Path("/content/drive/My Drive/Colab Notebook/data/raw"),
         Path("/content/drive/My Drive/Colab Notebooks/data/raw"),
-        Path("/content/My Drive/Colab Notebooks/data/raw"),
+        Path("/content/drive/MyDrive/Colab Notebook/data/raw"),
         Path("/content/drive/MyDrive/Colab Notebooks/data/raw"),
+        Path("/content/My Drive/Colab Notebook/data/raw"),
+        Path("/content/My Drive/Colab Notebooks/data/raw"),
+        Path("/content/Colab Notebook/data/raw"),
+        Path("/content/Colab Notebooks/data/raw"),
+        Path("/Colab Notebook/data/raw"),
+        Path("/Colab Notebooks/data/raw"),
+        Path("/content/drive/My Drive/Colab Notebook/data/processed"),
+        Path("/content/drive/MyDrive/Colab Notebook/data/processed"),
         Path("/content/drive/My Drive/Colab Notebooks/data/processed"),
+        Path("/content/drive/MyDrive/Colab Notebooks/data/processed"),
+        Path("/content/drive/My Drive/Colab Notebook/src/data/actual-data"),
+        Path("/content/drive/MyDrive/Colab Notebook/src/data/actual-data"),
+        Path("/content/drive/My Drive/Colab Notebooks/src/data/actual-data"),
+        Path("/content/drive/MyDrive/Colab Notebooks/src/data/actual-data"),
+        Path("/content/data/raw"),
     ]
+
+    # Dynamically discover any mounted Drive directories if present
+    drive_base = Path("/content/drive")
+    if drive_base.exists():
+        for drive_parent in [drive_base / "My Drive", drive_base / "MyDrive", drive_base, Path("/content/My Drive")]:
+            if drive_parent.exists():
+                try:
+                    for sub in drive_parent.iterdir():
+                        if sub.is_dir() and ("colab notebook" in sub.name.lower() or "is_ai-vuln" in sub.name.lower()):
+                            r_dir = sub / "data" / "raw"
+                            if r_dir.exists() and r_dir not in candidate_roots:
+                                candidate_roots.append(r_dir)
+                            a_dir = sub / "src" / "data" / "actual-data"
+                            if a_dir.exists() and a_dir not in candidate_roots:
+                                candidate_roots.append(a_dir)
+                except Exception:
+                    pass
     
     search_dirs = []
     for cr in candidate_roots:
         if cr.exists() and cr not in search_dirs:
             search_dirs.append(cr)
-            for sub in subfolders:
-                sub_dir = cr / sub
-                if sub_dir.exists() and sub_dir not in search_dirs:
-                    search_dirs.append(sub_dir)
             try:
                 for child in cr.iterdir():
                     if child.is_dir() and child not in search_dirs:
                         search_dirs.append(child)
+                        for grandchild in child.iterdir():
+                            if grandchild.is_dir() and grandchild not in search_dirs:
+                                search_dirs.append(grandchild)
             except Exception:
                 pass
 
     found_real_path = None
     if not prefer_sample:
+        # Step A: Priority match by candidate filename (case-insensitive)
         for s_dir in search_dirs:
+            try:
+                dir_files = [f for f in s_dir.iterdir() if f.is_file()]
+            except Exception:
+                continue
+            file_map = {f.name.lower(): f for f in dir_files}
             for cand in real_candidates:
-                candidate_path = s_dir / cand
-                if candidate_path.exists() and not is_synthetic_path(candidate_path):
-                    found_real_path = candidate_path
-                    break
+                cand_l = cand.lower()
+                if cand_l in file_map:
+                    candidate_path = file_map[cand_l]
+                    if not is_synthetic_path(candidate_path) and candidate_path.stat().st_size > 0:
+                        found_real_path = candidate_path
+                        break
             if found_real_path:
                 break
+
+        # Step B: Folder-name match fallback
+        if not found_real_path:
+            sub_lowers = [s.lower() for s in subfolders]
+            for s_dir in search_dirs:
+                if s_dir.name.lower() in sub_lowers:
+                    try:
+                        dir_files = [f for f in s_dir.iterdir() if f.is_file()]
+                    except Exception:
+                        continue
+                    valid_files = [
+                        f for f in dir_files
+                        if f.suffix.lower() in [".parquet", ".csv", ".txt"]
+                        and not is_synthetic_path(f)
+                        and f.stat().st_size > 0
+                        and not f.name.startswith(".")
+                        and "features" not in f.name.lower()
+                        and "list_events" not in f.name.lower()
+                    ]
+                    if valid_files:
+                        found_real_path = valid_files[0]
+                        break
 
     if found_real_path:
         print("\n" + "=" * 80)

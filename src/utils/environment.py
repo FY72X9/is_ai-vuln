@@ -15,10 +15,18 @@ def is_colab() -> bool:
 def resolve_project_root(candidate_roots: list = None) -> Path:
     """Detect and return the project root directory across Colab and workstation environments."""
     default_candidates = [
-        Path("/content/My Drive/Colab Notebooks"),
+        Path("/content/drive/My Drive/Colab Notebook"),
         Path("/content/drive/My Drive/Colab Notebooks"),
+        Path("/content/drive/MyDrive/Colab Notebook"),
         Path("/content/drive/MyDrive/Colab Notebooks"),
+        Path("/content/My Drive/Colab Notebook"),
+        Path("/content/My Drive/Colab Notebooks"),
+        Path("/content/Colab Notebook"),
+        Path("/content/Colab Notebooks"),
+        Path("/Colab Notebook"),
+        Path("/Colab Notebooks"),
         Path("/content/drive/MyDrive/is_ai-vuln"),
+        Path("/content/drive/My Drive/is_ai-vuln"),
         Path("/content/is_ai-vuln"),
         Path(".").resolve(),
     ]
@@ -28,8 +36,18 @@ def resolve_project_root(candidate_roots: list = None) -> Path:
         candidates = default_candidates
 
     for candidate in candidates:
-        if candidate.exists() and (candidate / "src").exists():
+        if candidate.exists() and ((candidate / "src").exists() or (candidate / "data" / "raw").exists()):
             return candidate.resolve()
+
+    # Dynamic search inside /content/drive if mounted
+    drive_base = Path("/content/drive")
+    if drive_base.exists():
+        for drive_parent in [drive_base / "My Drive", drive_base / "MyDrive", Path("/content/My Drive")]:
+            if drive_parent.exists():
+                for sub in drive_parent.iterdir():
+                    if sub.is_dir() and ("colab notebook" in sub.name.lower() or "is_ai-vuln" in sub.name.lower()):
+                        if (sub / "src").exists() or (sub / "data").exists():
+                            return sub.resolve()
 
     return Path(".").resolve()
 
