@@ -36,7 +36,9 @@ BENCHMARK_DATASET_METADATA = {
     "CICIDS2017": {
         "description": "Canadian Institute for Cybersecurity Intrusion Detection Evaluation Dataset 2017",
         "primary_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+        "subfolder": "MachineLearningCVE",
         "subfolders": ["MachineLearningCVE", "TrafficLabelling"],
+        "approx_size_mb": 843.66,
         "real_candidates": [
             "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
             "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
@@ -52,15 +54,14 @@ BENCHMARK_DATASET_METADATA = {
             "CICIDS2017_cleaned.csv",
         ],
         "sample_file": "CICIDS2017_sample.csv",
-        "download_url": "https://raw.githubusercontent.com/j4305/Intrusion-Detection-Systems-Benchmark/main/sample_cicids2017.csv",
-        "mirror_url": "https://huggingface.co/datasets/carlac/cicids2017/resolve/main/sample.csv",
-        "expected_sha256": None,
         "format": "parquet/csv"
     },
     "UNSW-NB15": {
         "description": "UNSW Network Benchmark 2015",
         "primary_file": "UNSW_NB15_training-set.csv",
+        "subfolder": "unsw-data-full",
         "subfolders": ["unsw-data-full"],
+        "approx_size_mb": 604.69,
         "real_candidates": [
             "UNSW_NB15_training-set.csv",
             "UNSW_NB15_testing-set.csv",
@@ -73,15 +74,14 @@ BENCHMARK_DATASET_METADATA = {
             "UNSW-NB15_cleaned.parquet",
         ],
         "sample_file": "UNSW_NB15_sample.csv",
-        "download_url": "https://raw.githubusercontent.com/defcom17/UNSW_NB15/master/UNSW_NB15_testing-set.csv",
-        "mirror_url": "https://huggingface.co/datasets/carlac/unsw-nb15/resolve/main/sample.csv",
-        "expected_sha256": None,
         "format": "csv"
     },
     "TON_IOT": {
         "description": "TON_IoT Telemetry and Network Dataset 2021",
         "primary_file": "train_test_network.csv",
+        "subfolder": "TON-IoT",
         "subfolders": ["TON-IoT", "ToN-IOT", "ton-iot", "ToN-IoT", "ton_iot", "TON_IoT"],
+        "approx_size_mb": 28.52,
         "real_candidates": [
             "train_test_network.csv",
             "Train_Test_Network.csv",
@@ -89,15 +89,14 @@ BENCHMARK_DATASET_METADATA = {
             "ton_iot.csv"
         ],
         "sample_file": "TON_IoT_sample.csv",
-        "download_url": "https://raw.githubusercontent.com/network-datasets/ton-iot-samples/main/Train_Test_Network_sample.csv",
-        "mirror_url": "https://huggingface.co/datasets/carlac/ton-iot/resolve/main/sample.csv",
-        "expected_sha256": None,
         "format": "csv"
     },
     "CIC-DDOS2019": {
         "description": "CIC Distributed Denial of Service 2019 Dataset",
         "primary_file": "Syn-training.parquet",
+        "subfolder": "CIC-DDoS2019",
         "subfolders": ["CIC-DDoS2019", "cic-ddos2019"],
+        "approx_size_mb": 33.60,
         "real_candidates": [
             "Syn-training.parquet",
             "DNS-testing.parquet",
@@ -111,15 +110,14 @@ BENCHMARK_DATASET_METADATA = {
             "CIC_DDoS2019_sample.parquet"
         ],
         "sample_file": "CIC_DDoS2019_sample.csv",
-        "download_url": "https://raw.githubusercontent.com/j4305/Intrusion-Detection-Systems-Benchmark/main/sample_ddos2019.csv",
-        "mirror_url": "https://huggingface.co/datasets/carlac/ddos2019/resolve/main/sample.csv",
-        "expected_sha256": None,
         "format": "parquet"
     },
     "NSL-KDD": {
         "description": "NSL-KDD Historical Baseline Dataset",
         "primary_file": "KDDTrain+.txt",
+        "subfolder": "NSL-KDD",
         "subfolders": ["NSL-KDD", "nsl-kdd"],
+        "approx_size_mb": 53.29,
         "real_candidates": [
             "KDDTrain+.txt",
             "KDDTrain+_20Percent.txt",
@@ -127,9 +125,6 @@ BENCHMARK_DATASET_METADATA = {
             "kdd_train.csv"
         ],
         "sample_file": "KDDTrain+_sample.txt",
-        "download_url": "https://raw.githubusercontent.com/defcom17/NSL_KDD/master/KDDTrain%2B.txt",
-        "mirror_url": "https://raw.githubusercontent.com/j4305/Intrusion-Detection-Systems-Benchmark/main/KDDTrain%2B.txt",
-        "expected_sha256": None,
         "format": "txt/csv"
     }
 }
@@ -304,64 +299,71 @@ def is_synthetic_path(filepath: str | Path) -> bool:
 def prepare_benchmark_dataset(
     dataset_name: str,
     base_dir: str | Path = ".",
-    prefer_sample: bool = False
+    raw_data_dir: Optional[str | Path] = None,
+    prefer_sample: bool = False,
+    *args,
+    **kwargs
 ) -> Path:
-    """Retrieve benchmark dataset: checks for authentic files first, then remote download, then synthetic fallback."""
+    """Retrieve benchmark dataset: checks for authentic files in user-provided structure without remote downloading."""
     dirs = initialize_dataset_directories(base_dir)
-    meta = BENCHMARK_DATASET_METADATA.get(dataset_name.upper()) or BENCHMARK_DATASET_METADATA.get("CICIDS2017")
+    meta = BENCHMARK_DATASET_METADATA.get(dataset_name.upper())
+    if not meta:
+        valid_keys = list(BENCHMARK_DATASET_METADATA.keys())
+        raise ValueError(f"Unknown benchmark dataset: '{dataset_name}'. Must be one of: {valid_keys}")
     
     # 1. Search for real authentic candidate files across candidate roots & subfolders
     real_candidates = meta.get("real_candidates", [meta["primary_file"]])
     subfolders = meta.get("subfolders", [])
     base_path = Path(base_dir).resolve()
     
-    candidate_roots = [
-        dirs["processed"],
-        dirs["raw"],
-        dirs["root"],
-        base_path / "data" / "raw",
-        base_path / "data" / "processed",
-        base_path / "src" / "data" / "actual-data",
-        base_path / "actual-data",
-        REPO_ROOT / "data" / "raw",
-        REPO_ROOT / "data" / "processed",
-        REPO_ROOT / "src" / "data" / "actual-data",
-        REPO_ROOT / "actual-data",
-        Path("/content/drive/My Drive/Colab Notebook/data/raw"),
+    candidate_roots = []
+    if raw_data_dir:
+        raw_p = Path(raw_data_dir).resolve()
+        if raw_p.exists() and raw_p not in candidate_roots:
+            candidate_roots.append(raw_p)
+            
+    candidate_roots.extend([
+        Path("/content/drive/MyDrive/Colab Notebooks/data/raw"),
         Path("/content/drive/My Drive/Colab Notebooks/data/raw"),
         Path("/content/drive/MyDrive/Colab Notebook/data/raw"),
-        Path("/content/drive/MyDrive/Colab Notebooks/data/raw"),
-        Path("/content/My Drive/Colab Notebook/data/raw"),
-        Path("/content/My Drive/Colab Notebooks/data/raw"),
-        Path("/content/Colab Notebook/data/raw"),
-        Path("/content/Colab Notebooks/data/raw"),
-        Path("/Colab Notebook/data/raw"),
+        Path("/content/drive/My Drive/Colab Notebook/data/raw"),
         Path("/Colab Notebooks/data/raw"),
-        Path("/content/drive/My Drive/Colab Notebook/data/processed"),
-        Path("/content/drive/MyDrive/Colab Notebook/data/processed"),
-        Path("/content/drive/My Drive/Colab Notebooks/data/processed"),
-        Path("/content/drive/MyDrive/Colab Notebooks/data/processed"),
-        Path("/content/drive/My Drive/Colab Notebook/src/data/actual-data"),
-        Path("/content/drive/MyDrive/Colab Notebook/src/data/actual-data"),
-        Path("/content/drive/My Drive/Colab Notebooks/src/data/actual-data"),
+        Path("/Colab Notebook/data/raw"),
+        dirs["raw"],
+        base_path / "data" / "raw",
+        base_path / "src" / "data" / "actual-data",
+        base_path / "actual-data",
+        REPO_ROOT / "src" / "data" / "actual-data",
+        REPO_ROOT / "data" / "raw",
+        REPO_ROOT / "actual-data",
         Path("/content/drive/MyDrive/Colab Notebooks/src/data/actual-data"),
+        Path("/content/drive/My Drive/Colab Notebooks/src/data/actual-data"),
+        Path("/content/drive/MyDrive/Colab Notebook/src/data/actual-data"),
+        Path("/content/drive/My Drive/Colab Notebook/src/data/actual-data"),
+        Path("/content/My Drive/Colab Notebooks/data/raw"),
+        Path("/content/My Drive/Colab Notebook/data/raw"),
+        Path("/content/Colab Notebooks/data/raw"),
+        Path("/content/Colab Notebook/data/raw"),
         Path("/content/data/raw"),
-    ]
+        dirs["processed"],
+        base_path / "data" / "processed",
+        dirs["root"],
+    ])
 
     # Dynamically discover any mounted Drive directories if present
     drive_base = Path("/content/drive")
     if drive_base.exists():
-        for drive_parent in [drive_base / "My Drive", drive_base / "MyDrive", drive_base, Path("/content/My Drive")]:
+        for drive_parent in [drive_base / "MyDrive", drive_base / "My Drive", drive_base, Path("/content/My Drive")]:
             if drive_parent.exists():
                 try:
                     for sub in drive_parent.iterdir():
                         if sub.is_dir() and ("colab notebook" in sub.name.lower() or "is_ai-vuln" in sub.name.lower()):
                             r_dir = sub / "data" / "raw"
                             if r_dir.exists() and r_dir not in candidate_roots:
-                                candidate_roots.append(r_dir)
+                                candidate_roots.insert(0, r_dir)
                             a_dir = sub / "src" / "data" / "actual-data"
                             if a_dir.exists() and a_dir not in candidate_roots:
-                                candidate_roots.append(a_dir)
+                                candidate_roots.insert(0, a_dir)
                 except Exception:
                     pass
     
@@ -429,49 +431,87 @@ def prepare_benchmark_dataset(
         print("=" * 80 + "\n")
         return found_real_path
 
-        
-    # 2. Check if primary file already exists
+    # 2. Check if primary file already exists in dirs["raw"]
     target_filename = meta["sample_file"] if prefer_sample else meta["primary_file"]
     target_path = dirs["raw"] / target_filename
     
-    if target_path.exists():
+    if target_path.exists() and not prefer_sample:
         is_syn = is_synthetic_path(target_path)
-        status_tag = "SYNTHETIC FALLBACK DATA" if is_syn else "REAL AUTHENTIC DATASET"
-        icon = "⚠️" if is_syn else "🛡️"
-        print("\n" + "=" * 80)
-        print(f"{icon} [DATA STATUS: {status_tag} LOADED]")
-        print(f"📁 Source: {target_path.resolve()}")
-        if is_syn:
-            print(f"📌 NOTICE: To use real data, upload '{meta['primary_file']}' to: {dirs['raw'].resolve()}")
-        print("=" * 80 + "\n")
-        return target_path
-        
-    # 3. Attempt download if URL available
-    download_success = False
-    if meta.get("download_url") and not prefer_sample:
-        download_success = download_file(meta["download_url"], target_path, meta.get("expected_sha256"))
-        if download_success:
+        if not is_syn:
             print("\n" + "=" * 80)
-            print(f"🛡️ [DATA STATUS: REAL DATASET DOWNLOADED SUCCESSFULLY]")
+            print(f"🛡️ [DATA STATUS: REAL AUTHENTIC DATASET LOADED]")
             print(f"📁 Source: {target_path.resolve()}")
             print("=" * 80 + "\n")
             return target_path
-    
-    # 4. Fallback to synthetic sample generation
-    sample_path = dirs["raw"] / f"{dataset_name}_sample.csv"
-    if not sample_path.exists():
-        generate_synthetic_benchmark_sample(dataset_name, sample_path, n_samples=10000)
-        
-    print("\n" + "=" * 80)
-    print(f"⚠️ [DATA STATUS: SYNTHETIC FALLBACK DATA IN USE]")
-    print(f"❌ Real dataset '{dataset_name}' not found in '{dirs['raw'].resolve()}' or '{dirs['processed'].resolve()}'.")
-    print(f"📊 Active File: {sample_path.name} (Simulated 10,000 synthetic NetFlow records)")
-    print(f"📌 ACTION REQUIRED TO USE REAL DATA:")
-    print(f"   Upload your authentic dataset (e.g., {meta['primary_file']}) to Google Drive at:")
-    print(f"   📁 {dirs['raw'].resolve() / meta['primary_file']}")
-    print(f"   The pipeline will automatically detect it on the next run.")
-    print("=" * 80 + "\n")
-    return sample_path
+
+    # 3. If prefer_sample was explicitly set to True, generate synthetic benchmark sample
+    if prefer_sample:
+        sample_path = dirs["raw"] / f"{dataset_name}_sample.csv"
+        if not sample_path.exists():
+            generate_synthetic_benchmark_sample(dataset_name, sample_path, n_samples=10000)
+            
+        print("\n" + "=" * 80)
+        print(f"⚠️ [DATA STATUS: SYNTHETIC SAMPLE EXPLICITLY REQUESTED]")
+        print(f"📊 Active File: {sample_path.name} (Simulated 10,000 synthetic NetFlow records)")
+        print("=" * 80 + "\n")
+        return sample_path
+
+    # 4. If real dataset not found and prefer_sample is False:
+    # Remote downloading is completely disabled per user research policy.
+    checked_list = "\n   - ".join(str(p) for p in search_dirs[:10])
+    raise FileNotFoundError(
+        f"\n{'=' * 80}\n"
+        f"❌ REAL BENCHMARK DATASET NOT FOUND: '{dataset_name}'\n"
+        f"📁 Expected in subfolder(s)      : {subfolders}\n"
+        f"📄 Expected candidate file(s)   : {real_candidates[:4]}\n"
+        f"🔍 Checked root directories     :\n   - {checked_list}\n\n"
+        f"🚫 Remote downloading has been disabled per research policy.\n"
+        f"📌 Please verify that the authentic folder '{subfolders[0]}' is present in your Google Drive at:\n"
+        f"   {raw_data_dir or dirs['raw']}\n"
+        f"{'=' * 80}"
+    )
+
+def scan_available_datasets(
+    base_dir: str | Path = ".",
+    raw_data_dir: Optional[str | Path] = None,
+    *args,
+    **kwargs
+) -> Dict[str, Dict[str, Any]]:
+    """Scan and return status of all 5 benchmark datasets across candidate roots."""
+    inventory = {}
+    for ds_name, meta in BENCHMARK_DATASET_METADATA.items():
+        try:
+            resolved_path = prepare_benchmark_dataset(
+                ds_name, base_dir=base_dir, raw_data_dir=raw_data_dir, prefer_sample=False
+            )
+            is_syn = is_synthetic_path(resolved_path)
+            file_size_mb = round(resolved_path.stat().st_size / (1024 * 1024), 2) if resolved_path.exists() else 0.0
+            try:
+                folder_size_mb = round(sum(f.stat().st_size for f in resolved_path.parent.rglob('*') if f.is_file()) / (1024 * 1024), 2)
+            except Exception:
+                folder_size_mb = file_size_mb
+            inventory[ds_name] = {
+                "dataset_name": ds_name,
+                "expected_folder": meta.get("subfolder", meta.get("subfolders", [""])[0]),
+                "detected_folder": resolved_path.parent.name,
+                "detected_file": resolved_path.name,
+                "source_path": str(resolved_path.resolve()),
+                "is_synthetic": is_syn,
+                "status": "SYNTHETIC_FALLBACK" if is_syn else "REAL_AUTHENTIC",
+                "file_size_mb": file_size_mb,
+                "folder_size_mb": folder_size_mb,
+                "expected_size_mb": meta.get("approx_size_mb", 0.0),
+                "format": meta.get("format", "csv")
+            }
+        except Exception as e:
+            inventory[ds_name] = {
+                "dataset_name": ds_name,
+                "expected_folder": meta.get("subfolder", meta.get("subfolders", [""])[0]),
+                "expected_size_mb": meta.get("approx_size_mb", 0.0),
+                "status": "NOT_FOUND",
+                "error": str(e).strip()
+            }
+    return inventory
 
 if __name__ == "__main__":
     ensure_gitignore_safeguards()

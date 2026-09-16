@@ -39,18 +39,28 @@ if sys.stdout.encoding != 'utf-8':
 def run_preparation_pipeline(
     dataset_name: str = "CICIDS2017",
     base_dir: str | Path = ".",
+    raw_data_dir: Optional[str | Path] = None,
     prefer_sample: bool = False,
     n_splits: int = 5,
-    build_graphs: bool = True
+    build_graphs: bool = True,
+    *args,
+    **kwargs
 ) -> Dict[str, Any]:
-    """Execute complete ingestion, cleaning, anti-leakage splitting, and artifact generation."""
+    """Execute complete ingestion, cleaning, anti-leakage splitting, and artifact generation from provided structure."""
     dirs = initialize_dataset_directories(base_dir)
     print(f"\n==========================================")
     print(f"🚀 Launching Prep Pipeline for: {dataset_name}")
     print(f"==========================================")
     
-    # 1. Ingestion / Download
-    raw_path = prepare_benchmark_dataset(dataset_name, base_dir=base_dir, prefer_sample=prefer_sample)
+    # 1. Ingestion from provided structure (Zero remote downloads)
+    try:
+        raw_path = prepare_benchmark_dataset(
+            dataset_name, base_dir=base_dir, raw_data_dir=raw_data_dir, prefer_sample=prefer_sample
+        )
+    except TypeError:
+        raw_path = prepare_benchmark_dataset(
+            dataset_name, base_dir=base_dir, prefer_sample=prefer_sample
+        )
     print(f"📄 Ingesting raw file: {raw_path}...")
     
     if str(raw_path).endswith(".parquet"):
@@ -181,7 +191,9 @@ def run_preparation_pipeline(
         "metadata_file": str(splits_meta_file),
         "clean_stats": clean_stats,
         "fold_splits": fold_splits,
-        "graph_info": graph_info
+        "graph_info": graph_info,
+        "raw_shape": (int(df_raw.shape[0]), int(df_raw.shape[1])),
+        "cleaned_shape": (int(df_clean.shape[0]), int(df_clean.shape[1]))
     }
 
 if __name__ == "__main__":

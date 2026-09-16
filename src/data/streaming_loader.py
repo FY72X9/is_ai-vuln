@@ -154,7 +154,8 @@ def generate_scalable_synthetic_partition(
 def resolve_track_b_dataset(
     base_dir: str | Path = ".",
     dataset_name: str = "CICIDS2017",
-    target_samples: int = 100000
+    target_samples: int = 100000,
+    raw_data_dir: Optional[str | Path] = None
 ) -> Tuple[Path, bool]:
     """Resolve the dataset file for Track B streaming benchmark: prefers real data, falls back to synthetic.
 
@@ -186,7 +187,9 @@ def resolve_track_b_dataset(
 
     # 2. Check for real authentic raw dataset files using prepare_benchmark_dataset
     try:
-        raw_benchmark_file = prepare_benchmark_dataset(dataset_name, base_dir=base_dir, prefer_sample=False)
+        raw_benchmark_file = prepare_benchmark_dataset(
+            dataset_name, base_dir=base_dir, raw_data_dir=raw_data_dir, prefer_sample=False
+        )
         if raw_benchmark_file.exists() and not is_synthetic_path(raw_benchmark_file):
             print("\n" + "=" * 80)
             print(f"🛡️ [TRACK B STREAMING STATUS: REAL AUTHENTIC RAW DATA ACTIVE]")
