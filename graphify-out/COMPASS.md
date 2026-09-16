@@ -1,4 +1,4 @@
-# Architectural Compass - D:\Codes\research_banks\is_ai-vuln (2026-09-08)
+# Architectural Compass - D:\Codes\research_banks\is_ai-vuln (2026-09-16)
 
 > [!NOTE]
 > This is a token-optimized summary. For deep logic, see GRAPH_REPORT.md.
@@ -8,12 +8,12 @@
 2. `run_tests()` (16 edges)
 3. `Visualization and journal-grade layouting modules.` (16 edges)
 4. `is_ai-vuln Project Overview` (12 edges)
-5. `run_closed_loop_fuzzy_dematel()` (11 edges)
-6. `XGBoostIDS` (11 edges)
-7. `LightGBMIDS` (11 edges)
-8. `run_preparation_pipeline()` (10 edges)
-9. `MambularSSMIDS` (10 edges)
-10. `FTTransformerIDS` (10 edges)
+5. `run_preparation_pipeline()` (11 edges)
+6. `run_closed_loop_fuzzy_dematel()` (11 edges)
+7. `XGBoostIDS` (11 edges)
+8. `LightGBMIDS` (11 edges)
+9. `prepare_benchmark_dataset()` (10 edges)
+10. `MambularSSMIDS` (10 edges)
 
 ## System Layers
 - **L0: Global/Entry**: 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Fit scaler and sampler STRICTLY within the train split, preventing leakage to va](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L146) (0 connections)
+- [Generate realistic synthetic NetFlow records for offline pipeline testing and Co](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L160) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
 
 ## Audit Trail
 

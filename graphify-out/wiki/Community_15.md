@@ -1,25 +1,27 @@
 # Community 15
 
-> 4 nodes · cohesion 0.50
+> 6 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- [references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (2 connections)
-- [validate_references()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L18) (2 connections)
-- [Academic Citation Integrity & Retraction Validator. Verifies DOI resolution via](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (1 connections)
-- [Validate all references in the provided list for DOI resolution and retraction s](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L19) (1 connections)
+- [references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (3 connections)
+- [format_bibtex_entry()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L314) (3 connections)
+- [harvest_and_build_library()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L340) (3 connections)
+- [Metadata Harvester for Academic References using OpenAlex and CrossRef REST APIs](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (1 connections)
+- [Format reference dict into a clean BibTeX entry.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L315) (1 connections)
+- [Harvest metadata from OpenAlex / CrossRef where available and build references/l](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L341) (1 connections)
 
 ## Relationships
 
-- [[Community 11]] (2 shared connections)
+- [[Community 14]] (3 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

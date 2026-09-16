@@ -1,30 +1,31 @@
 # Community 12
 
-> 8 nodes · cohesion 0.29
+> 9 nodes · cohesion 0.22
 
 ## Key Concepts
 
-- [metrics.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L1) (4 connections)
-- [evaluate_fold_run()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L53) (4 connections)
-- [calculate_ttf_utility()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L71) (3 connections)
-- [evaluate_classification_metrics()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L22) (3 connections)
-- [Evaluation Metrics and Task-Technology Fit (TTF) Utility Engine. Computes standa](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L1) (1 connections)
-- [Calculate comprehensive classification metrics.](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L27) (1 connections)
-- [Combine classification metrics with inference profiling into standard telemetry](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L59) (1 connections)
-- [Compute formal Task-Technology Fit utility score according to Blueprint v4.0.](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L80) (1 connections)
+- [base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L1) (5 connections)
+- [.profile_inference()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L51) (4 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L40) (3 connections)
+- [predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L36) (3 connections)
+- **ABC** (2 connections)
+- [fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L31) (1 connections)
+- [Unified Base Model Interface for Intrusion Detection Models. Standardizes traini](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L1) (1 connections)
+- [Generate prediction probability distributions. Fallback to binary indicator if u](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L41) (1 connections)
+- [Profile inference latency (ms/flow), throughput (flows/sec), and peak VRAM/RAM.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L57) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 10]] (3 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\metrics.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
 
 ## Audit Trail
 
-- EXTRACTED: 16 (89%)
-- INFERRED: 2 (11%)
+- EXTRACTED: 20 (95%)
+- INFERRED: 1 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

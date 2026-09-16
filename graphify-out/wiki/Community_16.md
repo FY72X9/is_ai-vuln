@@ -4,23 +4,23 @@
 
 ## Key Concepts
 
-- [export_benchmark_to_latex()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L11) (3 connections)
-- [latex_exporter.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L1) (2 connections)
-- [Automated LaTeX Table Generation for Q1 Journal Publication. Generates professio](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L1) (1 connections)
-- [Format DataFrame into publication-grade LaTeX table with booktabs.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L18) (1 connections)
+- [references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (2 connections)
+- [validate_references()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L18) (2 connections)
+- [Academic Citation Integrity & Retraction Validator. Verifies DOI resolution via](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (1 connections)
+- [Validate all references in the provided list for DOI resolution and retraction s](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L19) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 15]] (2 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\visualization\latex_exporter.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (86%)
-- INFERRED: 1 (14%)
+- EXTRACTED: 6 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

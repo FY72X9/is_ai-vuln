@@ -2,7 +2,7 @@
 
 > God node · 16 connections · [D:\Codes\research_banks\is_ai-vuln\src\visualization\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/__init__.py#L1)
 
-**Community:** [[Community 4]]
+**Community:** [[Community 0]]
 
 ## Call Trace Diagram
 

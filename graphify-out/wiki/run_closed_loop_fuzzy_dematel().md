@@ -21,12 +21,12 @@ sequenceDiagram
     participant P12 as flush_memory()
     participant P13 as .fit()
     participant P14 as evaluate_robustness_degradation_slope()
-    participant P15 as run_causal_triangulation()
-    participant P16 as .iter_chunks()
-    participant P17 as inject_gaussian_noise()
-    participant P18 as get_model()
-    participant P19 as generate_mock_telemetry_matrix()
-    participant P20 as generate_scalable_synthetic_partition()
+    participant P15 as generate_mock_telemetry_matrix()
+    participant P16 as run_causal_triangulation()
+    participant P17 as generate_scalable_synthetic_partition()
+    participant P18 as .iter_chunks()
+    participant P19 as inject_gaussian_noise()
+    participant P20 as get_model()
     participant P21 as compute_friedman_test()
     participant P22 as compute_nemenyi_critical_difference()
     participant P23 as export_benchmark_to_latex()
@@ -88,14 +88,14 @@ sequenceDiagram
     P22-->>- P1: return
     P1->>+ P23: calls
     P23-->>- P1: return
+    P0->>+ P15: calls
+    P15-->>- P0: return
     P0->>+ P5: calls
     P5-->>- P0: return
     P0->>+ P6: calls
     P6-->>- P0: return
     P0->>+ P7: calls
     P7-->>- P0: return
-    P0->>+ P19: calls
-    P19-->>- P0: return
     P0->>+ P24: calls
     P24-->>- P0: return
     P0->>+ P25: calls
@@ -110,10 +110,10 @@ sequenceDiagram
 
 ### calls
 - [[run_tests()]] `INFERRED`
+- [[generate_mock_telemetry_matrix()]] `INFERRED`
 - [[normalize_fuzzy_matrices()]] `EXTRACTED`
 - [[compute_total_relation_matrix()]] `EXTRACTED`
 - [[cfcs_defuzzify()]] `EXTRACTED`
-- [[generate_mock_telemetry_matrix()]] `INFERRED`
 - [[compute_empirical_nmi_matrix()]] `INFERRED`
 - [[synthesize_triangular_fuzzy_matrix()]] `EXTRACTED`
 - [[compute_prominence_and_relation()]] `EXTRACTED`

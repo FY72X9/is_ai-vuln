@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Verify SHA-256 checksum of a downloaded file.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L83) (0 connections)
+- [Generate hard binary / multi-class predictions.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L37) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
 
 ## Audit Trail
 

@@ -1,29 +1,29 @@
 {
   "hotspots": [
     {
-      "label": "BaseIDSModel",
-      "risk": 0.53,
-      "type": "CLASS"
+      "label": "prepare_benchmark_dataset()",
+      "risk": 0.52,
+      "type": "FUNCTION"
     },
     {
-      "label": "StreamingChunkLoader",
-      "risk": 0.517,
+      "label": "BaseIDSModel",
+      "risk": 0.36,
       "type": "CLASS"
     },
     {
       "label": "run_preparation_pipeline()",
-      "risk": 0.506,
+      "risk": 0.327,
       "type": "FUNCTION"
     },
     {
-      "label": ".iter_chunks()",
-      "risk": 0.435,
-      "type": "FUNCTION"
+      "label": "StreamingChunkLoader",
+      "risk": 0.293,
+      "type": "CLASS"
     },
     {
-      "label": "validate_references()",
-      "risk": 0.421,
-      "type": "FUNCTION"
+      "label": "is_ai-vuln Project Overview",
+      "risk": 0.291,
+      "type": "UNKNOWN"
     }
   ],
   "blast_radius": {
@@ -31,6 +31,6 @@
     "run_tests()": 16,
     "Visualization and journal-grade layouting modules.": 16,
     "is_ai-vuln Project Overview": 12,
-    "run_closed_loop_fuzzy_dematel()": 11
+    "run_preparation_pipeline()": 11
   }
 }

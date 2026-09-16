@@ -2,7 +2,7 @@
 
 > God node · 12 connections · [README.md](file:///D:/Codes/research_banks/is_ai-vuln/README.md#L8-L18)
 
-**Community:** [[Community 1]]
+**Community:** [[Community 5]]
 
 ## Connections by Relation
 
