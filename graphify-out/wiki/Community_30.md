@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L114) (0 connections)
+- [Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L16) (0 connections)
 
 ## Relationships
 

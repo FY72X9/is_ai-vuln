@@ -1,10 +1,10 @@
-# Community 40
+# Data Splitting
 
 > 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Time-aware chronological cross-validator without future-looking data leakage.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L111) (0 connections)
+- [Generate sequential train/validation split indices.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L123) (0 connections)
 
 ## Relationships
 

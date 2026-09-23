@@ -1,25 +1,24 @@
 # Community 16
 
-> 4 nodes · cohesion 0.50
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (2 connections)
-- [validate_references()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L18) (2 connections)
-- [Academic Citation Integrity & Retraction Validator. Verifies DOI resolution via](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (1 connections)
-- [Validate all references in the provided list for DOI resolution and retraction s](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L19) (1 connections)
+- [check_upgrade_semantics.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L1) (2 connections)
+- [code_text()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L8) (1 connections)
+- [Semantic spot-check that the multi-dataset upgrades landed in the notebook artif](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L1) (1 connections)
 
 ## Relationships
 
-- [[Community 15]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\check_upgrade_semantics.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py)
 
 ## Audit Trail
 
-- EXTRACTED: 6 (100%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

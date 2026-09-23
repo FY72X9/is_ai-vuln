@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Download a file with retry mechanism and SHA256 verification.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L125) (0 connections)
+- [Check and automatically append required exclusion rules to .gitignore.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L80) (0 connections)
 
 ## Relationships
 

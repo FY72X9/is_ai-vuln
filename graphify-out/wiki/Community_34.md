@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L57) (0 connections)
+- [Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L32) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
 
 ## Audit Trail
 

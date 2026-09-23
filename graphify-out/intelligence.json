@@ -2,28 +2,28 @@
   "hotspots": [
     {
       "label": "prepare_benchmark_dataset()",
-      "risk": 0.52,
+      "risk": 0.511,
       "type": "FUNCTION"
     },
     {
       "label": "BaseIDSModel",
-      "risk": 0.36,
+      "risk": 0.355,
       "type": "CLASS"
     },
     {
       "label": "run_preparation_pipeline()",
-      "risk": 0.327,
+      "risk": 0.319,
       "type": "FUNCTION"
-    },
-    {
-      "label": "StreamingChunkLoader",
-      "risk": 0.293,
-      "type": "CLASS"
     },
     {
       "label": "is_ai-vuln Project Overview",
       "risk": 0.291,
       "type": "UNKNOWN"
+    },
+    {
+      "label": "StreamingChunkLoader",
+      "risk": 0.288,
+      "type": "CLASS"
     }
   ],
   "blast_radius": {

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L32) (0 connections)
+- [Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L114) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
 
 ## Audit Trail
 

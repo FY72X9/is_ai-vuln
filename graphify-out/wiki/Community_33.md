@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Robust quantile binning with fallback for low variance columns.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L68) (0 connections)
+- [Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L11) (0 connections)
 
 ## Relationships
 

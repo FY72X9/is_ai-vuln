@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Retrieve benchmark dataset: attempts remote download or synthesizes representati](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L246) (0 connections)
+- [Generate realistic synthetic NetFlow records for offline pipeline testing and Co](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L160) (0 connections)
 
 ## Relationships
 

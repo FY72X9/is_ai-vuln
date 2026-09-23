@@ -1,22 +1,24 @@
 # Community 18
 
-> 1 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [graphify_query.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/graphify_query.py#L1) (0 connections)
+- [Friedman & Nemenyi Statistical Tests](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L565-L588) (2 connections)
+- [Ablation Study & Robustness Analysis](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L589-L656) (1 connections)
+- [5-Fold Stratified Cross-Validation](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L545-L564) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 17]] (4 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\graphify_query.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/graphify_query.py)
+- [docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

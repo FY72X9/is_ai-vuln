@@ -4,9 +4,9 @@
 
 ## Key Concepts
 
-- [Friedman & Nemenyi Statistical Tests](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L565-L588) (2 connections)
-- [Ablation Study & Robustness Analysis](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L589-L656) (1 connections)
-- [5-Fold Stratified Cross-Validation](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L545-L564) (1 connections)
+- [test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (2 connections)
+- [Functional test for save_publication_figure_dual across local and mock Google Dr](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (1 connections)
+- [run_test()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L9) (1 connections)
 
 ## Relationships
 
@@ -14,7 +14,7 @@
 
 ## Source Files
 
-- [docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py)
 
 ## Audit Trail
 
