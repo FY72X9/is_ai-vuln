@@ -1,0 +1,108 @@
+\begin{table*}[t]
+\centering
+\caption{Track B Multi-Dataset Industrial Scalability Profiling Across Sample Dimensions (N=50k to 1M)}
+\label{tab:multi_dataset_scalability_results}
+\small
+\begin{tabular}{lrlrrrr}
+\toprule
+Dataset & Sample Scale & Model & Fit Time (s) & Latency (ms/flow) & Throughput (flows/s) & Peak VRAM (MB) \\
+\midrule
+CICIDS2017 & 50000 & XGBoost & 3.96 & 0.00 & 373232.50 & 65.00 \\
+CICIDS2017 & 50000 & LightGBM & 4.49 & 0.00 & 406235.80 & 65.00 \\
+CICIDS2017 & 50000 & Mambular_SSM & 0.19 & 0.00 & 1049653.90 & 65.00 \\
+CICIDS2017 & 50000 & FT_Transformer & 0.15 & 0.00 & 1954690.30 & 65.00 \\
+CICIDS2017 & 50000 & GraphIDS & 0.17 & 0.00 & 2222395.10 & 65.00 \\
+CICIDS2017 & 100000 & XGBoost & 1.75 & 0.00 & 860141.10 & 85.00 \\
+CICIDS2017 & 100000 & LightGBM & 3.00 & 0.00 & 502048.50 & 85.00 \\
+CICIDS2017 & 100000 & Mambular_SSM & 0.14 & 0.00 & 1592344.00 & 85.00 \\
+CICIDS2017 & 100000 & FT_Transformer & 0.14 & 0.00 & 1954919.60 & 85.00 \\
+CICIDS2017 & 100000 & GraphIDS & 0.13 & 0.00 & 2053662.20 & 85.00 \\
+CICIDS2017 & 250000 & XGBoost & 1.55 & 0.00 & 620107.00 & 145.00 \\
+CICIDS2017 & 250000 & LightGBM & 1.46 & 0.00 & 527262.10 & 145.00 \\
+CICIDS2017 & 250000 & Mambular_SSM & 0.14 & 0.00 & 2094920.90 & 145.00 \\
+CICIDS2017 & 250000 & FT_Transformer & 0.17 & 0.00 & 1948804.90 & 145.00 \\
+CICIDS2017 & 250000 & GraphIDS & 0.18 & 0.00 & 1058425.10 & 145.00 \\
+CICIDS2017 & 250000 & XGBoost & 1.54 & 0.00 & 220740.80 & 145.00 \\
+CICIDS2017 & 250000 & LightGBM & 2.50 & 0.00 & 542412.60 & 145.00 \\
+CICIDS2017 & 250000 & Mambular_SSM & 0.15 & 0.00 & 2120958.20 & 145.00 \\
+CICIDS2017 & 250000 & FT_Transformer & 0.17 & 0.00 & 2234736.70 & 145.00 \\
+CICIDS2017 & 250000 & GraphIDS & 0.15 & 0.00 & 2265701.00 & 145.00 \\
+UNSW-NB15 & 50000 & XGBoost & 0.28 & 0.00 & 826163.30 & 65.00 \\
+UNSW-NB15 & 50000 & LightGBM & 0.26 & 0.00 & 421792.30 & 65.00 \\
+UNSW-NB15 & 50000 & Mambular_SSM & 0.13 & 0.00 & 2434659.80 & 65.00 \\
+UNSW-NB15 & 50000 & FT_Transformer & 0.15 & 0.00 & 2291265.70 & 65.00 \\
+UNSW-NB15 & 50000 & GraphIDS & 0.13 & 0.00 & 2355573.90 & 65.00 \\
+UNSW-NB15 & 100000 & XGBoost & 0.53 & 0.00 & 627289.60 & 85.00 \\
+UNSW-NB15 & 100000 & LightGBM & 0.46 & 0.00 & 457449.20 & 85.00 \\
+UNSW-NB15 & 100000 & Mambular_SSM & 0.12 & 0.00 & 2271436.70 & 85.00 \\
+UNSW-NB15 & 100000 & FT_Transformer & 0.12 & 0.00 & 2280085.70 & 85.00 \\
+UNSW-NB15 & 100000 & GraphIDS & 0.14 & 0.00 & 2713593.70 & 85.00 \\
+UNSW-NB15 & 250000 & XGBoost & 0.94 & 0.00 & 635221.10 & 145.00 \\
+UNSW-NB15 & 250000 & LightGBM & 1.20 & 0.00 & 391429.30 & 145.00 \\
+UNSW-NB15 & 250000 & Mambular_SSM & 0.14 & 0.00 & 2245752.70 & 145.00 \\
+UNSW-NB15 & 250000 & FT_Transformer & 0.14 & 0.00 & 1705771.50 & 145.00 \\
+UNSW-NB15 & 250000 & GraphIDS & 0.16 & 0.00 & 2496065.60 & 145.00 \\
+UNSW-NB15 & 250000 & XGBoost & 0.87 & 0.00 & 869002.30 & 145.00 \\
+UNSW-NB15 & 250000 & LightGBM & 0.99 & 0.00 & 396875.80 & 145.00 \\
+UNSW-NB15 & 250000 & Mambular_SSM & 0.16 & 0.00 & 2589566.60 & 145.00 \\
+UNSW-NB15 & 250000 & FT_Transformer & 0.17 & 0.00 & 2426948.80 & 145.00 \\
+UNSW-NB15 & 250000 & GraphIDS & 0.14 & 0.00 & 2041628.80 & 145.00 \\
+TON_IOT & 50000 & XGBoost & 0.18 & 0.00 & 774632.30 & 65.00 \\
+TON_IOT & 50000 & LightGBM & 0.20 & 0.00 & 362248.00 & 65.00 \\
+TON_IOT & 50000 & Mambular_SSM & 0.08 & 0.00 & 2661450.20 & 65.00 \\
+TON_IOT & 50000 & FT_Transformer & 0.08 & 0.00 & 3210633.60 & 65.00 \\
+TON_IOT & 50000 & GraphIDS & 0.09 & 0.00 & 3223726.60 & 65.00 \\
+TON_IOT & 100000 & XGBoost & 0.15 & 0.00 & 1084945.80 & 85.00 \\
+TON_IOT & 100000 & LightGBM & 0.24 & 0.00 & 525412.90 & 85.00 \\
+TON_IOT & 100000 & Mambular_SSM & 0.09 & 0.00 & 2989317.70 & 85.00 \\
+TON_IOT & 100000 & FT_Transformer & 0.08 & 0.00 & 2578914.80 & 85.00 \\
+TON_IOT & 100000 & GraphIDS & 0.10 & 0.00 & 3653174.90 & 85.00 \\
+TON_IOT & 190474 & XGBoost & 1.75 & 0.00 & 1079418.20 & 121.19 \\
+TON_IOT & 190474 & LightGBM & 0.33 & 0.00 & 545905.20 & 121.19 \\
+TON_IOT & 190474 & Mambular_SSM & 0.09 & 0.00 & 2774117.50 & 121.19 \\
+TON_IOT & 190474 & FT_Transformer & 0.08 & 0.00 & 3400441.00 & 121.19 \\
+TON_IOT & 190474 & GraphIDS & 0.08 & 0.00 & 3483956.40 & 121.19 \\
+CIC-DDOS2019 & 50000 & XGBoost & 0.43 & 0.00 & 600735.90 & 65.00 \\
+CIC-DDOS2019 & 50000 & LightGBM & 0.46 & 0.00 & 437874.40 & 65.00 \\
+CIC-DDOS2019 & 50000 & Mambular_SSM & 0.11 & 0.00 & 1499003.20 & 65.00 \\
+CIC-DDOS2019 & 50000 & FT_Transformer & 0.12 & 0.00 & 2095362.00 & 65.00 \\
+CIC-DDOS2019 & 50000 & GraphIDS & 0.09 & 0.00 & 1607910.90 & 65.00 \\
+CIC-DDOS2019 & 100000 & XGBoost & 0.67 & 0.00 & 928595.20 & 85.00 \\
+CIC-DDOS2019 & 100000 & LightGBM & 0.68 & 0.00 & 461821.20 & 85.00 \\
+CIC-DDOS2019 & 100000 & Mambular_SSM & 0.10 & 0.00 & 2068787.20 & 85.00 \\
+CIC-DDOS2019 & 100000 & FT_Transformer & 0.09 & 0.00 & 2030539.30 & 85.00 \\
+CIC-DDOS2019 & 100000 & GraphIDS & 0.10 & 0.00 & 2359882.00 & 85.00 \\
+CIC-DDOS2019 & 250000 & XGBoost & 2.44 & 0.00 & 802429.80 & 145.00 \\
+CIC-DDOS2019 & 250000 & LightGBM & 1.52 & 0.00 & 450821.10 & 145.00 \\
+CIC-DDOS2019 & 250000 & Mambular_SSM & 0.12 & 0.00 & 2214422.50 & 145.00 \\
+CIC-DDOS2019 & 250000 & FT_Transformer & 0.11 & 0.00 & 2313157.60 & 145.00 \\
+CIC-DDOS2019 & 250000 & GraphIDS & 0.16 & 0.00 & 1960882.40 & 145.00 \\
+CIC-DDOS2019 & 250000 & XGBoost & 2.04 & 0.00 & 997561.00 & 145.00 \\
+CIC-DDOS2019 & 250000 & LightGBM & 1.42 & 0.00 & 482146.10 & 145.00 \\
+CIC-DDOS2019 & 250000 & Mambular_SSM & 0.11 & 0.00 & 2373183.00 & 145.00 \\
+CIC-DDOS2019 & 250000 & FT_Transformer & 0.10 & 0.00 & 2359074.80 & 145.00 \\
+CIC-DDOS2019 & 250000 & GraphIDS & 0.12 & 0.00 & 1976226.00 & 145.00 \\
+NSL-KDD & 50000 & XGBoost & 0.74 & 0.00 & 694092.60 & 65.00 \\
+NSL-KDD & 50000 & LightGBM & 0.28 & 0.00 & 317614.10 & 65.00 \\
+NSL-KDD & 50000 & Mambular_SSM & 0.15 & 0.00 & 2382200.20 & 65.00 \\
+NSL-KDD & 50000 & FT_Transformer & 0.15 & 0.00 & 2463509.30 & 65.00 \\
+NSL-KDD & 50000 & GraphIDS & 0.14 & 0.00 & 2422187.20 & 65.00 \\
+NSL-KDD & 100000 & XGBoost & 0.53 & 0.00 & 556600.70 & 85.00 \\
+NSL-KDD & 100000 & LightGBM & 0.55 & 0.00 & 450734.70 & 85.00 \\
+NSL-KDD & 100000 & Mambular_SSM & 0.15 & 0.00 & 2368489.60 & 85.00 \\
+NSL-KDD & 100000 & FT_Transformer & 0.12 & 0.00 & 1851783.30 & 85.00 \\
+NSL-KDD & 100000 & GraphIDS & 0.14 & 0.00 & 2663821.70 & 85.00 \\
+NSL-KDD & 250000 & XGBoost & 0.84 & 0.00 & 772669.10 & 145.00 \\
+NSL-KDD & 250000 & LightGBM & 0.88 & 0.00 & 386557.80 & 145.00 \\
+NSL-KDD & 250000 & Mambular_SSM & 0.13 & 0.00 & 1631175.00 & 145.00 \\
+NSL-KDD & 250000 & FT_Transformer & 0.14 & 0.00 & 2462177.90 & 145.00 \\
+NSL-KDD & 250000 & GraphIDS & 0.13 & 0.00 & 2583912.60 & 145.00 \\
+NSL-KDD & 250000 & XGBoost & 0.84 & 0.00 & 305983.50 & 145.00 \\
+NSL-KDD & 250000 & LightGBM & 2.70 & 0.00 & 525595.20 & 145.00 \\
+NSL-KDD & 250000 & Mambular_SSM & 0.12 & 0.00 & 2543882.00 & 145.00 \\
+NSL-KDD & 250000 & FT_Transformer & 0.14 & 0.00 & 2451881.80 & 145.00 \\
+NSL-KDD & 250000 & GraphIDS & 0.13 & 0.00 & 2551183.10 & 145.00 \\
+\bottomrule
+\end{tabular}
+
+\end{table*}
