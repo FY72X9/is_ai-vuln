@@ -19,14 +19,14 @@ sequenceDiagram
     participant P10 as compute_prominence_and_relation()
     participant P11 as construct_axiomatic_prior_matrix()
     participant P12 as StreamingChunkLoader
-    participant P13 as .cleanup()
-    participant P14 as .fit()
-    participant P15 as evaluate_robustness_degradation_slope()
-    participant P16 as run_causal_triangulation()
-    participant P17 as generate_scalable_synthetic_partition()
-    participant P18 as .iter_chunks()
-    participant P19 as inject_gaussian_noise()
-    participant P20 as get_model()
+    participant P13 as .fit()
+    participant P14 as .cleanup()
+    participant P15 as get_model()
+    participant P16 as evaluate_robustness_degradation_slope()
+    participant P17 as run_causal_triangulation()
+    participant P18 as generate_scalable_synthetic_partition()
+    participant P19 as .iter_chunks()
+    participant P20 as inject_gaussian_noise()
     participant P21 as compute_friedman_test()
     participant P22 as compute_nemenyi_critical_difference()
     participant P23 as export_benchmark_to_latex()
@@ -78,10 +78,10 @@ sequenceDiagram
     P14-->>- P0: return
     P0->>+ P15: calls
     P15-->>- P0: return
-    P0->>+ P2: calls
-    P2-->>- P0: return
     P0->>+ P16: calls
     P16-->>- P0: return
+    P0->>+ P2: calls
+    P2-->>- P0: return
     P0->>+ P17: calls
     P17-->>- P0: return
     P0->>+ P18: calls
@@ -104,15 +104,15 @@ sequenceDiagram
 - [[run_closed_loop_fuzzy_dematel()]] `INFERRED`
 - [[StreamingChunkLoader]] `INFERRED`
 - [[run_monte_carlo_sensitivity_proof()]] `INFERRED`
-- [[.cleanup()]] `INFERRED`
 - [[.fit()]] `INFERRED`
+- [[.cleanup()]] `INFERRED`
+- [[get_model()]] `INFERRED`
 - [[evaluate_robustness_degradation_slope()]] `INFERRED`
 - [[generate_mock_telemetry_matrix()]] `INFERRED`
 - [[run_causal_triangulation()]] `INFERRED`
 - [[generate_scalable_synthetic_partition()]] `INFERRED`
 - [[.iter_chunks()]] `INFERRED`
 - [[inject_gaussian_noise()]] `INFERRED`
-- [[get_model()]] `INFERRED`
 - [[compute_friedman_test()]] `INFERRED`
 - [[compute_nemenyi_critical_difference()]] `INFERRED`
 - [[export_benchmark_to_latex()]] `INFERRED`

@@ -1,52 +1,68 @@
 # Community 3
 
-> 37 nodes · cohesion 0.07
+> 38 nodes · cohesion 0.07
 
 ## Key Concepts
 
-- [run_closed_loop_fuzzy_dematel()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L134) (11 connections)
-- [run_monte_carlo_sensitivity_proof()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L26) (7 connections)
-- [fuzzy_engine.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L1) (7 connections)
-- [causal_validation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L1) (6 connections)
-- [empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L1) (5 connections)
-- [generate_mock_telemetry_matrix()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L11) (5 connections)
-- [compute_empirical_nmi_matrix()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L86) (4 connections)
-- [extract_empirical_telemetry_from_experiments()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L32) (4 connections)
-- [cfcs_defuzzify()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L62) (4 connections)
-- [compute_total_relation_matrix()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L49) (4 connections)
-- [normalize_fuzzy_matrices()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L40) (4 connections)
-- [construct_axiomatic_prior_matrix()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/axiomatic_priors.py#L29) (3 connections)
-- [_calculate_kendalls_w()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L85) (3 connections)
-- [compute_structural_hamming_distance()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L97) (3 connections)
-- [pd_qcut_safe()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L122) (3 connections)
-- [compute_prominence_and_relation()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L94) (3 connections)
-- [synthesize_triangular_fuzzy_matrix()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py#L8) (3 connections)
-- [axiomatic_priors.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/axiomatic_priors.py#L1) (2 connections)
-- [test_dematel_empirical_mapper()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py#L66) (2 connections)
-- [Axiomatic Theoretical Prior Matrix (W_theory) for Autonomous Closed-Loop Fuzzy D](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/axiomatic_priors.py#L1) (1 connections)
-- [Derive the 8x8 theoretical causal prior matrix W_theory.          Self-influence](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/axiomatic_priors.py#L30) (1 connections)
-- [Monte Carlo Robustness Proof & DirectLiNGAM Algorithmic Causal Triangulation. Va](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L1) (1 connections)
-- [Execute 10,000 Monte Carlo perturbation iterations to prove stability of promine](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L34) (1 connections)
-- [Calculate Kendall's W concordance coefficient across m raters for n items.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L86) (1 connections)
-- [Calculate Structural Hamming Distance (SHD) between two causal graphs.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L98) (1 connections)
-- *... and 12 more nodes in this community*
+- [run_tests()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py#L36) (16 connections)
+- [StreamingChunkLoader](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L21) (7 connections)
+- [.cleanup()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L111) (6 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py#L27) (6 connections)
+- [run_causal_triangulation()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L104) (5 connections)
+- [robustness.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L1) (5 connections)
+- [evaluate_robustness_degradation_slope()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L39) (5 connections)
+- [run_component_ablation_sweep()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L73) (5 connections)
+- [streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L1) (4 connections)
+- [statistical_tests.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L1) (4 connections)
+- [inject_gaussian_noise()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L14) (4 connections)
+- [generate_scalable_synthetic_partition()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L121) (4 connections)
+- [.iter_chunks()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L36) (4 connections)
+- [export_benchmark_to_latex()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L11) (3 connections)
+- [compute_friedman_test()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L33) (3 connections)
+- [compute_nemenyi_critical_difference()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L84) (3 connections)
+- [test_full_pipeline.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py#L1) (2 connections)
+- [latex_exporter.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L1) (2 connections)
+- [inject_feature_corruption()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L27) (2 connections)
+- [._extract_features_and_target()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L103) (2 connections)
+- [Comprehensive Full-Pipeline Verification Test Suite. Verifies streaming data loa](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py#L1) (2 connections)
+- [Release weights and garbage collect GPU/CPU memory.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L112) (1 connections)
+- [Run DirectLiNGAM causal discovery and calculate SHD against Fuzzy DEMATEL digrap](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L108) (1 connections)
+- [Automated LaTeX Table Generation for Q1 Journal Publication. Generates professio](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L1) (1 connections)
+- [Format DataFrame into publication-grade LaTeX table with booktabs.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L18) (1 connections)
+- *... and 13 more nodes in this community*
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class StreamingChunkLoader {
+        +streaming_loader.py()
+        +.__init__()
+        +.iter_chunks()
+        +._extract_features_and_target()
+    }
+```
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 1]] (15 shared connections)
+- [[Community 8]] (3 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_all_updates.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\axiomatic_priors.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/axiomatic_priors.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\test_full_pipeline.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
 - [D:\Codes\research_banks\is_ai-vuln\src\dematel\causal_validation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\fuzzy_engine.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/fuzzy_engine.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\robustness.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\statistical_tests.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\graph_ids.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\visualization\latex_exporter.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py)
 
 ## Audit Trail
 
-- EXTRACTED: 84 (83%)
-- INFERRED: 17 (17%)
+- EXTRACTED: 71 (64%)
+- INFERRED: 40 (36%)
 - AMBIGUOUS: 0 (0%)
 
 ---

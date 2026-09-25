@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L11) (0 connections)
+- [dump_phase1.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/dump_phase1.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\dump_phase1.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/dump_phase1.py)
 
 ## Audit Trail
 

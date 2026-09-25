@@ -1,6 +1,6 @@
 # Community 0
 
-> 68 nodes · cohesion 0.06
+> 75 nodes · cohesion 0.05
 
 ## Key Concepts
 
@@ -17,8 +17,11 @@
 - [Instantiate a benchmark IDS model by name.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/__init__.py#L26) (10 connections)
 - **BaseIDSModel** (8 connections)
 - [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L306) (6 connections)
+- [base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L1) (5 connections)
 - [deep_tabular.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L1) (4 connections)
 - [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L139) (4 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L40) (3 connections)
+- [predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L36) (3 connections)
 - [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L165) (3 connections)
 - [._tune_with_optuna()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L131) (3 connections)
 - [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L72) (3 connections)
@@ -26,10 +29,7 @@
 - [foundation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L1) (3 connections)
 - [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L232) (3 connections)
 - [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/deep_tabular.py#L227) (3 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L131) (3 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/foundation.py#L60) (3 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/classical.py#L117) (2 connections)
-- *... and 43 more nodes in this community*
+- *... and 50 more nodes in this community*
 
 ## Class Diagram
 
@@ -121,7 +121,7 @@ classDiagram
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 12]] (2 shared connections)
 
 ## Source Files
 
@@ -140,8 +140,8 @@ classDiagram
 
 ## Audit Trail
 
-- EXTRACTED: 188 (71%)
-- INFERRED: 76 (29%)
+- EXTRACTED: 204 (73%)
+- INFERRED: 76 (27%)
 - AMBIGUOUS: 0 (0%)
 
 ---

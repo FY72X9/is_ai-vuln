@@ -1,24 +1,25 @@
 # Community 17
 
-> 3 nodes · cohesion 0.67
+> 4 nodes · cohesion 0.50
 
 ## Key Concepts
 
-- [test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (2 connections)
-- [Functional test for save_publication_figure_dual across local and mock Google Dr](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (1 connections)
-- [run_test()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L9) (1 connections)
+- [references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (2 connections)
+- [validate_references()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L18) (2 connections)
+- [Academic Citation Integrity & Retraction Validator. Verifies DOI resolution via](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (1 connections)
+- [Validate all references in the provided list for DOI resolution and retraction s](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L19) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 15]] (2 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py)
 
 ## Audit Trail
 
-- EXTRACTED: 4 (100%)
+- EXTRACTED: 6 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

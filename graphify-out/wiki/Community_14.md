@@ -1,28 +1,30 @@
 # Community 14
 
-> 6 nodes · cohesion 0.40
+> 8 nodes · cohesion 0.36
 
 ## Key Concepts
 
-- [references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (3 connections)
-- [format_bibtex_entry()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L314) (3 connections)
-- [harvest_and_build_library()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L340) (3 connections)
-- [Metadata Harvester for Academic References using OpenAlex and CrossRef REST APIs](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (1 connections)
-- [Format reference dict into a clean BibTeX entry.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L315) (1 connections)
-- [Harvest metadata from OpenAlex / CrossRef where available and build references/l](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L341) (1 connections)
+- [clean_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L95) (5 connections)
+- [clean_column_names()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L17) (4 connections)
+- [decontaminate_cicids2017()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L23) (4 connections)
+- [cleaner.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L1) (4 connections)
+- [Data Cleaning & Decontamination Pipeline. Addresses known anomalies in intrusion](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L1) (1 connections)
+- [Strip extraneous whitespace and special characters from DataFrame column headers](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L18) (1 connections)
+- [Clean and decontaminate CICIDS2017 dataset according to SPW 2021 and TIFS 2022 f](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L24) (1 connections)
+- [Universal cleaning dispatcher for benchmark datasets.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L96) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 13]] (4 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\cleaner.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 20 (95%)
+- INFERRED: 1 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

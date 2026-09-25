@@ -15,18 +15,18 @@ sequenceDiagram
     participant P6 as compute_total_relation_matrix()
     participant P7 as cfcs_defuzzify()
     participant P8 as _calculate_kendalls_w()
-    participant P9 as .cleanup()
-    participant P10 as test_all_models()
-    participant P11 as run_component_ablation_sweep()
-    participant P12 as flush_memory()
-    participant P13 as .fit()
-    participant P14 as evaluate_robustness_degradation_slope()
-    participant P15 as generate_mock_telemetry_matrix()
-    participant P16 as run_causal_triangulation()
-    participant P17 as generate_scalable_synthetic_partition()
-    participant P18 as .iter_chunks()
-    participant P19 as inject_gaussian_noise()
-    participant P20 as get_model()
+    participant P9 as .fit()
+    participant P10 as run_track_a_benchmark()
+    participant P11 as test_all_models()
+    participant P12 as run_causal_triangulation()
+    participant P13 as run_component_ablation_sweep()
+    participant P14 as .cleanup()
+    participant P15 as get_model()
+    participant P16 as evaluate_robustness_degradation_slope()
+    participant P17 as generate_mock_telemetry_matrix()
+    participant P18 as generate_scalable_synthetic_partition()
+    participant P19 as .iter_chunks()
+    participant P20 as inject_gaussian_noise()
     participant P21 as compute_friedman_test()
     participant P22 as compute_nemenyi_critical_difference()
     participant P23 as export_benchmark_to_latex()
@@ -58,16 +58,16 @@ sequenceDiagram
     P8-->>- P4: return
     P1->>+ P9: calls
     P9-->>- P1: return
-    P9->>+ P1: calls
-    P1-->>- P9: return
     P9->>+ P10: calls
     P10-->>- P9: return
+    P9->>+ P1: calls
+    P1-->>- P9: return
     P9->>+ P11: calls
     P11-->>- P9: return
     P9->>+ P12: calls
     P12-->>- P9: return
-    P1->>+ P13: calls
-    P13-->>- P1: return
+    P9->>+ P13: calls
+    P13-->>- P9: return
     P1->>+ P14: calls
     P14-->>- P1: return
     P1->>+ P15: calls
@@ -76,6 +76,8 @@ sequenceDiagram
     P16-->>- P1: return
     P1->>+ P17: calls
     P17-->>- P1: return
+    P1->>+ P12: calls
+    P12-->>- P1: return
     P1->>+ P18: calls
     P18-->>- P1: return
     P1->>+ P19: calls
@@ -88,8 +90,8 @@ sequenceDiagram
     P22-->>- P1: return
     P1->>+ P23: calls
     P23-->>- P1: return
-    P0->>+ P15: calls
-    P15-->>- P0: return
+    P0->>+ P17: calls
+    P17-->>- P0: return
     P0->>+ P5: calls
     P5-->>- P0: return
     P0->>+ P6: calls

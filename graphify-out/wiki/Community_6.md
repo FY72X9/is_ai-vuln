@@ -1,28 +1,78 @@
 # Community 6
 
-> 19 nodes · cohesion 0.12
+> 32 nodes · cohesion 0.10
 
 ## Key Concepts
 
-- [is_ai-vuln Project Overview](file:///D:/Codes/research_banks/is_ai-vuln/README.md#L8-L18) (12 connections)
-- [Fuzzy DEMATEL](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L308-L357) (4 connections)
-- [Q1 Readiness Audit & Gap Analysis](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L761-L844) (4 connections)
-- [FT-Transformer](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L207-L234) (2 connections)
-- [Mambular (Mamba SSM)](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L175-L206) (2 connections)
-- [Target Q1 Journals (IEEE ComSurv, InfoFusion, JSAC)](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L40-L58) (2 connections)
-- [TabICL v2](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L109-L131) (2 connections)
-- [TabPFN v3](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L86-L108) (2 connections)
-- [Repository Directory Structure](file:///D:/Codes/research_banks/is_ai-vuln/README.md#L20-L30) (2 connections)
-- [Causal Network & Prominence-Relation Map](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L333-L345) (1 connections)
-- [CICIDS2017 Dataset](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L721-L730) (1 connections)
-- [Contribution Triangle](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L765-L790) (1 connections)
-- [GraphIDS](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L132-L152) (1 connections)
-- [NSL-KDD Dataset](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L721-L730) (1 connections)
-- [OpenAlex & Semantic Scholar Bibliometrics](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L25-L47) (1 connections)
-- [Colab Reproducibility Package](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L687-L718) (1 connections)
-- [SAINT](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L153-L174) (1 connections)
-- [Triangular Fuzzy Numbers (TFN)](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L346-L357) (1 connections)
-- [UNSW-NB15 Dataset](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L721-L730) (1 connections)
+- [cell12_phase2a.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L1) (10 connections)
+- [InContextPriorIDS](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L163) (8 connections)
+- [NativePyTorchDeepTabular](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L224) (8 connections)
+- [ClassicalGBDT](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L129) (7 connections)
+- [BaseIDSModel](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L96) (6 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L406) (5 connections)
+- [AntiLeakageGroupKFold](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L21) (4 connections)
+- [get_model()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L428) (4 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L424) (4 connections)
+- [extract_subnet_mask()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L17) (3 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L241) (3 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L229) (3 connections)
+- [.split()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L28) (2 connections)
+- [.profile_inference()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L100) (2 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L134) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L130) (2 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L157) (2 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L159) (2 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L171) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L165) (2 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L220) (2 connections)
+- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L197) (2 connections)
+- [safe_slice()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L11) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L23) (1 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L97) (1 connections)
+- *... and 7 more nodes in this community*
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class AntiLeakageGroupKFold {
+        +cell12_phase2a.py()
+        +.__init__()
+        +.split()
+    }
+    class BaseIDSModel {
+        +cell12_phase2a.py()
+        +.__init__()
+        +.profile_inference()
+    }
+    class ClassicalGBDT {
+        +cell12_phase2a.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+        +.predict_proba()
+    }
+    class InContextPriorIDS {
+        +cell12_phase2a.py()
+        +.__init__()
+        +.fit()
+        +.predict_proba()
+        +.predict()
+    }
+    class NativePyTorchDeepTabular {
+        +cell12_phase2a.py()
+        +.__init__()
+        +.fit()
+        +.predict_proba()
+        +.predict()
+    }
+    ClassicalGBDT <|-- BaseIDSModel
+    InContextPriorIDS <|-- BaseIDSModel
+    NativePyTorchDeepTabular <|-- BaseIDSModel
+    BaseIDSModel <|-- ClassicalGBDT
+    BaseIDSModel <|-- InContextPriorIDS
+    BaseIDSModel <|-- NativePyTorchDeepTabular
+```
 
 ## Relationships
 
@@ -30,13 +80,12 @@
 
 ## Source Files
 
-- [README.md](file:///D:/Codes/research_banks/is_ai-vuln/README.md)
-- [docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\cell12_phase2a.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py)
 
 ## Audit Trail
 
-- EXTRACTED: 36 (86%)
-- INFERRED: 6 (14%)
+- EXTRACTED: 96 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

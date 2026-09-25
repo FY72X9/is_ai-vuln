@@ -2,35 +2,35 @@
   "hotspots": [
     {
       "label": "prepare_benchmark_dataset()",
-      "risk": 0.51,
+      "risk": 0.508,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "prepare_dataset()",
+      "risk": 0.403,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "run_track_a_benchmark()",
+      "risk": 0.362,
       "type": "FUNCTION"
     },
     {
       "label": "BaseIDSModel",
-      "risk": 0.355,
+      "risk": 0.348,
       "type": "CLASS"
     },
     {
       "label": "run_preparation_pipeline()",
-      "risk": 0.319,
+      "risk": 0.316,
       "type": "FUNCTION"
-    },
-    {
-      "label": "is_ai-vuln Project Overview",
-      "risk": 0.291,
-      "type": "UNKNOWN"
-    },
-    {
-      "label": "StreamingChunkLoader",
-      "risk": 0.288,
-      "type": "CLASS"
     }
   ],
   "blast_radius": {
     "BaseIDSModel": 30,
+    "run_track_a_benchmark()": 18,
     "run_tests()": 16,
     "Visualization and journal-grade layouting modules.": 16,
-    "is_ai-vuln Project Overview": 12,
-    "run_preparation_pipeline()": 11
+    "is_ai-vuln Project Overview": 12
   }
 }

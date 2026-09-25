@@ -1,10 +1,12 @@
 # Community 19
 
-> 1 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [ast_audit_all.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_audit_all.py#L1) (0 connections)
+- [generate_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L1) (2 connections)
+- [load_v1()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L10) (1 connections)
+- [save_v2()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L15) (1 connections)
 
 ## Relationships
 
@@ -12,11 +14,11 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\ast_audit_all.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_audit_all.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

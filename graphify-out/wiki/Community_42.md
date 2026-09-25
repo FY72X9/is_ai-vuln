@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L57) (0 connections)
+- [dump_phase3_5.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/dump_phase3_5.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\dump_phase3_5.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/dump_phase3_5.py)
 
 ## Audit Trail
 

@@ -1,30 +1,31 @@
 # Community 13
 
-> 8 nodes · cohesion 0.36
+> 9 nodes · cohesion 0.56
 
 ## Key Concepts
 
-- [clean_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L95) (5 connections)
-- [clean_column_names()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L17) (4 connections)
-- [decontaminate_cicids2017()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L23) (4 connections)
-- [cleaner.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L1) (4 connections)
-- [Data Cleaning & Decontamination Pipeline. Addresses known anomalies in intrusion](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L1) (1 connections)
-- [Strip extraneous whitespace and special characters from DataFrame column headers](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L18) (1 connections)
-- [Clean and decontaminate CICIDS2017 dataset according to SPW 2021 and TIFS 2022 f](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L24) (1 connections)
-- [Universal cleaning dispatcher for benchmark datasets.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L96) (1 connections)
+- [generate_remaining_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (8 connections)
+- [code_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L12) (6 connections)
+- [md_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L21) (6 connections)
+- [write_nb()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L28) (5 connections)
+- [build_nb03()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L211) (4 connections)
+- [build_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L579) (4 connections)
+- [build_nb05()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1069) (4 connections)
+- [build_nb06()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1343) (4 connections)
+- [Batch Generator for Google Colab Notebooks: Notebooks 03, 04, 05, 06.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 11]] (1 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\cleaner.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_remaining_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py)
 
 ## Audit Trail
 
-- EXTRACTED: 20 (95%)
-- INFERRED: 1 (5%)
+- EXTRACTED: 40 (95%)
+- INFERRED: 2 (5%)
 - AMBIGUOUS: 0 (0%)
 
 ---

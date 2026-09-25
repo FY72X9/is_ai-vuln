@@ -1,22 +1,24 @@
 # Community 20
 
-> 1 nodes · cohesion 1.00
+> 3 nodes · cohesion 0.67
 
 ## Key Concepts
 
-- [ast_check_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_check_nb02.py#L1) (0 connections)
+- [test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (2 connections)
+- [Functional test for save_publication_figure_dual across local and mock Google Dr](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (1 connections)
+- [run_test()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L9) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 17]] (1 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\ast_check_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_check_nb02.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
+- EXTRACTED: 4 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -1,10 +1,11 @@
 # Community 23
 
-> 1 nodes · cohesion 1.00
+> 2 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [inspect_nb03.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_nb03.py#L1) (0 connections)
+- [export_latex_table()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell8_phase5.py#L5) (1 connections)
+- [cell8_phase5.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell8_phase5.py#L1) (1 connections)
 
 ## Relationships
 
@@ -12,11 +13,11 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_nb03.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_nb03.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\cell8_phase5.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell8_phase5.py)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
+- EXTRACTED: 2 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

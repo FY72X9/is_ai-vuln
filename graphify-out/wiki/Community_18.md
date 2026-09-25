@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- [Friedman & Nemenyi Statistical Tests](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L565-L588) (2 connections)
-- [Ablation Study & Robustness Analysis](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L589-L656) (1 connections)
-- [5-Fold Stratified Cross-Validation](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L545-L564) (1 connections)
+- [check_upgrade_semantics.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L1) (2 connections)
+- [code_text()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L8) (1 connections)
+- [Semantic spot-check that the multi-dataset upgrades landed in the notebook artif](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L1) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 16]] (1 shared connections)
 
 ## Source Files
 
-- [docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\check_upgrade_semantics.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py)
 
 ## Audit Trail
 

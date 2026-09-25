@@ -1,57 +1,43 @@
 # Community 7
 
-> 17 nodes · cohesion 0.15
+> 19 nodes · cohesion 0.14
 
 ## Key Concepts
 
-- [splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L1) (7 connections)
-- [PureNumPyStandardScaler](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L47) (7 connections)
-- [fit_fold_isolated_pipeline()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L140) (5 connections)
-- [AntiLeakageTimeSeriesSplit](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L113) (4 connections)
-- [.fit_transform()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L66) (4 connections)
-- [extract_subnet_mask()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L29) (3 connections)
-- [.transform()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L60) (3 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L53) (2 connections)
-- [safe_slice()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L18) (2 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L116) (1 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L49) (1 connections)
-- [Anti-Leakage Data Partitioning Suite. Implements Subnet-Grouped and Time-Aware K](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L1) (1 connections)
-- [Time-aware chronological cross-validator without future-looking data leakage.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L114) (1 connections)
-- [Fit scaler and sampler STRICTLY within the train split, preventing leakage to va](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L149) (1 connections)
-- [Safely slice pandas DataFrame, Series, or NumPy ndarray by integer indices.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L19) (1 connections)
-- [Extract subnet group from IPv4 address string (default /24 mask).](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L30) (1 connections)
-- [Pure NumPy implementation of standard scaler for isolated or minimal environment](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L48) (1 connections)
-
-## Class Diagram
-
-```mermaid
-classDiagram
-    class AntiLeakageTimeSeriesSplit {
-        +splitters.py()
-        +.__init__()
-        +.split()
-    }
-    class PureNumPyStandardScaler {
-        +splitters.py()
-        +.__init__()
-        +.fit()
-        +.transform()
-        +.fit_transform()
-    }
-```
+- [prepare_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L126) (6 connections)
+- [environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L1) (5 connections)
+- [flush_memory()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L98) (5 connections)
+- [setup_environment()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L54) (5 connections)
+- [decontaminate_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L57) (4 connections)
+- [cell14_phase1.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L1) (4 connections)
+- [resolve_project_root()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L15) (4 connections)
+- [build_flow_multigraph()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L106) (3 connections)
+- [is_colab()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L7) (3 connections)
+- [test_environment_root_resolution()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py#L23) (3 connections)
+- [clean_column_names()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L52) (2 connections)
+- [Construct directed NetworkX interaction graph from NetFlows.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L107) (1 connections)
+- [Resolve, ingest, decontaminate, partition and persist ONE benchmark dataset.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L127) (1 connections)
+- [SPW 2021 (Engelen et al.) & TIFS 2022 (Lanvin et al.) decontamination suite.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L58) (1 connections)
+- [Environment initialization and hardware-runtime abstraction for Google Colab and](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L1) (1 connections)
+- [Initialize storage directories, Google Drive mounting (if Colab), and memory saf](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L16) (1 connections)
+- [Initialize storage directories, Google Drive mounting (if Colab), and memory saf](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L55) (1 connections)
+- [Check if the current runtime is Google Colab.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L8) (1 connections)
+- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L99) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 10]] (5 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\cell14_phase1.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_all_updates.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
 
 ## Audit Trail
 
-- EXTRACTED: 44 (98%)
-- INFERRED: 1 (2%)
+- EXTRACTED: 43 (83%)
+- INFERRED: 9 (17%)
 - AMBIGUOUS: 0 (0%)
 
 ---

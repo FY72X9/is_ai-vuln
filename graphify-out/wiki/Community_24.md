@@ -1,10 +1,11 @@
 # Community 24
 
-> 1 nodes · cohesion 1.00
+> 2 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [inspect_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_notebooks.py#L1) (0 connections)
+- [test_dematel_mc.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_dematel_mc.py#L1) (1 connections)
+- [run_mc()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_dematel_mc.py#L15) (1 connections)
 
 ## Relationships
 
@@ -12,11 +13,11 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\test_dematel_mc.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_dematel_mc.py)
 
 ## Audit Trail
 
-- EXTRACTED: 0 (0%)
+- EXTRACTED: 2 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [validate_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/validate_notebooks.py#L1) (0 connections)
+- [build_phase1_v2.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_phase1_v2.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\validate_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/validate_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\build_phase1_v2.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_phase1_v2.py)
 
 ## Audit Trail
 

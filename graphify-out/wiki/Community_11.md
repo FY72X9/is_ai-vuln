@@ -1,31 +1,35 @@
 # Community 11
 
-> 9 nodes · cohesion 0.56
+> 13 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- [generate_remaining_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (8 connections)
-- [code_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L12) (6 connections)
-- [md_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L21) (6 connections)
-- [write_nb()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L28) (5 connections)
-- [build_nb03()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L211) (4 connections)
-- [build_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L579) (4 connections)
-- [build_nb05()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1069) (4 connections)
-- [build_nb06()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1343) (4 connections)
-- [Batch Generator for Google Colab Notebooks: Notebooks 03, 04, 05, 06.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (1 connections)
+- [upgrade_multi_dataset.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L1) (11 connections)
+- [main()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L665) (7 connections)
+- [find_code_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L41) (5 connections)
+- [set_cell_source()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L51) (5 connections)
+- [upgrade_nb01()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L127) (5 connections)
+- [upgrade_nb02()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L444) (5 connections)
+- [upgrade_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L593) (5 connections)
+- [indent_block()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L57) (4 connections)
+- [validate_notebooks()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L639) (3 connections)
+- [load_nb()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L32) (2 connections)
+- [save_nb()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L36) (2 connections)
+- [Post-generation upgrader: converts Notebook 01 / 02 / 04 from single-dataset ex](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L1) (1 connections)
+- [Return index of first code cell whose joined source contains marker.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L42) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 9]] (2 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_remaining_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\upgrade_multi_dataset.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py)
 
 ## Audit Trail
 
-- EXTRACTED: 40 (95%)
-- INFERRED: 2 (5%)
+- EXTRACTED: 52 (93%)
+- INFERRED: 4 (7%)
 - AMBIGUOUS: 0 (0%)
 
 ---

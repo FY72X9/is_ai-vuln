@@ -1,40 +1,42 @@
 # Community 8
 
-> 16 nodes · cohesion 0.14
+> 19 nodes · cohesion 0.12
 
 ## Key Concepts
 
-- [plot_causal_network_digraph()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L134) (4 connections)
-- [statistical_tests.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L1) (4 connections)
-- [save_publication_figure()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L39) (4 connections)
-- [set_publication_style()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L6) (4 connections)
-- [plot_critical_difference_diagram()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L90) (4 connections)
-- [publication_styler.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L1) (3 connections)
-- [compute_friedman_test()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L33) (3 connections)
-- [compute_nemenyi_critical_difference()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L84) (3 connections)
-- [Render publication-grade causal network digraph with prominent cause-effect node](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L139) (1 connections)
-- [Journal-grade publication figure styling for IEEE / ACM / Elsevier Q1 venues.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L1) (1 connections)
-- [Save figure simultaneously in vector PDF format and high-res PNG preview.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L40) (1 connections)
-- [Apply IEEE/Nature publication styling to matplotlib rcParams.          Args:](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py#L7) (1 connections)
-- [Non-Parametric Statistical Significance Engine: Friedman Test & Nemenyi CD Analy](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L1) (1 connections)
-- [Calculate the Friedman non-parametric test across N datasets and k models.](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L37) (1 connections)
-- [Compute Nemenyi Critical Difference (CD) threshold.](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L85) (1 connections)
-- [Generate publication-standard horizontal Critical Difference (CD) rank diagram.](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L96) (1 connections)
+- [is_ai-vuln Project Overview](file:///D:/Codes/research_banks/is_ai-vuln/README.md#L8-L18) (12 connections)
+- [Fuzzy DEMATEL](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L308-L357) (4 connections)
+- [Q1 Readiness Audit & Gap Analysis](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L761-L844) (4 connections)
+- [FT-Transformer](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L207-L234) (2 connections)
+- [Mambular (Mamba SSM)](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L175-L206) (2 connections)
+- [Target Q1 Journals (IEEE ComSurv, InfoFusion, JSAC)](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L40-L58) (2 connections)
+- [TabICL v2](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L109-L131) (2 connections)
+- [TabPFN v3](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L86-L108) (2 connections)
+- [Repository Directory Structure](file:///D:/Codes/research_banks/is_ai-vuln/README.md#L20-L30) (2 connections)
+- [Causal Network & Prominence-Relation Map](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L333-L345) (1 connections)
+- [CICIDS2017 Dataset](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L721-L730) (1 connections)
+- [Contribution Triangle](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L765-L790) (1 connections)
+- [GraphIDS](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L132-L152) (1 connections)
+- [NSL-KDD Dataset](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L721-L730) (1 connections)
+- [OpenAlex & Semantic Scholar Bibliometrics](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L25-L47) (1 connections)
+- [Colab Reproducibility Package](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L687-L718) (1 connections)
+- [SAINT](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L153-L174) (1 connections)
+- [Triangular Fuzzy Numbers (TFN)](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L346-L357) (1 connections)
+- [UNSW-NB15 Dataset](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md#L721-L730) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 6]] (42 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\causal_validation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\statistical_tests.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\visualization\publication_styler.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/publication_styler.py)
+- [README.md](file:///D:/Codes/research_banks/is_ai-vuln/README.md)
+- [docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md](file:///D:/Codes/research_banks/is_ai-vuln/docs/Research_Blueprint_IS_CS_Q1_2026_FINAL_v3.md)
 
 ## Audit Trail
 
-- EXTRACTED: 27 (73%)
-- INFERRED: 10 (27%)
+- EXTRACTED: 36 (86%)
+- INFERRED: 6 (14%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Generate hard binary / multi-class predictions.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L37) (0 connections)
+- [build_phase2b_v2.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_phase2b_v2.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\build_phase2b_v2.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_phase2b_v2.py)
 
 ## Audit Trail
 
