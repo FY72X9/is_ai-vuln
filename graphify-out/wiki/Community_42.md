@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Fit scaler and sampler STRICTLY within the train split, preventing leakage to va](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L146) (0 connections)
+- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L57) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
 
 ## Audit Trail
 

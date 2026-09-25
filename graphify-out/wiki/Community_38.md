@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Verify SHA-256 checksum of a downloaded file.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L83) (0 connections)
+- [Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L114) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
 
 ## Audit Trail
 

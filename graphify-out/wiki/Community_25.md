@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Verify SHA-256 checksum of a downloaded file.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L99) (0 connections)
+- [patch_safe_slice.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/patch_safe_slice.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\patch_safe_slice.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/patch_safe_slice.py)
 
 ## Audit Trail
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Check and automatically append required exclusion rules to .gitignore.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L64) (0 connections)
+- [Yield (X_chunk, y_chunk) in bounded batches.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L31) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
 
 ## Audit Trail
 

@@ -45,3 +45,9 @@
 | 40 | Community 40 |  |
 | 41 | Community 41 | Responsible for generating indices to sequentially split a dataset into training and validation subsets. |
 | 42 | Community 42 |  |
+| 43 | Community 43 |  |
+| 44 | Community 44 |  |
+| 45 | Community 45 |  |
+| 46 | Community 46 | Ensures that models are trained only on past data and evaluated on future data, preventing future information leakage in time-dependent datasets. |
+| 47 | Community 47 | Responsible for generating indices to sequentially split a dataset into training and validation subsets. |
+| 48 | Community 48 | Handles fitting scalers and samplers only on training data to prevent leakage into validation sets. |

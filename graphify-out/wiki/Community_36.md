@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L57) (0 connections)
+- [Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L16) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
 
 ## Audit Trail
 

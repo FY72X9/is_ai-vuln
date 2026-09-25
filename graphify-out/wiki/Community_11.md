@@ -9,14 +9,14 @@
 - [md_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L21) (6 connections)
 - [write_nb()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L28) (5 connections)
 - [build_nb03()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L211) (4 connections)
-- [build_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L566) (4 connections)
-- [build_nb05()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1056) (4 connections)
-- [build_nb06()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1330) (4 connections)
+- [build_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L579) (4 connections)
+- [build_nb05()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1069) (4 connections)
+- [build_nb06()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1343) (4 connections)
 - [Batch Generator for Google Colab Notebooks: Notebooks 03, 04, 05, 06.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_remaining_notebooks.py#L1) (1 connections)
 
 ## Relationships
 
-- [[Community 4]] (1 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 

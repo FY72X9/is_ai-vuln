@@ -1,10 +1,10 @@
-# Community 33
+# Community 43
 
 > 1 nodes · cohesion 1.00
 
 ## Key Concepts
 
-- [Generate realistic synthetic NetFlow records for offline pipeline testing and Co](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L160) (0 connections)
+- [Check and automatically append required exclusion rules to .gitignore.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L64) (0 connections)
 
 ## Relationships
 

@@ -45,8 +45,6 @@ classDiagram
 
 ## Relationships
 
-- [[Community 2]] (15 shared connections)
-- [[Community 14]] (4 shared connections)
 - [[Community 0]] (2 shared connections)
 
 ## Source Files

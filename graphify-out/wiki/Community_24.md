@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Check and automatically append required exclusion rules to .gitignore.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L80) (0 connections)
+- [inspect_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_notebooks.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_notebooks.py)
 
 ## Audit Trail
 

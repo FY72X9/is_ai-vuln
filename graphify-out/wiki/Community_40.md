@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Time-aware chronological cross-validator without future-looking data leakage.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L111) (0 connections)
+- [Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L32) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
 
 ## Audit Trail
 

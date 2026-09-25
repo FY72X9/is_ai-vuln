@@ -1,11 +1,11 @@
-# Graph Report - D:\Codes\research_banks\is_ai-vuln  (2026-09-23)
+# Graph Report - D:\Codes\research_banks\is_ai-vuln  (2026-09-25)
 
 ## Corpus Check
-- 47 files · ~492,191 words
+- 53 files · ~790,647 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 396 nodes · 574 edges · 43 communities detected
+- 402 nodes · 574 edges · 49 communities detected
 - Extraction: 78% EXTRACTED · 22% INFERRED · 0% AMBIGUOUS · INFERRED: 129 edges (avg confidence: 0.71)
 - Token cost: 0 input · 0 output
 
@@ -53,6 +53,12 @@
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `BaseIDSModel` - 30 edges
@@ -198,156 +204,198 @@ Nodes (0):
 ### Community 22 - "Community 22"
 
 Cohesion: 1.0
-Nodes (1): Train the model on the provided training partition.
+Nodes (0): 
 
 ### Community 23 - "Community 23"
 
 Cohesion: 1.0
-Nodes (1): Generate hard binary / multi-class predictions.
+Nodes (0): 
 
 ### Community 24 - "Community 24"
 
 Cohesion: 1.0
-Nodes (1): Check and automatically append required exclusion rules to .gitignore.
+Nodes (0): 
 
 ### Community 25 - "Community 25"
 
 Cohesion: 1.0
-Nodes (1): Verify SHA-256 checksum of a downloaded file.
+Nodes (0): 
 
 ### Community 26 - "Community 26"
 
 Cohesion: 1.0
-Nodes (1): Download a file with retry mechanism and SHA256 verification.
+Nodes (0): 
 
 ### Community 27 - "Community 27"
 
 Cohesion: 1.0
-Nodes (1): Generate realistic synthetic NetFlow records for offline pipeline testing and Co
+Nodes (0): 
 
 ### Community 28 - "Community 28"
 
 Cohesion: 1.0
-Nodes (1): Ensure data directories exist and safeguards are active.
+Nodes (1): Train the model on the provided training partition.
 
 ### Community 29 - "Community 29"
 
 Cohesion: 1.0
-Nodes (1): Retrieve benchmark dataset: attempts remote download or synthesizes representati
+Nodes (1): Generate hard binary / multi-class predictions.
 
 ### Community 30 - "Community 30"
 
 Cohesion: 1.0
-Nodes (1): Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.
+Nodes (1): Check and automatically append required exclusion rules to .gitignore.
 
 ### Community 31 - "Community 31"
 
 Cohesion: 1.0
-Nodes (1): Yield (X_chunk, y_chunk) in bounded batches.
+Nodes (1): Verify SHA-256 checksum of a downloaded file.
 
 ### Community 32 - "Community 32"
 
 Cohesion: 1.0
-Nodes (1): Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B
+Nodes (1): Download a file with retry mechanism and SHA256 verification.
 
 ### Community 33 - "Community 33"
 
 Cohesion: 1.0
-Nodes (1): Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v
+Nodes (1): Generate realistic synthetic NetFlow records for offline pipeline testing and Co
 
 ### Community 34 - "Community 34"
 
 Cohesion: 1.0
-Nodes (1): Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.
+Nodes (1): Ensure data directories exist and safeguards are active.
 
 ### Community 35 - "Community 35"
 
 Cohesion: 1.0
-Nodes (1): Robust quantile binning with fallback for low variance columns.
+Nodes (1): Retrieve benchmark dataset: attempts remote download or synthesizes representati
 
 ### Community 36 - "Community 36"
 
 Cohesion: 1.0
-Nodes (1): Trigger Python garbage collection and flush CUDA cache to avoid OOM.
+Nodes (1): Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.
 
 ### Community 37 - "Community 37"
 
 Cohesion: 1.0
-Nodes (1): Check and automatically append required exclusion rules to .gitignore.
+Nodes (1): Yield (X_chunk, y_chunk) in bounded batches.
 
 ### Community 38 - "Community 38"
 
 Cohesion: 1.0
-Nodes (1): Verify SHA-256 checksum of a downloaded file.
+Nodes (1): Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B
 
 ### Community 39 - "Community 39"
 
 Cohesion: 1.0
-Nodes (1): Ensure data directories exist and safeguards are active.
+Nodes (1): Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v
 
 ### Community 40 - "Community 40"
 
 Cohesion: 1.0
-Nodes (1): Time-aware chronological cross-validator without future-looking data leakage.
+Nodes (1): Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.
 
 ### Community 41 - "Community 41"
 _Responsible for generating indices to sequentially split a dataset into training and validation subsets._
 Cohesion: 1.0
-Nodes (1): Generate sequential train/validation split indices.
+Nodes (1): Robust quantile binning with fallback for low variance columns.
 
 ### Community 42 - "Community 42"
 
+Cohesion: 1.0
+Nodes (1): Trigger Python garbage collection and flush CUDA cache to avoid OOM.
+
+### Community 43 - "Community 43"
+
+Cohesion: 1.0
+Nodes (1): Check and automatically append required exclusion rules to .gitignore.
+
+### Community 44 - "Community 44"
+
+Cohesion: 1.0
+Nodes (1): Verify SHA-256 checksum of a downloaded file.
+
+### Community 45 - "Community 45"
+
+Cohesion: 1.0
+Nodes (1): Ensure data directories exist and safeguards are active.
+
+### Community 46 - "Community 46"
+_Ensures that models are trained only on past data and evaluated on future data, preventing future information leakage in time-dependent datasets._
+Cohesion: 1.0
+Nodes (1): Time-aware chronological cross-validator without future-looking data leakage.
+
+### Community 47 - "Community 47"
+_Responsible for generating indices to sequentially split a dataset into training and validation subsets._
+Cohesion: 1.0
+Nodes (1): Generate sequential train/validation split indices.
+
+### Community 48 - "Community 48"
+_Handles fitting scalers and samplers only on training data to prevent leakage into validation sets._
 Cohesion: 1.0
 Nodes (1): Fit scaler and sampler STRICTLY within the train split, preventing leakage to va
 
 ## Knowledge Gaps
 - **138 isolated node(s):** `Script to apply standardized Google Drive + Local figure destination folders and`, `Comprehensive script to ensure ALL experiments (Phase 1 through Phase 5) fully u`, `Semantic spot-check that the multi-dataset upgrades landed in the notebook artif`, `100% Self-Contained Generator for src/notebook/01_phase1_pipeline_colab.ipynb. Z`, `Generator script for src/notebook/02_phase2_track_a_benchmark_colab.ipynb.` (+133 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 19`** (1 nodes): `graphify_query.py`
+- **Thin community `Community 19`** (1 nodes): `ast_audit_all.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 20`** (1 nodes): `inspect_notebooks.py`
+- **Thin community `Community 20`** (1 nodes): `ast_check_nb02.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 21`** (1 nodes): `validate_notebooks.py`
+- **Thin community `Community 21`** (1 nodes): `graphify_query.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 22`** (1 nodes): `Train the model on the provided training partition.`
+- **Thin community `Community 22`** (1 nodes): `inspect_nb02.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 23`** (1 nodes): `Generate hard binary / multi-class predictions.`
+- **Thin community `Community 23`** (1 nodes): `inspect_nb03.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 24`** (1 nodes): `Check and automatically append required exclusion rules to .gitignore.`
+- **Thin community `Community 24`** (1 nodes): `inspect_notebooks.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 25`** (1 nodes): `Verify SHA-256 checksum of a downloaded file.`
+- **Thin community `Community 25`** (1 nodes): `patch_safe_slice.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 26`** (1 nodes): `Download a file with retry mechanism and SHA256 verification.`
+- **Thin community `Community 26`** (1 nodes): `test_nb03_unsw.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 27`** (1 nodes): `Generate realistic synthetic NetFlow records for offline pipeline testing and Co`
+- **Thin community `Community 27`** (1 nodes): `validate_notebooks.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 28`** (1 nodes): `Ensure data directories exist and safeguards are active.`
+- **Thin community `Community 28`** (1 nodes): `Train the model on the provided training partition.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 29`** (1 nodes): `Retrieve benchmark dataset: attempts remote download or synthesizes representati`
+- **Thin community `Community 29`** (1 nodes): `Generate hard binary / multi-class predictions.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 30`** (1 nodes): `Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.`
+- **Thin community `Community 30`** (1 nodes): `Check and automatically append required exclusion rules to .gitignore.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 31`** (1 nodes): `Yield (X_chunk, y_chunk) in bounded batches.`
+- **Thin community `Community 31`** (1 nodes): `Verify SHA-256 checksum of a downloaded file.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 32`** (1 nodes): `Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B`
+- **Thin community `Community 32`** (1 nodes): `Download a file with retry mechanism and SHA256 verification.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 33`** (1 nodes): `Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v`
+- **Thin community `Community 33`** (1 nodes): `Generate realistic synthetic NetFlow records for offline pipeline testing and Co`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 34`** (1 nodes): `Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.`
+- **Thin community `Community 34`** (1 nodes): `Ensure data directories exist and safeguards are active.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 35`** (1 nodes): `Robust quantile binning with fallback for low variance columns.`
+- **Thin community `Community 35`** (1 nodes): `Retrieve benchmark dataset: attempts remote download or synthesizes representati`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 36`** (1 nodes): `Trigger Python garbage collection and flush CUDA cache to avoid OOM.`
+- **Thin community `Community 36`** (1 nodes): `Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 37`** (1 nodes): `Check and automatically append required exclusion rules to .gitignore.`
+- **Thin community `Community 37`** (1 nodes): `Yield (X_chunk, y_chunk) in bounded batches.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 38`** (1 nodes): `Verify SHA-256 checksum of a downloaded file.`
+- **Thin community `Community 38`** (1 nodes): `Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 39`** (1 nodes): `Ensure data directories exist and safeguards are active.`
+- **Thin community `Community 39`** (1 nodes): `Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 40`** (1 nodes): `Time-aware chronological cross-validator without future-looking data leakage.`
+- **Thin community `Community 40`** (1 nodes): `Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 41`** (1 nodes): `Generate sequential train/validation split indices.`
+- **Thin community `Community 41`** (1 nodes): `Robust quantile binning with fallback for low variance columns.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 42`** (1 nodes): `Fit scaler and sampler STRICTLY within the train split, preventing leakage to va`
+- **Thin community `Community 42`** (1 nodes): `Trigger Python garbage collection and flush CUDA cache to avoid OOM.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 43`** (1 nodes): `Check and automatically append required exclusion rules to .gitignore.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 44`** (1 nodes): `Verify SHA-256 checksum of a downloaded file.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 45`** (1 nodes): `Ensure data directories exist and safeguards are active.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 46`** (1 nodes): `Time-aware chronological cross-validator without future-looking data leakage.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 47`** (1 nodes): `Generate sequential train/validation split indices.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 48`** (1 nodes): `Fit scaler and sampler STRICTLY within the train split, preventing leakage to va`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.

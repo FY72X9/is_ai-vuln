@@ -43,7 +43,13 @@
     "39": "Community 39",
     "40": "Community 40",
     "41": "Data Splitting",
-    "42": "Community 42"
+    "42": "Community 42",
+    "43": "Community 43",
+    "44": "Community 44",
+    "45": "Community 45",
+    "46": "Time Series Cross-validation",
+    "47": "Data Splitting",
+    "48": "Preprocessing"
   },
   "communitySummaries": {
     "0": "",
@@ -88,7 +94,13 @@
     "39": "",
     "40": "",
     "41": "Responsible for generating indices to sequentially split a dataset into training and validation subsets.",
-    "42": ""
+    "42": "",
+    "43": "",
+    "44": "",
+    "45": "",
+    "46": "Ensures that models are trained only on past data and evaluated on future data, preventing future information leakage in time-dependent datasets.",
+    "47": "Responsible for generating indices to sequentially split a dataset into training and validation subsets.",
+    "48": "Handles fitting scalers and samplers only on training data to prevent leakage into validation sets."
   },
   "communityLinks": {
     "11": {

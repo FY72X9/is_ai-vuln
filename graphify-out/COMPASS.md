@@ -1,4 +1,4 @@
-# Architectural Compass - D:\Codes\research_banks\is_ai-vuln (2026-09-23)
+# Architectural Compass - D:\Codes\research_banks\is_ai-vuln (2026-09-25)
 
 > [!NOTE]
 > This is a token-optimized summary. For deep logic, see GRAPH_REPORT.md.

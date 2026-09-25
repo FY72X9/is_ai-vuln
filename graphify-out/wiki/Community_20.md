@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [inspect_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_notebooks.py#L1) (0 connections)
+- [ast_check_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_check_nb02.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\ast_check_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_check_nb02.py)
 
 ## Audit Trail
 

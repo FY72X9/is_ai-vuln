@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [graphify_query.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/graphify_query.py#L1) (0 connections)
+- [ast_audit_all.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_audit_all.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\graphify_query.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/graphify_query.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\ast_audit_all.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_audit_all.py)
 
 ## Audit Trail
 

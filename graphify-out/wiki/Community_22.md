@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Train the model on the provided training partition.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L32) (0 connections)
+- [inspect_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_nb02.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_nb02.py)
 
 ## Audit Trail
 

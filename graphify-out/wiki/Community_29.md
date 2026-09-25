@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Retrieve benchmark dataset: attempts remote download or synthesizes representati](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L246) (0 connections)
+- [Generate hard binary / multi-class predictions.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L37) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
 
 ## Audit Trail
 

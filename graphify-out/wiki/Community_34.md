@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Calculate the 8x8 Normalized Mutual Information (NMI) matrix and fold variance.](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L32) (0 connections)
+- [Ensure data directories exist and safeguards are active.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L227) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
 
 ## Audit Trail
 

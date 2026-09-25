@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Ensure data directories exist and safeguards are active.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L101) (0 connections)
+- [Generate realistic empirical metric telemetry across the 8 DEMATEL factors for v](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py#L11) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\dematel\empirical_mapper.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/empirical_mapper.py)
 
 ## Audit Trail
 

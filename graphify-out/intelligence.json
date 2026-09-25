@@ -2,7 +2,7 @@
   "hotspots": [
     {
       "label": "prepare_benchmark_dataset()",
-      "risk": 0.511,
+      "risk": 0.51,
       "type": "FUNCTION"
     },
     {
