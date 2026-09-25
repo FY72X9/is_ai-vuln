@@ -1,0 +1,32 @@
+{
+  "title": "Task-Technology Fit Analysis of Modern AI-Driven Intrusion Detection: Replication Package",
+  "version": "v2.0-audit-corrected",
+  "author": "Farrell Yodihartomo",
+  "target_journals": [
+    "Information Fusion",
+    "IEEE TDSC",
+    "IEEE TIFS",
+    "Expert Systems with Applications"
+  ],
+  "components": {
+    "modular_code": "src/",
+    "interactive_notebooks": [
+      "01_phase1_pipeline_colab.ipynb",
+      "02_phase2_track_a_benchmark_colab.ipynb",
+      "03_phase2_track_b_scalability_colab.ipynb",
+      "04_phase3_statistical_ablation_colab.ipynb",
+      "05_phase4_fuzzy_dematel_lingam_colab.ipynb",
+      "06_phase5_manuscript_figures_tables_colab.ipynb"
+    ],
+    "audit_references": "references/library.bib (35 verified DOIs)",
+    "output_figures": "experiment_output/figures/",
+    "output_tables": "experiment_output/publication_tables/",
+    "verified_datasets": [
+      "CICIDS2017",
+      "UNSW-NB15",
+      "TON_IOT",
+      "CIC-DDoS2019",
+      "NSL-KDD"
+    ]
+  }
+}

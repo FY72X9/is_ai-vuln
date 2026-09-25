@@ -1,0 +1,857 @@
+[
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 50000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.609,
+    "Latency (ms/flow)": 0.0014,
+    "Throughput (flows/s)": 724308.6,
+    "Peak VRAM (MB)": 24.06
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 50000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 5.572,
+    "Latency (ms/flow)": 0.007,
+    "Throughput (flows/s)": 143043.9,
+    "Peak VRAM (MB)": 22.9
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 50000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 5.776,
+    "Latency (ms/flow)": 0.0101,
+    "Throughput (flows/s)": 98684.5,
+    "Peak VRAM (MB)": 29.14
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 50000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.609,
+    "Latency (ms/flow)": 0.0163,
+    "Throughput (flows/s)": 61324.0,
+    "Peak VRAM (MB)": 135.87
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 50000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.18,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1440693.8,
+    "Peak VRAM (MB)": 19.08
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 100000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.78,
+    "Latency (ms/flow)": 0.0016,
+    "Throughput (flows/s)": 642144.0,
+    "Peak VRAM (MB)": 27.56
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 100000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.616,
+    "Latency (ms/flow)": 0.0021,
+    "Throughput (flows/s)": 479952.5,
+    "Peak VRAM (MB)": 25.4
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 100000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.254,
+    "Latency (ms/flow)": 0.0008,
+    "Throughput (flows/s)": 1283921.2,
+    "Peak VRAM (MB)": 29.14
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 100000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.461,
+    "Latency (ms/flow)": 0.0113,
+    "Throughput (flows/s)": 88577.2,
+    "Peak VRAM (MB)": 135.87
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 100000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.175,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1456291.9,
+    "Peak VRAM (MB)": 19.08
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.886,
+    "Latency (ms/flow)": 0.0017,
+    "Throughput (flows/s)": 605179.8,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 1.361,
+    "Latency (ms/flow)": 0.002,
+    "Throughput (flows/s)": 504767.8,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.261,
+    "Latency (ms/flow)": 0.0009,
+    "Throughput (flows/s)": 1088967.0,
+    "Peak VRAM (MB)": 29.14
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.489,
+    "Latency (ms/flow)": 0.0113,
+    "Throughput (flows/s)": 88730.0,
+    "Peak VRAM (MB)": 135.87
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.189,
+    "Latency (ms/flow)": 0.0008,
+    "Throughput (flows/s)": 1295024.8,
+    "Peak VRAM (MB)": 19.08
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.867,
+    "Latency (ms/flow)": 0.0015,
+    "Throughput (flows/s)": 676063.0,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 2.359,
+    "Latency (ms/flow)": 0.0019,
+    "Throughput (flows/s)": 529717.1,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.27,
+    "Latency (ms/flow)": 0.0008,
+    "Throughput (flows/s)": 1210921.3,
+    "Peak VRAM (MB)": 29.14
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.503,
+    "Latency (ms/flow)": 0.0114,
+    "Throughput (flows/s)": 87339.7,
+    "Peak VRAM (MB)": 135.87
+  },
+  {
+    "Dataset": "CICIDS2017",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.188,
+    "Latency (ms/flow)": 0.0008,
+    "Throughput (flows/s)": 1331454.2,
+    "Peak VRAM (MB)": 19.08
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 50000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.337,
+    "Latency (ms/flow)": 0.0014,
+    "Throughput (flows/s)": 706057.4,
+    "Peak VRAM (MB)": 24.06
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 50000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 1.122,
+    "Latency (ms/flow)": 0.002,
+    "Throughput (flows/s)": 498799.5,
+    "Peak VRAM (MB)": 22.9
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 50000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.271,
+    "Latency (ms/flow)": 0.0008,
+    "Throughput (flows/s)": 1311200.3,
+    "Peak VRAM (MB)": 28.91
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 50000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.362,
+    "Latency (ms/flow)": 0.0053,
+    "Throughput (flows/s)": 187972.5,
+    "Peak VRAM (MB)": 87.25
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 50000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.194,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1463071.7,
+    "Peak VRAM (MB)": 18.62
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 100000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.427,
+    "Latency (ms/flow)": 0.001,
+    "Throughput (flows/s)": 990433.4,
+    "Peak VRAM (MB)": 27.56
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 100000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.431,
+    "Latency (ms/flow)": 0.0019,
+    "Throughput (flows/s)": 513352.3,
+    "Peak VRAM (MB)": 25.4
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 100000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.239,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1502027.0,
+    "Peak VRAM (MB)": 28.91
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 100000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.379,
+    "Latency (ms/flow)": 0.0055,
+    "Throughput (flows/s)": 181590.3,
+    "Peak VRAM (MB)": 87.25
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 100000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.17,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1543219.4,
+    "Peak VRAM (MB)": 18.62
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.866,
+    "Latency (ms/flow)": 0.0011,
+    "Throughput (flows/s)": 911692.1,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 3.285,
+    "Latency (ms/flow)": 0.0019,
+    "Throughput (flows/s)": 530066.6,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.255,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1474085.9,
+    "Peak VRAM (MB)": 28.91
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.396,
+    "Latency (ms/flow)": 0.0055,
+    "Throughput (flows/s)": 181791.1,
+    "Peak VRAM (MB)": 87.25
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.178,
+    "Latency (ms/flow)": 0.0005,
+    "Throughput (flows/s)": 1859259.6,
+    "Peak VRAM (MB)": 18.62
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.052,
+    "Latency (ms/flow)": 0.0011,
+    "Throughput (flows/s)": 884108.0,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.946,
+    "Latency (ms/flow)": 0.0021,
+    "Throughput (flows/s)": 468725.8,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.276,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1445633.0,
+    "Peak VRAM (MB)": 28.91
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.382,
+    "Latency (ms/flow)": 0.0055,
+    "Throughput (flows/s)": 181376.5,
+    "Peak VRAM (MB)": 87.25
+  },
+  {
+    "Dataset": "UNSW-NB15",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.197,
+    "Latency (ms/flow)": 0.0009,
+    "Throughput (flows/s)": 1103821.6,
+    "Peak VRAM (MB)": 18.62
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 50000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.123,
+    "Latency (ms/flow)": 0.001,
+    "Throughput (flows/s)": 1001597.5,
+    "Peak VRAM (MB)": 24.06
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 50000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.115,
+    "Latency (ms/flow)": 0.0015,
+    "Throughput (flows/s)": 647940.1,
+    "Peak VRAM (MB)": 22.9
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 50000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.233,
+    "Latency (ms/flow)": 0.0005,
+    "Throughput (flows/s)": 2219302.6,
+    "Peak VRAM (MB)": 28.71
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 50000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 1.308,
+    "Latency (ms/flow)": 0.0141,
+    "Throughput (flows/s)": 70904.7,
+    "Peak VRAM (MB)": 43.15
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 50000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.17,
+    "Latency (ms/flow)": 0.0005,
+    "Throughput (flows/s)": 1976477.9,
+    "Peak VRAM (MB)": 18.22
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 100000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.125,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1480481.3,
+    "Peak VRAM (MB)": 27.56
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 100000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.147,
+    "Latency (ms/flow)": 0.0013,
+    "Throughput (flows/s)": 775535.3,
+    "Peak VRAM (MB)": 25.4
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 100000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.248,
+    "Latency (ms/flow)": 0.0005,
+    "Throughput (flows/s)": 2032402.6,
+    "Peak VRAM (MB)": 28.71
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 100000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 1.326,
+    "Latency (ms/flow)": 0.0033,
+    "Throughput (flows/s)": 307473.1,
+    "Peak VRAM (MB)": 43.15
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 100000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.175,
+    "Latency (ms/flow)": 0.0004,
+    "Throughput (flows/s)": 2230295.9,
+    "Peak VRAM (MB)": 18.22
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 190474,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.213,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1421671.2,
+    "Peak VRAM (MB)": 33.89
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 190474,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.314,
+    "Latency (ms/flow)": 0.0017,
+    "Throughput (flows/s)": 605635.4,
+    "Peak VRAM (MB)": 29.92
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 190474,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.243,
+    "Latency (ms/flow)": 0.0005,
+    "Throughput (flows/s)": 2220653.0,
+    "Peak VRAM (MB)": 28.71
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 190474,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 1.315,
+    "Latency (ms/flow)": 0.0033,
+    "Throughput (flows/s)": 302484.6,
+    "Peak VRAM (MB)": 43.15
+  },
+  {
+    "Dataset": "TON_IOT",
+    "Sample Scale": 190474,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.18,
+    "Latency (ms/flow)": 0.0004,
+    "Throughput (flows/s)": 2236278.5,
+    "Peak VRAM (MB)": 18.22
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 50000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.4,
+    "Latency (ms/flow)": 0.0011,
+    "Throughput (flows/s)": 948656.8,
+    "Peak VRAM (MB)": 24.06
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 50000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.349,
+    "Latency (ms/flow)": 0.0019,
+    "Throughput (flows/s)": 529352.2,
+    "Peak VRAM (MB)": 22.9
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 50000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.249,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1386569.3,
+    "Peak VRAM (MB)": 29.1
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 50000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.371,
+    "Latency (ms/flow)": 0.011,
+    "Throughput (flows/s)": 91064.6,
+    "Peak VRAM (MB)": 129.79
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 50000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.166,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1421379.2,
+    "Peak VRAM (MB)": 19.01
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 100000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.127,
+    "Latency (ms/flow)": 0.0012,
+    "Throughput (flows/s)": 825898.9,
+    "Peak VRAM (MB)": 27.56
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 100000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 2.811,
+    "Latency (ms/flow)": 0.0018,
+    "Throughput (flows/s)": 551074.3,
+    "Peak VRAM (MB)": 25.4
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 100000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.264,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1431626.9,
+    "Peak VRAM (MB)": 29.1
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 100000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.393,
+    "Latency (ms/flow)": 0.0112,
+    "Throughput (flows/s)": 89193.1,
+    "Peak VRAM (MB)": 129.79
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 100000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.175,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1594025.6,
+    "Peak VRAM (MB)": 19.01
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.397,
+    "Latency (ms/flow)": 0.001,
+    "Throughput (flows/s)": 969157.5,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 1.434,
+    "Latency (ms/flow)": 0.0024,
+    "Throughput (flows/s)": 420207.7,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.292,
+    "Latency (ms/flow)": 0.001,
+    "Throughput (flows/s)": 986181.1,
+    "Peak VRAM (MB)": 29.1
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.417,
+    "Latency (ms/flow)": 0.0113,
+    "Throughput (flows/s)": 88859.5,
+    "Peak VRAM (MB)": 129.79
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.194,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1540608.9,
+    "Peak VRAM (MB)": 19.01
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 1.618,
+    "Latency (ms/flow)": 0.0011,
+    "Throughput (flows/s)": 945993.2,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 1.329,
+    "Latency (ms/flow)": 0.002,
+    "Throughput (flows/s)": 498404.5,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.265,
+    "Latency (ms/flow)": 0.0009,
+    "Throughput (flows/s)": 1107581.0,
+    "Peak VRAM (MB)": 29.1
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 5.455,
+    "Latency (ms/flow)": 0.011,
+    "Throughput (flows/s)": 90941.0,
+    "Peak VRAM (MB)": 129.79
+  },
+  {
+    "Dataset": "CIC-DDOS2019",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.193,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1516673.9,
+    "Peak VRAM (MB)": 19.01
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 50000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.232,
+    "Latency (ms/flow)": 0.001,
+    "Throughput (flows/s)": 981746.9,
+    "Peak VRAM (MB)": 24.06
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 50000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.222,
+    "Latency (ms/flow)": 0.002,
+    "Throughput (flows/s)": 502859.4,
+    "Peak VRAM (MB)": 22.9
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 50000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.26,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1504081.7,
+    "Peak VRAM (MB)": 28.89
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 50000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.366,
+    "Latency (ms/flow)": 0.0056,
+    "Throughput (flows/s)": 180066.5,
+    "Peak VRAM (MB)": 82.81
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 50000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.175,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1430660.2,
+    "Peak VRAM (MB)": 18.59
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 100000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.381,
+    "Latency (ms/flow)": 0.001,
+    "Throughput (flows/s)": 967722.1,
+    "Peak VRAM (MB)": 27.56
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 100000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 2.646,
+    "Latency (ms/flow)": 0.0019,
+    "Throughput (flows/s)": 521391.9,
+    "Peak VRAM (MB)": 25.4
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 100000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.254,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1586406.4,
+    "Peak VRAM (MB)": 28.89
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 100000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.335,
+    "Latency (ms/flow)": 0.0054,
+    "Throughput (flows/s)": 184072.3,
+    "Peak VRAM (MB)": 82.81
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 100000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.173,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1465991.9,
+    "Peak VRAM (MB)": 18.59
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.794,
+    "Latency (ms/flow)": 0.0011,
+    "Throughput (flows/s)": 943092.8,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 0.748,
+    "Latency (ms/flow)": 0.0018,
+    "Throughput (flows/s)": 552455.7,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.259,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1770980.4,
+    "Peak VRAM (MB)": 28.89
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.345,
+    "Latency (ms/flow)": 0.0055,
+    "Throughput (flows/s)": 183070.8,
+    "Peak VRAM (MB)": 82.81
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.182,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1697192.1,
+    "Peak VRAM (MB)": 18.59
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "XGBoost",
+    "Fit Time (s)": 0.908,
+    "Latency (ms/flow)": 0.0014,
+    "Throughput (flows/s)": 729151.0,
+    "Peak VRAM (MB)": 38.06
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "LightGBM",
+    "Fit Time (s)": 2.812,
+    "Latency (ms/flow)": 0.0019,
+    "Throughput (flows/s)": 528864.9,
+    "Peak VRAM (MB)": 32.9
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "Mambular_SSM",
+    "Fit Time (s)": 0.256,
+    "Latency (ms/flow)": 0.0007,
+    "Throughput (flows/s)": 1514006.8,
+    "Peak VRAM (MB)": 28.89
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "FT_Transformer",
+    "Fit Time (s)": 2.363,
+    "Latency (ms/flow)": 0.0053,
+    "Throughput (flows/s)": 187253.4,
+    "Peak VRAM (MB)": 82.81
+  },
+  {
+    "Dataset": "NSL-KDD",
+    "Sample Scale": 250000,
+    "Model": "GraphIDS",
+    "Fit Time (s)": 0.171,
+    "Latency (ms/flow)": 0.0006,
+    "Throughput (flows/s)": 1785487.9,
+    "Peak VRAM (MB)": 18.59
+  }
+]

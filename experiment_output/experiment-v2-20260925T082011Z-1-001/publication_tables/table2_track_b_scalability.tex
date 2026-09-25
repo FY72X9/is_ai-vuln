@@ -1,0 +1,33 @@
+\begin{table*}[t]
+\centering
+\caption{Track B Multi-Dataset Industrial Scalability Profiling Across Sample Dimensions (N=50k to 1M)}
+\label{tab:scalability_summary}
+\small
+\begin{tabular}{rlrrr}
+\toprule
+Sample Scale & Model & Throughput (flows/s) & Latency (ms/flow) & Peak VRAM (MB) \\
+\midrule
+50000 & FT_Transformer & 118266.460000 & 0.010460 & 95.774000 \\
+50000 & GraphIDS & 1546456.560000 & 0.000660 & 18.704000 \\
+50000 & LightGBM & 464399.020000 & 0.002880 & 22.900000 \\
+50000 & Mambular_SSM & 1303967.680000 & 0.002560 & 28.950000 \\
+50000 & XGBoost & 872473.440000 & 0.001180 & 24.060000 \\
+100000 & FT_Transformer & 170181.200000 & 0.007340 & 95.774000 \\
+100000 & GraphIDS & 1657964.940000 & 0.000600 & 18.704000 \\
+100000 & LightGBM & 568261.260000 & 0.001800 & 25.400000 \\
+100000 & Mambular_SSM & 1567276.820000 & 0.000660 & 28.950000 \\
+100000 & XGBoost & 981335.940000 & 0.001100 & 27.560000 \\
+190474 & FT_Transformer & 302484.600000 & 0.003300 & 43.150000 \\
+190474 & GraphIDS & 2236278.500000 & 0.000400 & 18.220000 \\
+190474 & LightGBM & 605635.400000 & 0.001700 & 29.920000 \\
+190474 & Mambular_SSM & 2220653.000000 & 0.000500 & 28.710000 \\
+190474 & XGBoost & 1421671.200000 & 0.000700 & 33.890000 \\
+250000 & FT_Transformer & 136170.250000 & 0.008350 & 108.930000 \\
+250000 & GraphIDS & 1516190.375000 & 0.000687 & 18.825000 \\
+250000 & LightGBM & 504151.262500 & 0.002000 & 32.900000 \\
+250000 & Mambular_SSM & 1324794.562500 & 0.000788 & 29.010000 \\
+250000 & XGBoost & 833054.675000 & 0.001250 & 38.060000 \\
+\bottomrule
+\end{tabular}
+
+\end{table*}
