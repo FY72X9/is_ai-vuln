@@ -65,23 +65,22 @@ def build_docx():
     for p in doc.paragraphs:
         if 'This is where the abstract should be placed' in p.text or p.text.startswith('Network intrusion detection systems'):
             p.text = (
-                "Network intrusion detection systems operate under severe friction between line-rate packet throughput, "
-                "out-of-distribution zero-day generalization, and runtime computational footprint. Classical benchmark studies "
-                "assess machine learning models as isolated mathematical algorithms without grounding their capabilities in operational "
-                "security workflows. This investigation addresses this theoretical gap by evaluating eight architectures spanning "
-                "gradient-boosted decision trees, tabular transformers, selective state space models, and tabular foundation models "
-                "through the theoretical lens of Task-Technology Fit (TTF) and Design Science Research. Across five decontaminated "
-                "network benchmarks (CICIDS2017, UNSW-NB15, TON_IoT, CIC-DDoS2019, and NSL-KDD), we execute a dual-track experimental "
-                "evaluation enforcing subnet-isolated cross-validation and active zero-day holdout induction. The empirical evidence "
-                "demonstrates that tree ensembles (LightGBM and XGBoost) dominate observed attack classification (Seen F1 >= 0.9469) "
-                "while sustaining sub-microsecond processing. Conversely, the prior-data fitted foundation model (TabPFN v3) achieves the "
-                "highest zero-day transfer (Unseen F1 = 0.6173 +- 0.4275), leading Task T2 utility (U(T2) = 0.7100) and exceeding deep "
-                "neural baselines by 6 to 10 percentage points at an inference cost of 3.11 ms per flow. Selective state space models "
-                "(Mambular SSM) match tree processing speeds (>929,000 flows/sec) while sustaining flat VRAM allocation across expanding "
-                "data regimes. Non-parametric Demšar tests confirm significant architectural divergence (Friedman chi-square = 29.6667, "
-                "p = 1.093e-4), while Triangular Fuzzy DEMATEL causal discovery across 10,000 Monte Carlo perturbation runs (Kendall W = 0.9716) "
-                "isolates model layer formulation as the primary systemic cause of operational performance. From these empirical validations, "
-                "we confirm four formal Design Propositions and provide an operational Three-Tier Security Operations Center blueprint."
+                "Network intrusion detection systems face conflicting operational demands: sustaining line-rate packet throughput, "
+                "generalizing to unobserved zero-day exploits, and fitting within strict hardware resource budgets. Most benchmark studies "
+                "evaluate models as isolated algorithms, ignoring how architectural properties align with real-world security workflows. "
+                "We evaluate this problem through the theoretical lens of Task-Technology Fit (TTF) and Design Science Research, examining "
+                "eight architectures spanning gradient-boosted decision trees, tabular transformers, selective state space models, and "
+                "tabular foundation models. Using five decontaminated network benchmarks (CICIDS2017, UNSW-NB15, TON_IoT, CIC-DDoS2019, "
+                "and NSL-KDD), our dual-track evaluation applies subnet-isolated cross-validation alongside active zero-day holdouts. The "
+                "results show that tree ensembles (LightGBM and XGBoost) excel on observed attacks (Seen F1 >= 0.9469) with sub-microsecond "
+                "processing. In contrast, the prior-data fitted foundation model TabPFN v3 achieves the strongest zero-day transfer "
+                "(Unseen F1 = 0.6173 +- 0.4275), leading Task T2 utility (U(T2) = 0.7100) and surpassing deep neural baselines by 6 to "
+                "10 percentage points, though requiring 3.11 ms per flow. Selective state space models (Mambular SSM) match tree throughput "
+                "(>929,000 flows/s) while keeping memory consumption flat as batch volumes grow. Non-parametric Demšar tests confirm "
+                "significant architectural divergence (Friedman chi-square = 29.6667, p = 1.093e-4). Triangular Fuzzy DEMATEL across "
+                "10,000 Monte Carlo perturbation runs (Kendall W = 0.9716) identifies model layer formulation as the primary systemic cause "
+                "of operational performance. These findings support four formal Design Propositions and an operational Three-Tier Security "
+                "Operations Center blueprint."
             )
             p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
             for r in p.runs:
@@ -212,60 +211,54 @@ def build_docx():
     # Section 1: Introduction
     add_h1("1. Introduction")
     add_p(
-        "Modern enterprise networks operate under intense throughput demands, where edge inspection appliances process "
-        "continuous line rates exceeding 10 Gbps to 100 Gbps [1], [2]. In these environments, Network Intrusion Detection Systems (NIDS) "
-        "must inspect high-dimensional packet flows, identify malicious behaviors, and isolate anomalous telemetry before unauthorized "
-        "actors breach internal subnets [3]. This operational mandate forces security operations centers (SOC) to confront a trilemma "
-        "between three competing performance objectives: sub-millisecond per-flow inference latency, high detection accuracy on known attack "
-        "signatures, and generalization capacity against unobserved zero-day exploits."
+        "Enterprise network appliances inspect continuous traffic at line rates from 10 Gbps to 100 Gbps [1], [2]. At this scale, "
+        "Network Intrusion Detection Systems (NIDS) must evaluate high-dimensional packet flows and flag anomalous telemetry before "
+        "attackers reach internal subnets [3]. Security operations centers (SOC) face an inherent trade-off among three operational goals: "
+        "sub-millisecond per-flow latency, accurate classification of known attack signatures, and generalization to unobserved zero-day exploits."
     )
     add_p(
-        "Recent advances in machine learning present multiple competing architectural paradigms for tabular traffic classification. Historically, "
-        "Gradient-Boosted Decision Trees (GBDTs), specifically LightGBM [4] and XGBoost [5], have dominated tabular benchmarks. Their recursive "
-        "orthogonal splitting logic fits the discrete, uncoordinated coordinate distributions typical of network telemetry (such as TCP flags, "
-        "port indices, and packet counts) with high computational speed [6]. Because NetFlow features lack spatial stationarity or translation invariance, "
-        "axis-aligned decision trees partition feature spaces efficiently without requiring continuous coordinate projections [7]. However, decision "
-        "trees partition feature spaces via rigid bounding boxes that struggle to extrapolate when novel attacks shift traffic distributions outside observed training regions."
+        "For tabular traffic classification, Gradient-Boosted Decision Trees (GBDTs), particularly LightGBM [4] and XGBoost [5], remain the standard "
+        "baseline. Their recursive orthogonal splits fit the discrete, uncoordinated coordinates common in network telemetry (such as TCP flags, port "
+        "numbers, and packet counters) with minimal computational overhead [6]. Because NetFlow features lack spatial stationarity and translation "
+        "invariance, axis-aligned splits partition input spaces effectively without mapping coordinates into dense continuous embeddings [7]. The "
+        "fundamental limitation lies in extrapolation. Axis-aligned bounding boxes fail to generalize when novel exploits fall outside the feature "
+        "ranges established during training."
     )
     add_p(
-        "To address this extrapolation bottleneck, researchers introduced tabular deep learning architectures. Models such as FT-Transformer [8] "
-        "and SAINT [9] deploy self-attention mechanisms to capture complex feature-to-feature interdependencies. While self-attention creates smooth, "
-        "continuous decision boundaries, it introduces quadratic computational complexity O(D^2) with respect to feature dimension D. Under line-rate "
-        "streaming conditions, this quadratic overhead creates processing bottlenecks and increases GPU memory saturation [10]. To circumvent the "
-        "quadratic scaling of attention, selective State Space Models (SSMs), notably Mamba [11] and its tabular realization Mambular [12], combine "
-        "hardware-aware parallel associative scans with linear time complexity O(D). Simultaneously, prior-data fitted tabular foundation models, "
-        "including TabPFN [13] and TabICL [14], formulate classification as in-context Bayesian inference. By pre-training on millions of synthetic "
-        "causal graphs, foundation models execute zero-shot prediction on unseen tasks without updating internal model weights."
+        "Tabular deep learning models attempt to resolve this boundary limitation. Architectures such as FT-Transformer [8] and SAINT [9] use "
+        "self-attention to capture complex inter-feature relationships. Self-attention yields smoother, continuous decision boundaries, but its computational "
+        "complexity scales quadratically (O(D^2)) with feature count D. Under line-rate traffic, this quadratic scaling leads to packet queuing and high "
+        "GPU memory demands [10]. To bypass quadratic overhead, selective State Space Models (SSMs), such as Mamba [11] and its tabular adaptation Mambular [12], "
+        "apply hardware-aware parallel associative scans in linear time O(D). In parallel, prior-data fitted tabular foundation models, notably TabPFN [13] "
+        "and TabICL [14], frame classification as in-context Bayesian inference. Pre-trained on synthetic causal graphs, they perform zero-shot inference on "
+        "novel tasks without weight updates."
     )
     add_p(
-        "Despite these algorithmic innovations, cybersecurity research suffers from an Information Systems (IS) theoretical disconnect. Security "
-        "studies evaluate machine learning models as isolated algorithmic artifacts, ranking architectures solely on aggregate accuracy or overall F1 "
-        "scores on static test splits [15], [16]. This narrow engineering perspective detaches algorithmic performance from organizational task demands, "
-        "obscuring critical trade-offs between processing speed, resource consumption, and forensic fidelity. An architecture that achieves high "
-        "accuracy in offline evaluations can destabilize an operational SOC if its inference latency causes queue overflow at network perimeter gateways."
+        "Despite these algorithmic developments, the intrusion detection literature often suffers from an Information Systems (IS) disconnect. Many studies "
+        "treat machine learning models as isolated algorithms, ranking architectures by aggregate accuracy or F1 scores on static test sets [15], [16]. "
+        "This narrow focus divorces algorithmic behavior from operational realities, hiding trade-offs between latency, hardware footprint, and forensic "
+        "accuracy. A model with high offline accuracy can easily fail in an active SOC if its per-flow latency causes packet drops at edge gateways."
     )
     add_p(
-        "This investigation resolves this disconnect by evaluating intrusion detection models through the theoretical lens of Task-Technology Fit (TTF) "
-        "formulated by Goodhue and Thompson [17] and the Design Science Research (DSR) guidelines established by Hevner et al. [18]. TTF posits that "
-        "information technology enhances organizational performance only when its capabilities correspond directly to the operational demands of the "
-        "assigned task. In cybersecurity operations, algorithmic capabilities (such as discrete boundary cuts, in-context priors, and state-space recurrence) "
-        "do not possess intrinsic utility; their effectiveness depends on the specific operational profile of the security task."
+        "We ground our analysis in the Task-Technology Fit (TTF) framework of Goodhue and Thompson [17] and the Design Science Research (DSR) guidelines of "
+        "Hevner et al. [18]. TTF posits that technology generates organizational value only when its capabilities match the requirements of the task. In cyber-defense, "
+        "algorithmic capabilities (such as discrete boundary cuts, in-context synthetic priors, or state-space recurrence) offer no absolute advantage in the abstract. "
+        "Their utility emerges only when aligned with the specific operating profile of a security task."
     )
     add_p(
-        "To formalize this inquiry, we define three core operational SOC tasks: Line-Rate Perimeter Filtering (T1), Zero-Day Forensic Isolation (T2), "
-        "and Enterprise Composite Triage (T3). Across these task regimes, we investigate four specific research questions:"
+        "We define three concrete operational tasks: Line-Rate Perimeter Filtering (T1), Zero-Day Forensic Isolation (T2), and Enterprise Composite Triage (T3). "
+        "Across these operating regimes, we address four research questions:"
     )
     add_p("How do tabular foundation models, selective state space models, deep neural networks, and decision tree ensembles compare across seen attack classification and zero-day threat generalization?", bold_prefix="• RQ1: ")
     add_p("What are the empirical throughput, per-flow latency, and dynamic memory boundaries of these model families under industrial streaming conditions?", bold_prefix="• RQ2: ")
     add_p("Are observed performance disparities between architectural paradigms statistically significant under non-parametric multi-dataset testing protocols?", bold_prefix="• RQ3: ")
     add_p("How do upstream architectural attributes causally govern downstream operational trade-offs, and what deployment topology optimizes overall Task-Technology Fit?", bold_prefix="• RQ4: ")
     add_p(
-        "To answer these questions, this paper executes a comprehensive dual-track benchmark evaluating eight representative architectures across "
-        "five decontaminated intrusion datasets: CICIDS2017 [19], UNSW-NB15 [20], TON_IoT [21], CIC-DDoS2019 [22], and NSL-KDD [23]. We enforce strict "
-        "anti-leakage cross-validation through subnet-isolated GroupKFold partitioning and systematic zero-day holdout induction [24]. Furthermore, we "
-        "apply the Demšar statistical testing protocol [25] alongside Triangular Fuzzy DEMATEL causal discovery [26], [27], [28] and DirectLiNGAM "
-        "non-Gaussian causal triangulation [29]. Based on these empirical validations, we formalize four Design Propositions (DP1 - DP4) derived in "
-        "Section 2 and provide an operational Three-Tier SOC deployment blueprint."
+        "We conduct a dual-track benchmark evaluating eight representative architectures across five decontaminated network intrusion datasets: "
+        "CICIDS2017 [19], UNSW-NB15 [20], TON_IoT [21], CIC-DDoS2019 [22], and NSL-KDD [23]. To avoid data leakage, our protocol uses subnet-isolated "
+        "GroupKFold partitioning and systematic zero-day holdouts [24]. We evaluate significance through the Demšar testing framework [25] and examine causal "
+        "structures using Triangular Fuzzy DEMATEL [26], [27], [28] with DirectLiNGAM triangulation [29]. These empirical results validate four formal Design "
+        "Propositions (DP1 - DP4) and provide an operational Three-Tier SOC deployment blueprint."
     )
 
     # Section 2: Research Methodology
@@ -283,13 +276,13 @@ def build_docx():
         "excluded from model training. The classification objective is to estimate the posterior distribution P(y_i = c | x_i; theta)."
     )
     add_p(
-        "Because network traffic displays severe class imbalance (often exceeding 100:1 between benign flows and rare attack vectors), overall accuracy "
-        "provides a misleading measure of operational competence. We evaluate detection efficacy through Macro-averaged F1, Seen Attack F1, and Unseen Zero-Day F1:"
+        "Because network traffic exhibits extreme class imbalance (often exceeding 100:1 between benign traffic and rare attacks), overall "
+        "accuracy is an unreliable metric. We evaluate classification performance using Macro-averaged F1, Seen Attack F1, and Unseen Zero-Day F1:"
     )
     add_eq("Precision_c = TP_c / (TP_c + FP_c),   Recall_c = TP_c / (TP_c + FN_c),   F1_c = 2*Precision_c*Recall_c / (Precision_c + Recall_c)", "1")
     add_eq("F1_macro = (1/|C|) sum_{c in C} F1_c,   F1_seen = (1/|C_seen|) sum_{c in C_seen} F1_c,   F1_unseen = (1/|C_unseen|) sum_{c in C_unseen} F1_c", "2")
     add_p(
-        "In accordance with Goodhue and Thompson [17], technological utility is evaluated against three operational SOC tasks:"
+        "Following Goodhue and Thompson [17], we define utility functions for three operational SOC tasks:"
     )
     add_p("Prioritizes sub-millisecond per-flow latency L (in ms) and high throughput while retaining high seen attack detection:", bold_prefix="1) Task T1 (Line-Rate Perimeter Filtering): ")
     add_eq("U(T1) = 0.40 * F1_seen + 0.35 * min(1.0, 0.005 / (L + 1e-6)) + 0.25 * ROC-AUC", "3")
@@ -300,21 +293,20 @@ def build_docx():
 
     add_h2("2.2. Theoretical Grounding and Formal Design Propositions")
     add_p(
-        "Following the Design Science Research guidelines of Hevner et al. [18] and the Task-Technology Fit framework of Goodhue and Thompson [17], "
-        "technological artifacts generate organizational value only when their structural capabilities align with task requirements. In autonomous cyber-defense, "
-        "task requirements translate into physical processing constraints, while technology dimensions correspond to the mathematical inductive biases of competing model families. "
-        "Based on these theoretical foundations, we formalize four Design Propositions:"
+        "Design Science Research [18] and Task-Technology Fit theory [17] state that technological artifacts deliver organizational "
+        "value only when their functional capabilities align with task requirements. In autonomous cyber-defense, task demands reflect "
+        "physical processing constraints, while technology capabilities correspond to the inductive biases of competing model architectures. "
+        "We formalize this relationship into four Design Propositions:"
     )
-    add_p("In operational tasks governed by line-rate streaming constraints (T1), selective State Space Models (Mambular SSM) and decision tree ensembles exhibit superior Task-Technology Fit over self-attention transformers due to linear-time O(D) associative scan efficiency in hardware SRAM.", bold_prefix="• Design Proposition 1 (DP1 - Linear Complexity Fit in Line-Rate Streaming): ")
-    add_p("In zero-day forensic tasks characterized by extreme sample scarcity (T2), tabular foundation models (TabPFN v3) maximize Task-Technology Fit through Bayesian in-context inference over synthetic priors without parameter re-estimation.", bold_prefix="• Design Proposition 2 (DP2 - In-Context Prior Fit in Zero-Day Forensic Isolation): ")
-    add_p("In coordinated multi-host intrusion campaigns (T3), relational graph neural networks (GraphIDS) achieve high operational throughput by encoding structural topological priors, but require hybrid tabular feature integration to prevent accuracy degradation on sparse subnet neighborhoods.", bold_prefix="• Design Proposition 3 (DP3 - Topological Correlation Fit in Multi-Host Tracking): ")
-    add_p("Hardware memory footprint and inference latency ceilings act as asymptotic bounding constraints governed causally by mathematical layer formulation, rendering post-hoc software pruning ineffective against quadratic attention bottlenecks.", bold_prefix="• Design Proposition 4 (DP4 - Hardware-Constrained Causal Feedback): ")
+    add_p("In operational tasks governed by line-rate streaming constraints (T1), selective State Space Models (Mambular SSM) and decision tree ensembles exhibit superior Task-Technology Fit over self-attention transformers through linear-time O(D) associative scan efficiency in hardware SRAM.", bold_prefix="• Design Proposition 1 (DP1, Linear Complexity Fit in Line-Rate Streaming): ")
+    add_p("In zero-day forensic tasks characterized by extreme sample scarcity (T2), tabular foundation models (TabPFN v3) maximize Task-Technology Fit through Bayesian in-context inference over synthetic priors without parameter re-estimation.", bold_prefix="• Design Proposition 2 (DP2, In-Context Prior Fit in Zero-Day Forensic Isolation): ")
+    add_p("In coordinated multi-host intrusion campaigns (T3), relational graph neural networks (GraphIDS) achieve high throughput by encoding structural topological priors, but require hybrid tabular feature integration to prevent accuracy degradation on sparse subnet neighborhoods.", bold_prefix="• Design Proposition 3 (DP3, Topological Correlation Fit in Multi-Host Tracking): ")
+    add_p("Hardware memory footprint and inference latency ceilings act as asymptotic bounding constraints governed causally by mathematical layer formulation, rendering post-hoc software pruning ineffective against quadratic attention bottlenecks.", bold_prefix="• Design Proposition 4 (DP4, Hardware-Constrained Causal Feedback): ")
 
     add_h2("2.3. Dataset Characteristics and Anti-Leakage Protocol")
     add_p(
-        "Recent methodological audits demonstrated that standard public NIDS benchmarks contain severe data leakage, synthetic artifact pollution, "
-        "and duplicate records across train and test splits [19], [24]. To guarantee audit-proof empirical validity, we curate and decontaminate five "
-        "multi-domain network intrusion datasets, summarized in Table 1."
+        "Methodological audits indicate that standard public NIDS benchmarks contain data leakage, synthetic artifacts, and duplicate flows "
+        "across splits [19], [24]. To ensure empirical validity, we curated and decontaminated five multi-domain network intrusion datasets, summarized in Table 1."
     )
 
     t1_headers = ["Dataset Identifier", "Raw Records", "Partition (N)", "Features (D)", "Subnet Isolation Scheme", "Evaluated Attacks"]
@@ -328,28 +320,28 @@ def build_docx():
     add_table_data("Table 1. Benchmark Dataset Characteristics and Decontamination Telemetry", t1_headers, t1_rows)
 
     add_p(
-        "To prevent distributional leakage, we enforce subnet-isolated GroupKFold partitioning based on IPv4 /24 network address masks. For folds 1 and 2, "
-        "we actively purge selected rare attack classes from the training partition while retaining them in validation splits to measure zero-day induction transfer. "
-        "Scalers are fitted strictly on training subsets to prevent statistical feature leakage into test manifolds."
+        "To prevent cross-partition leakage and evaluate realistic zero-day generalization, we apply subnet-isolated GroupKFold partitioning "
+        "based on IPv4 /24 network address masks. For folds 1 and 2, we actively purge selected rare attack classes from the training partition "
+        "while retaining them in validation splits to measure zero-day induction transfer. Scalers are fitted strictly on training subsets to prevent "
+        "statistical feature leakage into test manifolds."
     )
 
     add_h2("2.4. Evaluated Model Families and Algorithmic Mechanics")
     add_p(
-        "We evaluate eight representative architectures covering four core paradigms: (1) Gradient-Boosted Decision Trees (LightGBM [4] and XGBoost [5]), "
-        "constructing ensembles of shallow decision trees via gradient-based split finding; (2) Tabular Deep Learning (FT-Transformer [8] and SAINT [9]), "
-        "deploying numerical token embeddings and multi-head attention; (3) Selective State Space Models (Mambular SSM [12]), adapting continuous selective "
-        "state-space scans [11] to tabular sequences via Zero-Order Hold discretization, executing linear-time associative scans in GPU SRAM; "
-        "(4) Relational Graph Neural Networks (GraphIDS [30]), executing message passing over communication flow topologies [31]; and "
-        "(5) Tabular Foundation Models (TabPFN v3 [13] and TabICL v2 [14]), executing in-context Bayesian inference over synthetic causal priors [32]."
+        "We evaluate eight architectures across four paradigms: (1) Gradient-Boosted Decision Trees (LightGBM [4] and XGBoost [5]), which build ensembles "
+        "of shallow trees using gradient-based split search and histogram binning; (2) Tabular Deep Learning (FT-Transformer [8] and SAINT [9]), which deploy "
+        "token embeddings and multi-head attention; (3) Selective State Space Models (Mambular SSM [12]), which adapt continuous state-space scans [11] to "
+        "tabular sequences, executing linear-time scans in GPU SRAM; (4) Relational Graph Neural Networks (GraphIDS [30]), applying message passing over local "
+        "topologies [31]; and (5) Tabular Foundation Models (TabPFN v3 [13] and TabICL v2 [14]), conducting Prior-Data Fitted in-context Bayesian inference [32]."
     )
 
     add_h2("2.5. Dual-Track Experimental Architecture")
     add_p(
-        "To resolve computational incommensurability across diverse model families, we decouple evaluation into two operational tracks: "
-        "Track A (Few-Shot Zero-Day Generalization Track) standardizes training on N <= 10,000 records per fold across all five datasets with active "
-        "zero-day holdout induction; Track B (Industrial Streaming Scalability Track) evaluates high-throughput architectures across expanding sample "
-        "sizes (N in {50k, 100k, 190,474, 250k}), tracking active CUDA device memory allocation directly from GPU runtime via torch.cuda.max_memory_allocated() "
-        "alongside per-flow latency. The threshold N = 190,474 corresponds to the full decontaminated partition of the enterprise CICIDS2017 benchmark."
+        "To compare these diverse architectures under consistent conditions, we divide the evaluation into two tracks: "
+        "Track A (Few-Shot Zero-Day Generalization) standardizes training on N <= 10,000 records per fold across all five datasets with active zero-day holdouts; "
+        "Track B (Industrial Streaming Scalability) evaluates high-throughput architectures across expanding batch sizes (N in {50k, 100k, 190,474, 250k}), "
+        "querying active CUDA device memory allocation directly through torch.cuda.max_memory_allocated() alongside per-flow latency. The volume N = 190,474 "
+        "represents the complete decontaminated partition of CICIDS2017, while N = 250k represents a high-volume streaming boundary."
     )
 
     add_h2("2.6. Non-Parametric Significance and Causal Discovery Framework")
@@ -357,9 +349,9 @@ def build_docx():
         "To evaluate whether observed performance differences represent genuine architectural advantages, we execute Demšar's non-parametric testing suite [25], "
         "computing Friedman chi-square, Iman-Davenport F-correction, and Nemenyi Critical Difference (CD) at alpha = 0.05. Furthermore, we apply Triangular "
         "Fuzzy DEMATEL [26], [27], [28], [33], [34] across seven operational factors: Model Architecture (F1), Sample Size (F2), Latency (F3), Memory Footprint (F4), "
-        "Seen F1 (F5), Unseen Zero-Day F1 (F6), and Noise Robustness (F7). To eliminate subjective human questionnaire bias, theoretical priors derive strictly "
-        "from computational complexity bounds (O(D) vs O(D^2)) and empirical mutual information metrics. We execute 10,000 Monte Carlo perturbation iterations "
-        "to establish Kendall's concordance index (W >= 0.95) and validate the resulting causal topology using DirectLiNGAM non-Gaussian causal discovery [29] (SHD <= 2)."
+        "Seen F1 (F5), Unseen Zero-Day F1 (F6), and Noise Robustness (F7). To avoid subjective questionnaire bias, initial direct relations calculate directly "
+        "from computational complexity bounds (O(D) versus O(D^2)) and empirical metrics. We execute 10,000 Monte Carlo perturbation runs to confirm stability "
+        "via Kendall's concordance (W >= 0.95) and validate the resulting causal topology using DirectLiNGAM non-Gaussian causal discovery [29] (SHD <= 2)."
     )
 
     # Section 3: Results and Discussion
@@ -399,15 +391,15 @@ def build_docx():
     add_fig("fig02_phase2_track_a_generalization_pareto_all.png", "Fig 2. Seen F1 versus Unseen Zero-Day F1 Pareto frontier across evaluated architectures.")
 
     add_p(
-        "The cross-dataset performance matrix in Table 3 uncovers fundamental interactions between network flow geometry and architectural inductive bias. "
-        "On CIC-DDoS2019, all architectures achieve near-perfect classification (F1 > 0.984, with GBDTs reaching 0.9965). This ceiling effect is driven by protocol-level "
-        "connectionless UDP reflection dynamics (e.g., TFTP and DrDoS_NTP), where severe byte count and packet volume asymmetry create distinct outlier clusters that are "
-        "easily separable by orthogonal tree splits. Conversely, on UNSW-NB15, performance collapses across all eight architectures (F1 = 0.6244 - 0.6787). Here, attackers "
-        "deployed payload padding and inter-arrival timing obfuscation to emulate legitimate HTTP/HTTPS traffic, creating dense topological overlap between attack and benign "
-        "manifolds that degrades both continuous neural embeddings and axis-aligned tree cuts. On TON_IoT, industrial sensor heartbeat jitter generates periodic bursts that "
-        "mathematically mimic low-rate DoS attacks, producing non-Gaussian telemetry noise that depresses performance (F1 = 0.5983 - 0.7170). Finally, on NSL-KDD, TabPFN v3 "
-        "achieves its highest performance (F1 = 0.9813), outperforming tree baselines. This confirms that TabPFN's synthetic prior-data pre-training excels at mapping discrete, "
-        "categorical service-protocol corridors through in-context Bayesian representations."
+        "The experimental results highlight clear interactions between traffic geometry, inductive bias, and system throughput. "
+        "On CIC-DDoS2019, all models reach near-perfect scores (F1 > 0.984, with GBDTs reaching 0.9965). The underlying traffic consists of connectionless "
+        "UDP amplification attacks (such as TFTP and DrDoS_NTP), where extreme packet volumes and high byte-rate asymmetry create isolated feature "
+        "clusters that orthogonal splits separate with little ambiguity. In contrast, on UNSW-NB15, scores drop across all eight architectures (F1 = 0.6244 - 0.6787). "
+        "In this dataset, malicious flows incorporate payload padding and packet timing variations designed to mimic benign HTTP and HTTPS sessions. Benign traffic "
+        "and exploit flows overlap heavily in feature space, challenging both continuous manifold embeddings and axis-aligned splits. On TON_IoT, periodic heartbeat "
+        "telemetry from industrial sensors produces packet bursts that resemble low-rate denial-of-service attempts, creating non-Gaussian noise that reduces classification "
+        "accuracy in neural architectures (F1 = 0.5983 - 0.7170). Finally, on NSL-KDD, TabPFN v3 scores highest on this benchmark (F1 = 0.9813), outperforming tree models. "
+        "NSL-KDD features follow discrete categorical protocol sequences, a structure that mirrors the synthetic priors embedded in TabPFN's transformer layers."
     )
 
     add_h2("3.2. Track B Industrial Streaming Scalability and Dynamic Telemetry")
@@ -443,46 +435,52 @@ def build_docx():
     add_fig("fig03_phase2_track_b_throughput_vram_scaling.png", "Fig 3. Streaming Throughput (flows/sec) and Dynamic Peak VRAM (MB) across expanding sample volumes.")
 
     add_p(
-        "Mambular SSM sustains over 2,220,000 flows/sec at N = 190,474 (the full decontaminated enterprise partition of CICIDS2017), achieving sub-microsecond latency (0.00050 ms). "
-        "By executing linear-time associative scans in GPU SRAM, Mambular eliminates the sequential bottleneck of recurrent networks and matches compiled tree speeds. "
-        "Conversely, XGBoost throughput drops from 1,421,671 flows/s at N = 190k to 833,054 flows/s at N = 250k due to CPU cache saturation and memory bus contention. "
-        "FT-Transformer remains restricted below 302,500 flows/s while VRAM expands to 108.93 MB, confirming the quadratic overhead of pairwise attention."
+        "Streaming throughput and memory telemetry indicate three clear operational behaviors: First, Mambular SSM sustains 2,220,653 flows/s "
+        "at N = 190,474 (the complete decontaminated enterprise partition of CICIDS2017) with sub-microsecond latency (0.00050 ms). Running linear-time "
+        "associative scans directly in GPU SRAM avoids the recurrent bottleneck and matches compiled tree throughput. Second, XGBoost throughput "
+        "dropped from 1,421,671 flows/s at N = 190k to 833,054 flows/s at N = 250k due to L1/L2 cache misses and memory bus contention once batch sizes "
+        "exceed on-chip cache limits. Third, FT-Transformer throughput stayed between 118,266 and 302,484 flows/s, with VRAM usage rising from 95.77 MB "
+        "to 108.93 MB, while Mambular SSM maintained flat memory usage (28.71 to 29.01 MB)."
     )
 
     add_h2("3.3. Non-Parametric Statistical Significance (Demšar Testing)")
     add_p(
-        "The Friedman test yields chi-square = 29.6667 (p = 1.0930e-4), rejecting equivalence. The Iman-Davenport correction confirms statistical significance "
-        "(F = 22.2500, p = 7.3322e-10). The Nemenyi Critical Difference at alpha = 0.05 is CD = 4.6956. The resulting average ranks are: (1) LightGBM: 1.6, "
-        "(2) XGBoost: 1.8, (3) TabPFN v3: 2.8, (4) FT-Transformer: 4.6, (5) Mambular SSM: 5.4, (6) TabICL v2: 5.8, (7) SAINT: 6.0, (8) GraphIDS: 8.0."
+        "Across the five benchmark datasets, the non-parametric Friedman test yields chi-square = 29.6667 (p = 1.0930e-4), rejecting equal performance. "
+        "The Iman-Davenport correction confirms this result (F = 22.2500, p = 7.3322e-10). At alpha = 0.05, the Nemenyi Critical Difference threshold "
+        "is CD = 4.6956. The resulting average ranks are: LightGBM (1.6), XGBoost (1.8), TabPFN v3 (2.8), FT-Transformer (4.6), Mambular SSM (5.4), "
+        "TabICL v2 (5.8), SAINT (6.0), and GraphIDS (8.0)."
     )
     add_fig("fig04a_phase3_nemenyi_critical_difference.png", "Fig 4. Demšar Nemenyi Critical Difference rank diagram (alpha = 0.05, CD = 4.6956).")
 
     add_p(
-        "The analysis establishes two conclusions: First, the top four architectures (LightGBM, XGBoost, TabPFN v3, and FT-Transformer) fall within the Critical "
-        "Difference boundary (|1.6 - 4.6| = 3.0 < 4.6956), demonstrating statistical equivalence under conservative post-hoc testing. Second, GraphIDS (rank 8.0) "
-        "differs significantly from tree baselines (|1.6 - 8.0| = 6.4 > 4.6956), revealing structural vulnerability on sparse network graphs. Pairwise Wilcoxon signed-rank "
-        "tests confirm directional separation between Mambular SSM and XGBoost (W = 0, p = 0.0625, Cliff's delta = -0.36), confirming that while rank differences "
-        "are subtle across five datasets, operational execution profiles remain distinct."
+        "Post-hoc tests highlight two structural patterns: First, the ranks of LightGBM (1.6), XGBoost (1.8), TabPFN v3 (2.8), and FT-Transformer (4.6) "
+        "all fall within the Critical Difference boundary (|1.6 - 4.6| = 3.0 < 4.6956), confirming statistical equivalence under conservative testing. "
+        "Second, GraphIDS places at rank 8.0, showing a statistically significant gap from tree baselines (|1.6 - 8.0| = 6.4 > 4.6956), revealing that "
+        "relational graph models struggle on sparse subnets where hosts communicate infrequently. Pairwise Wilcoxon signed-rank tests between Mambular SSM "
+        "and XGBoost (W = 0, p = 0.0625, Cliff's delta = -0.36) indicate directional differences in operational behavior, even where rank differences "
+        "across five datasets remain narrow."
     )
 
     add_h2("3.4. Parametric Ablation and Noise Perturbation Robustness")
     add_p(
-        "A full-factorial grid search over FT-Transformer configurations reveals an overparameterization cliff on tabular data (Fig. 5). Expanding embedding dimension "
-        "from d_token = 32 (F1 = 0.4955) to d_token = 64 with 4 heads and 4 blocks causes performance to collapse to F1 = 0.0178. Tabular coordinates lack spatial stationarity; "
-        "excessive capacity induces uniform gradient dispersion across uninformative features."
+        "A full-factorial grid search across FT-Transformer parameters identifies a clear overparameterization threshold (Fig. 5). A compact setup "
+        "(d_token = 32, 4 heads, 4 blocks) reaches Macro F1 = 0.4955. Increasing token dimension to d_token = 64 at the same depth causes performance to "
+        "collapse to F1 = 0.0178. Because tabular coordinates lack spatial continuity, excess capacity disperses attention weights uniformly across irrelevant inputs."
     )
     add_fig("fig04b_phase3_ft_transformer_ablation_heatmap.png", "Fig 5. FT-Transformer architectural ablation grid heatmap across token dimensions, head counts, and block depths.")
 
     add_p(
-        "Under Gaussian feature corruption (sigma in {0.0, 0.05, 0.1, 0.2}), TabPFN v3 displays adaptive resilience (+55.1% relative gain, rising from 0.2152 to 0.3338), "
-        "because synthetic priors regularize continuous coordinates. Conversely, XGBoost suffers degradation (retaining 67.3% of clean F1) due to brittle threshold cuts."
+        "Under Gaussian noise (sigma in {0.0, 0.05, 0.1, 0.2}), TabPFN v3 maintained strong stability, improving from 0.2152 to 0.3338 (+55.1% relative), "
+        "as pre-trained synthetic priors regularize noisy continuous inputs. Conversely, XGBoost was more vulnerable, retaining only 67.3% of its clean F1 "
+        "score, as small perturbations can shift values across sharp orthogonal thresholds."
     )
 
     add_h2("3.5. Causal Discovery and Triangulation")
     add_p(
-        "Triangular Fuzzy DEMATEL evaluates the structural relationships across seven operational factors (Table 5). Across 10,000 Monte Carlo perturbation iterations, "
-        "Kendall's concordance reaches W = 0.9716 >= 0.95. DirectLiNGAM causal triangulation confirms identical topological ordering (SHD = 1 <= 2). Model Architecture (F1) "
-        "acts as the primary systemic cause (D-R = +1.4688), driving downstream latency (D-R = -0.7554), memory footprint (D-R = -0.7110), and detection efficacy."
+        "Triangular Fuzzy DEMATEL examines the structural relationships among seven operational factors (Table 5). Across 10,000 Monte Carlo perturbation "
+        "runs, Kendall's concordance index reaches W = 0.9716 >= 0.95. DirectLiNGAM triangulation yields an identical topological ordering (SHD = 1 <= 2). "
+        "The causal model confirms that Model Architecture (F1) is the dominant root cause (D-R = +1.4688), directly driving downstream latency (D-R = -0.7554), "
+        "memory footprint (D-R = -0.7110), and detection scores."
     )
 
     t5_headers = ["Factor Identifier", "Dispatched (D)", "Received (R)", "Prominence (D+R)", "Net Role (D-R)", "Classification"]
@@ -500,55 +498,58 @@ def build_docx():
     add_fig("fig05_phase4_causal_network_dematel_digraph.png", "Fig 6. Triangular Fuzzy DEMATEL causal network digraph and Prominence-Relation quadrant map.")
 
     add_h2("3.6. Empirical Validation of Formal Design Propositions")
-    add_p("Mambular SSM demonstrates that selective state space recurrence matches tree throughput in high-volume streaming, eliminating the quadratic latency bottleneck of self-attention through hardware-aware associative scans.", bold_prefix="• DP1 (Linear Complexity Fit): CONFIRMED. ")
-    add_p("TabPFN v3 achieves the highest Unseen F1 (0.6173 +- 0.4275) and dominates Task T2 utility (U(T2) = 0.7100, outperforming LightGBM at 0.7003 and XGBoost at 0.6949). In-context Bayesian inference over synthetic priors regularizes unseen attack manifolds without parameter updates.", bold_prefix="• DP2 (In-Context Prior Fit): CONFIRMED. ")
-    add_p("GraphIDS achieves the lowest latency (0.0006 ms) and highest throughput (1,576,547 flows/s). However, its lower classification accuracy (Seen F1 = 0.8866) demonstrates that relational topological models require hybrid tabular feature integration to avoid false alarms on sparse subnets.", bold_prefix="• DP3 (Topological Invariance Fit): CONFIRMED. ")
-    add_p("Dynamic telemetry and DEMATEL causal discovery confirm that memory footprint and latency act as bounding constraints governed causally by layer formulation (D-R = -0.7554). Post-hoc parameter pruning cannot overcome quadratic attention scaling; processing speed is determined by algorithmic complexity.", bold_prefix="• DP4 (Hardware-Constrained Feedback): CONFIRMED. ")
+    add_p("Mambular SSM matches tree throughput in high-volume streaming, replacing the quadratic latency of self-attention with linear-time associative scans in hardware SRAM.", bold_prefix="• DP1 (Linear Complexity Fit): CONFIRMED. ")
+    add_p("TabPFN v3 achieves the highest Unseen F1 (0.6173 +- 0.4275) and leads Task T2 utility (U(T2) = 0.7100, ahead of LightGBM at 0.7003 and XGBoost at 0.6949). In-context Bayesian inference over synthetic priors provides effective regularization across unseen attack types without weight updates.", bold_prefix="• DP2 (In-Context Prior Fit): CONFIRMED. ")
+    add_p("GraphIDS delivers the lowest latency (0.0006 ms) and highest throughput (1,576,547 flows/s). Its lower accuracy (Seen F1 = 0.8866), however, shows that topological graph models require tabular feature integration to avoid errors on sparse subnets.", bold_prefix="• DP3 (Topological Invariance Fit): CONFIRMED. ")
+    add_p("Dynamic telemetry and DEMATEL results show that memory footprint and latency are structural constraints governed causally by layer formulation (D-R = -0.7554). Post-hoc pruning cannot compensate for quadratic attention complexity; processing performance depends directly on the underlying algorithm.", bold_prefix="• DP4 (Hardware-Constrained Feedback): CONFIRMED. ")
 
     add_h2("3.7. Three-Tier SOC Architectural Blueprint and Green AI Profiling")
     add_p(
-        "Synthesizing the empirical trade-offs, Fig. 7 maps the evaluated architectures within the multi-metric Task-Technology Fit utility space. "
-        "Because no single model maximizes utility across all tasks, we formulate a Three-Tier SOC Deployment Blueprint:"
+        "Fig. 7 plots all eight models across the Task-Technology Fit utility space. Because no single architecture fits all three operational tasks, "
+        "we structure these findings into an operational Three-Tier SOC architecture:"
     )
     add_fig("fig06_phase5_ttf_accuracy_latency_pareto_frontier.png", "Fig 7. Master Task-Technology Fit multi-metric Pareto frontier synthesizing operational cybersecurity trade-offs.")
 
-    add_p("Deploys LightGBM and compiled XGBoost at edge gateways, processing 500,000 to 1,500,000 flows/s with sub-microsecond latency (0.0011 ms) and 0.002 W per flow, filtering 95% of known traffic.", bold_prefix="1) Tier 1 (Perimeter Line-Rate Packet Filtering): ")
-    add_p("Deploys Mambular SSM on cluster aggregation nodes at 0.0011 ms latency, maintaining sequential session context and temporal state transitions across connection streams. Flows exhibiting high uncertainty (softmax entropy H(p) > 0.40 or prediction margin |p_1 - p_2| < 0.20) are escalated to Tier 3.", bold_prefix="2) Tier 2 (Stateful Session and Multi-Host Triage): ")
-    add_p("Deploys TabPFN v3 within an offline forensic sandbox. Unclassified flows and low-confidence anomalies are forwarded asynchronously via an in-memory token-bucket priority queue. TabPFN executes in-context Bayesian inference to classify novel exploit manifolds without interrupting perimeter traffic flow.", bold_prefix="3) Tier 3 (Asynchronous Zero-Day Forensic Isolation Sandbox): ")
+    add_p("Edge gateways run LightGBM or compiled XGBoost models. Operating at sub-microsecond latency (0.0011 ms) and low power (0.002 W per flow), Tier 1 filters 95% of traffic (500,000 to 1,500,000 flows/s), handling high-confidence benign flows and known attack signatures.", bold_prefix="1) Tier 1 (Perimeter Line-Rate Packet Filtering): ")
+    add_p("Aggregation switches run Mambular SSM at 0.0011 ms latency. This tier processes intermediate traffic volumes, tracking sequential session states and connection history. Ambiguous flows (softmax entropy H(p) > 0.40 or prediction margin |p_1 - p_2| < 0.20) are routed to Tier 3.", bold_prefix="2) Tier 2 (Stateful Session and Multi-Host Triage): ")
+    add_p("TabPFN v3 runs in an isolated forensic sandbox. Unclassified flows and low-confidence events from Tiers 1 and 2 arrive asynchronously through an in-memory token-bucket queue. TabPFN performs in-context Bayesian classification on unobserved exploit patterns without interrupting perimeter traffic.", bold_prefix="3) Tier 3 (Asynchronous Zero-Day Forensic Isolation Sandbox): ")
     add_p(
-        "Under Green AI carbon profiling, total computational energy expenditure is modeled as E_total = sum_{k=1}^3 alpha_k * P_k * (N_k / Throughput_k), "
-        "where alpha_1 = 0.95, alpha_2 = 0.04, and alpha_3 = 0.01 represent the empirical flow distribution percentages across tiers. This triaged architecture consumes "
-        "an estimated 0.0035 Watt-hours per 10,000 inspected flows, reducing enterprise computational energy consumption by 84% compared to an end-to-end transformer inspection pipeline."
+        "Total energy consumption across this three-tier pipeline is modeled as E_total = sum_{k=1}^3 alpha_k * P_k * (N_k / Throughput_k), "
+        "where alpha_1 = 0.95, alpha_2 = 0.04, and alpha_3 = 0.01 denote the traffic proportions across tiers, and P_k is the thermal design power (TDP) "
+        "of the host device. With this routing, the pipeline consumes roughly 0.0035 Watt-hours per 10,000 flows, cutting energy use by 84% compared to an end-to-end transformer setup."
     )
 
     # Section 4: Conclusions
     add_h1("4. Conclusions")
     add_p(
-        "This investigation evaluated eight machine learning, tabular deep learning, selective state space, and tabular foundation model architectures across "
-        "five decontaminated intrusion detection datasets under the theoretical lens of Task-Technology Fit and Design Science Research."
+        "This study evaluated eight machine learning architectures across five decontaminated network benchmarks through the theoretical lens of "
+        "Task-Technology Fit and Design Science Research."
     )
     add_p(
-        "The empirical findings answer the four research questions directly: First (RQ1), gradient-boosted decision trees dominate seen traffic distributions "
-        "(Seen F1 >= 0.9469) but suffer a 35-percentage-point cliff on novel attacks, whereas TabPFN v3 leads zero-day generalization (Unseen F1 = 0.6173 +- 0.4275) "
-        "and dominates Task T2 utility (U(T2) = 0.7100), outperforming neural baselines by 6 to 10 percentage points through synthetic prior-data regularization. "
-        "Second (RQ2), Mambular SSM sustains over 2,220,000 flows/s at sub-microsecond latency (0.0005 ms/flow) with flat VRAM consumption (28.71 to 29.01 MB), "
-        "matching tree throughput and avoiding the quadratic latency of self-attention. Third (RQ3), non-parametric Demšar testing confirms a top-tier statistical "
-        "equivalence cluster connecting LightGBM, XGBoost, TabPFN v3, and FT-Transformer, while separating pure graph message passing (GraphIDS, rank 8.0). "
-        "Fourth (RQ4), Fuzzy DEMATEL (Kendall W = 0.9716) and DirectLiNGAM (SHD = 1) isolate Model Architecture as the core systemic cause (D-R = +1.4688), "
-        "validating an operational Three-Tier SOC Architecture."
+        "Our findings address the four research questions: First (RQ1), gradient-boosted decision trees (LightGBM and XGBoost) dominate known traffic "
+        "(Seen F1 >= 0.9469), but their performance drops by roughly 35 percentage points on unobserved zero-day attacks. The tabular foundation model TabPFN v3 "
+        "achieves the highest zero-day generalization (Unseen F1 = 0.6173 +- 0.4275) and leads Task T2 utility (U(T2) = 0.7100), exceeding neural baselines by 6 to "
+        "10 percentage points through synthetic prior-data regularization. Second (RQ2), selective state space models (Mambular SSM) match tree throughput in high-volume "
+        "traffic, sustaining over 2,220,000 flows/s at sub-microsecond latency (0.0005 ms/flow) with stable GPU VRAM use (28.71 to 29.01 MB). Self-attention models "
+        "(FT-Transformer) exhibit quadratic memory growth and latency penalties (0.00835 ms/flow), keeping throughput below 302,500 flows/s. Third (RQ3), non-parametric "
+        "Friedman tests reject equal performance across architectures (chi-square = 29.6667, p = 1.093e-4; Iman-Davenport F = 22.2500, p = 7.332e-10). Nemenyi Critical "
+        "Difference tests place LightGBM, XGBoost, TabPFN v3, and FT-Transformer in a top-tier statistical equivalence cluster, while pure graph message-passing models "
+        "(GraphIDS) differ significantly from tree baselines. Fourth (RQ4), Triangular Fuzzy DEMATEL (Kendall W = 0.9716) and DirectLiNGAM (SHD = 1) identify Model Architecture "
+        "as the root cause (D-R = +1.4688) driving downstream latency, memory, and detection metrics, validating a Three-Tier SOC Architecture."
     )
     add_p(
-        "Theoretically, this research resolves the Information Systems theoretical disconnect in cybersecurity machine learning by shifting focus from isolated "
-        "benchmark metrics to operational Task-Technology Fit. We extend TTF theory from subjective human user evaluations to autonomous, machine-to-machine "
-        "algorithmic pipelines, demonstrating that technological utility is an emergent property arising from the alignment between algorithmic inductive biases "
-        "and organizational task profiles. Practically, the validated Three-Tier SOC blueprint provides enterprise security architects and Chief Information "
-        "Security Officers (CISOs) with an actionable, vendor-agnostic deployment framework that mitigates gateway packet drops while preventing zero-day "
-        "forensic blind spots, reducing computational energy requirements by 84% relative to monolithic neural inspection systems."
+        "Theoretically, this work connects machine learning benchmarks with the Information Systems principle of Task-Technology Fit. We extend TTF theory "
+        "from end-user software evaluation to automated, machine-to-machine security pipelines. Algorithmic utility is not an inherent trait of a model, but "
+        "an emergent property shaped by the fit between a model's inductive biases and the operational constraints of its task. Practically, the Three-Tier "
+        "SOC blueprint gives security architects and Chief Information Security Officers (CISOs) a vendor-neutral deployment pattern. Directing 95% of routine "
+        "traffic through edge-optimized trees and state space models while routing ambiguous flows to foundation models prevents gateway packet loss while closing "
+        "zero-day blind spots, reducing computational energy use by 84% compared to a monolithic neural pipeline."
     )
     add_p(
-        "This study acknowledges four primary operational limitations: controlled testbed traffic distributions, server-grade GPU hardware boundaries (Tesla T4), "
-        "tabular foundation model context windows (N <= 10,000), and upstream deep packet inspection (DPI) flow aggregation overhead. Future research will pursue "
-        "kernel-space eBPF compilation of selective state space models, dynamic streaming context expansion, and multimodal NetFlow-payload token fusion."
+        "We note four main limitations: controlled testbed traffic distributions, server-grade GPU hardware boundaries (Tesla T4), tabular foundation model "
+        "context sizes (N <= 10,000), and upstream deep packet inspection (DPI) flow aggregation overhead. Future work will focus on three areas: compiling "
+        "selective state space algorithms into kernel-space extended Berkeley Packet Filters (eBPF) for direct network card offload, designing streaming memory "
+        "mechanisms to expand foundation model context windows, and combining tabular NetFlow features with raw packet payloads in multi-modal encoders."
     )
 
     # Section 5: Acknowledgment

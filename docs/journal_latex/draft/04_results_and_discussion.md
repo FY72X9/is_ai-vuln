@@ -2,7 +2,7 @@
 
 ## 3. Results And Discussion
 
-This section presents the empirical findings from Campaign v2.0, provides phenomenological interpretations of observed computational mechanics, validates four formal Design Propositions ($DP_1 - DP_4$), and formulates an operational SOC deployment architecture.
+This section presents findings across both evaluation tracks, explains the computational dynamics governing observed results, tests the four formal Design Propositions ($DP_1 - DP_4$), and outlines an operational Three-Tier SOC architecture.
 
 ### 3.1 Track A Benchmark Results and Zero-Day Generalization Trade-offs
 Table 2 details the consolidated performance metrics across eight architectures and five decontaminated intrusion datasets under the 5-fold zero-day holdout protocol.
@@ -50,7 +50,7 @@ Table 3. Macro F1 Cross-Dataset Performance Matrix
 ```
 *Fig. 2. Seen F1 versus Unseen Zero-Day F1 Pareto frontier across evaluated architectures.*
 
-The empirical results reveal fundamental interactions between network flow geometries, inductive biases, and architectural capabilities:
+The experimental results highlight clear interactions between traffic geometry, inductive bias, and system throughput:
 
 1. **Protocol Dynamics Governing Cross-Dataset Performance (Table 3 Phenomenological Analysis)**:
    * **CIC-DDoS2019 ($F_1 > 0.984 - 0.996$)**: All architectures achieve near-perfect classification. This ceiling effect is driven by protocol-level connectionless UDP reflection dynamics (e.g., TFTP and DrDoS_NTP), where extreme packet volume and byte rate asymmetry create distinct outlier clusters that are easily separable by orthogonal tree splits.
@@ -90,7 +90,7 @@ Table 4. Track B Industrial Scalability Profiling Across Sample Volumes
 | **250,000** | LightGBM | 504,151.26 | 0.00200 | 32.90 |
 | **250,000** | FT-Transformer | 136,170.25 | 0.00835 | 108.93 |
 
-The scalability telemetry demonstrates three primary operational mechanics:
+Streaming throughput and memory telemetry indicate three clear operational behaviors:
 1. **Parallel Prefix Scans in GPU SRAM**: Mambular SSM sustains $2,220,653$ flows/sec at $N = 190,474$ (the full decontaminated enterprise partition of CICIDS2017), achieving sub-microsecond latency ($0.00050$ ms). By executing linear-time associative scans in GPU SRAM, Mambular eliminates the sequential bottleneck of recurrent networks and matches the processing speed of compiled tree algorithms.
 2. **CPU Cache Saturation in Trees**: XGBoost achieves $1,421,671$ flows/sec at $N = 190,474$, but drops to $833,054$ flows/sec at $N = 250,000$. This degradation reflects CPU L1/L2 cache saturation and memory bus contention as batch sizes exceed on-chip cache limits.
 3. **Quadratic Attention Bottleneck**: FT-Transformer throughput remains restricted ($118,266$ to $302,484$ flows/sec), while VRAM allocation expands from $95.77$ MB to $108.93$ MB. In contrast, Mambular SSM maintains flat memory consumption ($28.71$ to $29.01$ MB), confirming that selective state-space models decouple memory footprint from batch volume.
@@ -118,7 +118,7 @@ The resulting average model ranks are: (1) LightGBM: 1.6, (2) XGBoost: 1.8, (3) 
 ```
 *Fig. 3. Demšar Nemenyi Critical Difference rank diagram across evaluated architectures.*
 
-The statistical evaluation establishes two core conclusions:
+Post-hoc tests highlight two structural patterns:
 * **The Top Paradigm Equivalence Cluster**: The average ranks of LightGBM ($1.6$), XGBoost ($1.8$), TabPFN v3 ($2.8$), and FT-Transformer ($4.6$) fall within the Critical Difference boundary ($|1.6 - 4.6| = 3.0 < 4.6956$). While decision trees lead on average ranks, their margin over tabular foundation models and transformers does not reach statistical significance under conservative post-hoc testing.
 * **Topological Separation of Graph Routing**: GraphIDS occupies rank $8.0$, differing significantly from tree baselines ($|1.6 - 8.0| = 6.4 > 4.6956$). Message-passing neural networks experience performance degradation on sparse network topologies where isolated hosts lack sufficient neighborhood connectivity. Pairwise Wilcoxon signed-rank tests confirm directional separation between Mambular SSM and XGBoost ($W = 0, p = 0.0625, \text{Cliff's } \delta = -0.36$), confirming that while rank differences are subtle across five datasets, operational execution profiles remain distinct.
 
@@ -160,7 +160,7 @@ Table 5. Fuzzy DEMATEL Causal Prominence and Relation Metrics
 ```
 *Fig. 4. Causal influence network derived from Triangular Fuzzy DEMATEL.*
 
-Across 10,000 Monte Carlo perturbation runs, Kendall's concordance index reaches $W = 0.9716 \ge 0.95$. Triangulation against DirectLiNGAM confirms identical topological ordering with a Structural Hamming Distance of $\text{SHD} = 1 \le 2$. The causal analysis establishes that Model Architecture ($F_1$) acts as the primary systemic cause ($D-R = +1.4688$), driving downstream latency, memory footprint, and detection efficacy. Latency ($F_3$) acts as an endogenous effect ($D-R = -0.7554$), dictated strictly by asymptotic algorithmic complexity and hardware memory bandwidth rather than hyperparameter tuning.
+Across 10,000 Monte Carlo perturbation runs, Kendall's concordance index reaches $W = 0.9716 \ge 0.95$. DirectLiNGAM triangulation yields an identical topological ordering with a Structural Hamming Distance of $\text{SHD} = 1 \le 2$. The causal model confirms that Model Architecture ($F_1$) is the dominant root cause ($D-R = +1.4688$), directly driving downstream latency, memory footprint, and detection scores. Latency ($F_3$) is an endogenous effect ($D-R = -0.7554$), dictated by asymptotic algorithmic complexity and hardware memory bandwidth rather than tuning choices.
 
 ### 3.6 Empirical Validation of Formal Design Propositions
 The empirical evidence validates the four formal Design Propositions derived in Section 2.2:
