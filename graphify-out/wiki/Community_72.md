@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Verify SHA-256 checksum of a downloaded file.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L83) (0 connections)
+- [Check and automatically append required exclusion rules to .gitignore.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L80) (0 connections)
 
 ## Relationships
 

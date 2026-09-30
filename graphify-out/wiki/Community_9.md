@@ -1,64 +1,57 @@
 # Community 9
 
-> 17 nodes · cohesion 0.16
+> 17 nodes · cohesion 0.15
 
 ## Key Concepts
 
-- [TabICLIDS](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L86) (6 connections)
-- [TabPFNIDS](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L8) (6 connections)
-- [TabICLNet](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L54) (5 connections)
-- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L144) (4 connections)
-- [test_foundation_models.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L1) (3 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L101) (3 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L88) (2 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L159) (2 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L56) (2 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L18) (2 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L50) (2 connections)
-- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L41) (2 connections)
-- [Native PyTorch in-context learning transformer for tabular inputs (Qu et al., 20](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L55) (1 connections)
-- [Tabular In-Context Learning Foundation Model (Qu et al., 2025).](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L87) (1 connections)
-- [TabPFN tabular foundation model (Hollmann et al., Nature 2025).](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L9) (1 connections)
-- [.forward()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L74) (1 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py#L10) (1 connections)
+- [splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L1) (7 connections)
+- [PureNumPyStandardScaler](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L47) (7 connections)
+- [fit_fold_isolated_pipeline()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L140) (5 connections)
+- [AntiLeakageTimeSeriesSplit](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L113) (4 connections)
+- [extract_subnet_mask()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L29) (4 connections)
+- [.fit_transform()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L66) (4 connections)
+- [.transform()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L60) (4 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L53) (2 connections)
+- [safe_slice()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L18) (2 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L116) (1 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L49) (1 connections)
+- [Anti-Leakage Data Partitioning Suite. Implements Subnet-Grouped and Time-Aware K](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L1) (1 connections)
+- [Time-aware chronological cross-validator without future-looking data leakage.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L114) (1 connections)
+- [Fit scaler and sampler STRICTLY within the train split, preventing leakage to va](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L149) (1 connections)
+- [Safely slice pandas DataFrame, Series, or NumPy ndarray by integer indices.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L19) (1 connections)
+- [Extract subnet group from IPv4 address string (default /24 mask).](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L30) (1 connections)
+- [Pure NumPy implementation of standard scaler for isolated or minimal environment](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L48) (1 connections)
 
 ## Class Diagram
 
 ```mermaid
 classDiagram
-    class TabICLIDS {
-        +test_foundation_models.py()
+    class AntiLeakageTimeSeriesSplit {
+        +splitters.py()
+        +.__init__()
+        +.split()
+    }
+    class PureNumPyStandardScaler {
+        +splitters.py()
         +.__init__()
         +.fit()
-        +.predict_proba()
-        +.predict()
-    }
-    class TabICLNet {
-        +test_foundation_models.py()
-        +.__init__()
-        +.forward()
-    }
-    class TabPFNIDS {
-        +test_foundation_models.py()
-        +.__init__()
-        +.fit()
-        +.predict_proba()
-        +.predict()
+        +.transform()
+        +.fit_transform()
     }
 ```
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 10]] (6 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\test_foundation_models.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_foundation_models.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
 
 ## Audit Trail
 
-- EXTRACTED: 44 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 44 (94%)
+- INFERRED: 3 (6%)
 - AMBIGUOUS: 0 (0%)
 
 ---

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Ensure data directories exist and safeguards are active.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L101) (0 connections)
+- [Verify SHA-256 checksum of a downloaded file.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L99) (0 connections)
 
 ## Relationships
 

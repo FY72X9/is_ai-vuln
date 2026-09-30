@@ -123,17 +123,19 @@ Methodological audits indicate that standard public NIDS benchmarks contain data
 \caption{Benchmark Dataset Characteristics and Decontamination Telemetry}
 \label{tab:datasets}
 \footnotesize
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrrll}
 \toprule
 \textbf{Dataset Identifier} & \textbf{Raw Records} & \textbf{Partition ($N$)} & \textbf{Features ($D$)} & \textbf{Subnet Isolation Scheme} & \textbf{Evaluated Attacks} \\
 \midrule
 \textbf{CICIDS2017} \cite{lanvin2022errors} & 2,522,000 & 10,000 & 78 & GroupKFold on /24 subnet masks & DoS, DDoS, PortScan, Botnet, Infiltration \\
 \textbf{UNSW-NB15} \cite{moustafa2015unsw} & 2,540,044 & 10,000 & 49 & GroupKFold on IP subnet pairs & Exploits, Reconnaissance, DoS, Generic, Fuzzers \\
-\textbf{TON\_IoT} \cite{alhawawreh2020toniot} & 4,610,455 & 10,000 & 43 & Temporal session \& edge node grouping & Backdoor, Injection, DDoS, Scanning, Ransomware \\
+\textbf{TON\_IoT} \cite{alhawawreh2020toniot} & 4,610,455 & 10,000 & 43 & Temporal session and edge node grouping & Backdoor, Injection, DDoS, Scanning, Ransomware \\
 \textbf{CIC-DDoS2019} \cite{sharafaldin2019developing} & 426,076 & 10,000 & 65 & GroupKFold on client-server IP pairs & TFTP, DrDoS\_NTP, Syn, UDP, MSSQL, LDAP \\
 \textbf{NSL-KDD} \cite{tavallaee2009detailed} & 148,517 & 10,000 & 41 & Service-protocol interaction grouping & DoS, Probe, R2L, U2R \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 To prevent cross-partition leakage and evaluate realistic zero-day generalization, we apply Algorithm~\ref{alg:partitioning} across all dataset folds.
@@ -144,7 +146,7 @@ To prevent cross-partition leakage and evaluate realistic zero-day generalizatio
 \begin{algorithmic}[1]
 \REQUIRE Dataset $\mathcal{D} = \{(\mathbf{x}_i, y_i, \text{ip\_src}_i, \text{ip\_dst}_i, \text{attack\_cat}_i)\}_{i=1}^N$, Number of folds $K=5$, Candidate zero-day attacks $\mathcal{C}_{\text{zd}}$
 \ENSURE Validation metrics across all splits $\mathcal{M}_{\text{eval}}$
-\STATE Extract Subnet Group Identifiers: $g_i \leftarrow \text{IPv4Network}(\text{ip\_src}_i).\text{network\_address}(\text{mask}=\text{''/24''})$
+\STATE Extract Subnet Group Identifiers: $g_i \leftarrow \text{IPv4Network}(\text{ip\_src}_i).\text{network\_address}(\text{mask}=\text{``/24''})$
 \STATE Initialize $\text{GroupKFold}(n\_splits = K)$ using grouping variable $\mathbf{g}$
 \STATE Identify top distinct rare attacks for zero-day holdout: $\mathcal{C}_{\text{holdout}} \leftarrow \text{SelectTopDistinctAttacks}(\mathcal{C}_{\text{zd}}, \text{count}=2)$
 \FOR{fold $k = 1$ to $K$}
@@ -233,6 +235,7 @@ Table~\ref{tab:track_a} details the consolidated performance metrics across eigh
 \caption{Multi-Paradigm Benchmark Evaluation and Task-Technology Fit Utilities (Master Summary)}
 \label{tab:track_a}
 \footnotesize
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrrrrrrrrr}
 \toprule
 \textbf{Architecture} & \textbf{Macro F1} & \textbf{Seen F1} & \textbf{Unseen F1} & \textbf{ROC-AUC} & \textbf{Latency (ms)} & \textbf{Throughput (f/s)} & \textbf{VRAM (MB)} & \textbf{U(T1)} & \textbf{U(T2)} & \textbf{U(T3)} \\
@@ -246,7 +249,8 @@ Table~\ref{tab:track_a} details the consolidated performance metrics across eigh
 \textbf{TabICL v2} & 0.8306 & 0.9038 & 0.5552 & 0.8955 & 0.0053 & 188,790.6 & 2,525.67 & 0.6865 & 0.6590 & 0.7864 \\
 \textbf{GraphIDS} & 0.8124 & 0.8866 & 0.5144 & 0.8893 & \textbf{0.0006} & \textbf{1,576,547.4} & 2,525.67 & 0.6799 & 0.6263 & 0.7665 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table*}
 
 Table~\ref{tab:cross_dataset} provides the Macro F1 cross-dataset breakdown across all five individual datasets.
@@ -256,6 +260,7 @@ Table~\ref{tab:cross_dataset} provides the Macro F1 cross-dataset breakdown acro
 \caption{Macro F1 Cross-Dataset Performance Matrix}
 \label{tab:cross_dataset}
 \footnotesize
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrrrrrrr}
 \toprule
 \textbf{Dataset} & \textbf{LightGBM} & \textbf{XGBoost} & \textbf{TabPFN} & \textbf{FT-Trans} & \textbf{TabICL} & \textbf{Mambular} & \textbf{SAINT} & \textbf{GraphIDS} \\
@@ -266,7 +271,8 @@ Table~\ref{tab:cross_dataset} provides the Macro F1 cross-dataset breakdown acro
 \textbf{TON\_IoT} & 0.7170 & 0.7155 & 0.7121 & 0.6512 & 0.6518 & 0.6511 & 0.6497 & 0.5983 \\
 \textbf{UNSW-NB15} & 0.6787 & 0.6771 & 0.6592 & 0.6447 & 0.6309 & 0.6325 & 0.6350 & 0.6244 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \begin{figure}[!ht]
@@ -381,7 +387,8 @@ Triangular Fuzzy DEMATEL examines the structural relationships among seven opera
 \caption{Fuzzy DEMATEL Causal Prominence and Relation Metrics}
 \label{tab:causal_metrics}
 \footnotesize
-\begin{tabular}{lrrrrrl}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrl}
 \toprule
 \textbf{Factor} & \textbf{Dispatched ($D$)} & \textbf{Received ($R$)} & \textbf{Prominence ($D+R$)} & \textbf{Relation ($D-R$)} & \textbf{Role} \\
 \midrule
@@ -393,7 +400,8 @@ Triangular Fuzzy DEMATEL examines the structural relationships among seven opera
 \textbf{$F_6$: Unseen Zero-Day F1} & 0.2980 & 1.0540 & 1.3520 & -0.7560 & Net Outcome Effect \\
 \textbf{$F_7$: Noise Robustness} & 0.2100 & 0.4520 & 0.6620 & -0.2420 & Net Outcome Effect \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \begin{figure}[!ht]

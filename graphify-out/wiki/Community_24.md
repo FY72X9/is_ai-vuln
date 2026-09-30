@@ -4,8 +4,8 @@
 
 ## Key Concepts
 
-- [test_dematel_mc.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_dematel_mc.py#L1) (1 connections)
-- [run_mc()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_dematel_mc.py#L15) (1 connections)
+- [export_latex_table()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell8_phase5.py#L5) (1 connections)
+- [cell8_phase5.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell8_phase5.py#L1) (1 connections)
 
 ## Relationships
 
@@ -13,7 +13,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\test_dematel_mc.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_dematel_mc.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\cell8_phase5.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell8_phase5.py)
 
 ## Audit Trail
 

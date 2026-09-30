@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [dump_cell12.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/dump_cell12.py#L1) (0 connections)
+- [check_bib.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_bib.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\dump_cell12.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/dump_cell12.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\check_bib.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_bib.py)
 
 ## Audit Trail
 

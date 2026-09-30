@@ -1,39 +1,27 @@
 # Community 15
 
-> 6 nodes · cohesion 0.33
+> 6 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- [ScalableModel](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L5) (5 connections)
-- [Production-grade scalable architectures for line-rate network streaming.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L6) (1 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L13) (1 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L7) (1 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L74) (1 connections)
-- [cell10_phase2b.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L1) (1 connections)
-
-## Class Diagram
-
-```mermaid
-classDiagram
-    class ScalableModel {
-        +cell10_phase2b.py()
-        +.__init__()
-        +.fit()
-        +.predict()
-    }
-```
+- [references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (3 connections)
+- [format_bibtex_entry()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L314) (3 connections)
+- [harvest_and_build_library()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L340) (3 connections)
+- [Metadata Harvester for Academic References using OpenAlex and CrossRef REST APIs](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (1 connections)
+- [Format reference dict into a clean BibTeX entry.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L315) (1 connections)
+- [Harvest metadata from OpenAlex / CrossRef where available and build references/l](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L341) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 16]] (3 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\cell10_phase2b.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py)
 
 ## Audit Trail
 
-- EXTRACTED: 10 (100%)
+- EXTRACTED: 12 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Memory-efficient streaming chunk iterator for large-scale NetFlow partitions.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L16) (0 connections)
+- [test_df_perf.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_df_perf.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\test_df_perf.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_df_perf.py)
 
 ## Audit Trail
 

@@ -1,27 +1,26 @@
 # Community 16
 
-> 6 nodes · cohesion 0.40
+> 5 nodes · cohesion 0.40
 
 ## Key Concepts
 
-- [references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (3 connections)
-- [format_bibtex_entry()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L314) (3 connections)
-- [harvest_and_build_library()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L340) (3 connections)
-- [Metadata Harvester for Academic References using OpenAlex and CrossRef REST APIs](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L1) (1 connections)
-- [Format reference dict into a clean BibTeX entry.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L315) (1 connections)
-- [Harvest metadata from OpenAlex / CrossRef where available and build references/l](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py#L341) (1 connections)
+- [build_all_v2_perfect.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_all_v2_perfect.py#L1) (4 connections)
+- [refine_phase1()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_all_v2_perfect.py#L10) (1 connections)
+- [refine_phase2a()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_all_v2_perfect.py#L28) (1 connections)
+- [refine_phase2b()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_all_v2_perfect.py#L114) (1 connections)
+- [refine_phase5()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_all_v2_perfect.py#L193) (1 connections)
 
 ## Relationships
 
-- [[Community 14]] (3 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_harvester.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_harvester.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\build_all_v2_perfect.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_all_v2_perfect.py)
 
 ## Audit Trail
 
-- EXTRACTED: 12 (100%)
+- EXTRACTED: 8 (100%)
 - INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 

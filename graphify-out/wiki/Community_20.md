@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- [test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (2 connections)
-- [Functional test for save_publication_figure_dual across local and mock Google Dr](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L1) (1 connections)
-- [run_test()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py#L9) (1 connections)
+- [generate_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L1) (2 connections)
+- [load_v1()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L10) (1 connections)
+- [save_v2()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L15) (1 connections)
 
 ## Relationships
 
-- [[Community 17]] (1 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\test_figure_saving.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_figure_saving.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py)
 
 ## Audit Trail
 

@@ -1,91 +1,51 @@
 # Community 6
 
-> 32 nodes · cohesion 0.10
+> 27 nodes · cohesion 0.10
 
 ## Key Concepts
 
-- [cell12_phase2a.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L1) (10 connections)
-- [InContextPriorIDS](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L163) (8 connections)
-- [NativePyTorchDeepTabular](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L224) (8 connections)
-- [ClassicalGBDT](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L129) (7 connections)
-- [BaseIDSModel](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L96) (6 connections)
-- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L406) (5 connections)
-- [AntiLeakageGroupKFold](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L21) (4 connections)
-- [get_model()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L428) (4 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L424) (4 connections)
-- [extract_subnet_mask()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L17) (3 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L241) (3 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L229) (3 connections)
-- [.split()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L28) (2 connections)
-- [.profile_inference()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L100) (2 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L134) (2 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L130) (2 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L157) (2 connections)
-- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L159) (2 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L171) (2 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L165) (2 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L220) (2 connections)
-- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L197) (2 connections)
-- [safe_slice()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L11) (2 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L23) (1 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py#L97) (1 connections)
-- *... and 7 more nodes in this community*
-
-## Class Diagram
-
-```mermaid
-classDiagram
-    class AntiLeakageGroupKFold {
-        +cell12_phase2a.py()
-        +.__init__()
-        +.split()
-    }
-    class BaseIDSModel {
-        +cell12_phase2a.py()
-        +.__init__()
-        +.profile_inference()
-    }
-    class ClassicalGBDT {
-        +cell12_phase2a.py()
-        +.__init__()
-        +.fit()
-        +.predict()
-        +.predict_proba()
-    }
-    class InContextPriorIDS {
-        +cell12_phase2a.py()
-        +.__init__()
-        +.fit()
-        +.predict_proba()
-        +.predict()
-    }
-    class NativePyTorchDeepTabular {
-        +cell12_phase2a.py()
-        +.__init__()
-        +.fit()
-        +.predict_proba()
-        +.predict()
-    }
-    ClassicalGBDT <|-- BaseIDSModel
-    InContextPriorIDS <|-- BaseIDSModel
-    NativePyTorchDeepTabular <|-- BaseIDSModel
-    BaseIDSModel <|-- ClassicalGBDT
-    BaseIDSModel <|-- InContextPriorIDS
-    BaseIDSModel <|-- NativePyTorchDeepTabular
-```
+- [prepare_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L126) (6 connections)
+- [flush_memory()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L98) (6 connections)
+- [prepare_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py#L136) (6 connections)
+- [environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L1) (5 connections)
+- [setup_environment()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L54) (5 connections)
+- [decontaminate_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L57) (4 connections)
+- [cell14_phase1.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L1) (4 connections)
+- [inspect_v2_c14.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py#L1) (4 connections)
+- [resolve_project_root()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L15) (4 connections)
+- [decontaminate_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py#L57) (4 connections)
+- [build_flow_multigraph()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L106) (3 connections)
+- [is_colab()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L7) (3 connections)
+- [build_flow_multigraph()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py#L116) (3 connections)
+- [test_environment_root_resolution()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py#L23) (3 connections)
+- [clean_column_names()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L52) (2 connections)
+- [clean_column_names()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py#L52) (2 connections)
+- [Construct directed NetworkX interaction graph from NetFlows.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L107) (1 connections)
+- [Resolve, ingest, decontaminate, partition and persist ONE benchmark dataset.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L127) (1 connections)
+- [SPW 2021 (Engelen et al.) & TIFS 2022 (Lanvin et al.) decontamination suite.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py#L58) (1 connections)
+- [Environment initialization and hardware-runtime abstraction for Google Colab and](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L1) (1 connections)
+- [Initialize storage directories, Google Drive mounting (if Colab), and memory saf](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L16) (1 connections)
+- [Initialize storage directories, Google Drive mounting (if Colab), and memory saf](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L55) (1 connections)
+- [Check if the current runtime is Google Colab.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L8) (1 connections)
+- [Trigger Python garbage collection and flush CUDA cache to avoid OOM.](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py#L99) (1 connections)
+- [Construct directed NetworkX interaction graph from NetFlows.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py#L117) (1 connections)
+- *... and 2 more nodes in this community*
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 7]] (8 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\cell12_phase2a.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell12_phase2a.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\cell14_phase1.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase1.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_v2_c14.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_v2_c14.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_all_updates.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\utils\environment.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/environment.py)
 
 ## Audit Trail
 
-- EXTRACTED: 96 (100%)
-- INFERRED: 0 (0%)
+- EXTRACTED: 63 (84%)
+- INFERRED: 12 (16%)
 - AMBIGUOUS: 0 (0%)
 
 ---

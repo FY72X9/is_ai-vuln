@@ -4,17 +4,17 @@
 
 ## Key Concepts
 
-- [generate_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L1) (2 connections)
-- [load_v1()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L10) (1 connections)
-- [save_v2()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py#L15) (1 connections)
+- [check_upgrade_semantics.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L1) (2 connections)
+- [code_text()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L8) (1 connections)
+- [Semantic spot-check that the multi-dataset upgrades landed in the notebook artif](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py#L1) (1 connections)
 
 ## Relationships
 
-- No strong cross-community connections detected
+- [[Community 18]] (1 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_v2_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\check_upgrade_semantics.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/check_upgrade_semantics.py)
 
 ## Audit Trail
 

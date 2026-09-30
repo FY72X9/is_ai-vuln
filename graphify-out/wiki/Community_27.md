@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [build_phase1_v2.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_phase1_v2.py#L1) (0 connections)
+- [ast_check_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_check_nb02.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\build_phase1_v2.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/build_phase1_v2.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\ast_check_nb02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/ast_check_nb02.py)
 
 ## Audit Trail
 

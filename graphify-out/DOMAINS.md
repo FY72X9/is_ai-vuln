@@ -79,3 +79,17 @@
 | 74 | Community 74 | Ensures that models are trained only on past data and evaluated on future data, preventing future information leakage in time-dependent datasets. |
 | 75 | Community 75 | Responsible for generating indices to sequentially split a dataset into training and validation subsets. |
 | 76 | Community 76 | Handles fitting scalers and samplers only on training data to prevent leakage into validation sets. |
+| 77 | Community 77 | Responsible for obtaining benchmark datasets either via remote download or synthesis when unavailable. |
+| 78 | Community 78 |  |
+| 79 | Community 79 |  |
+| 80 | Community 80 |  |
+| 81 | Community 81 |  |
+| 82 | Community 82 |  |
+| 83 | Community 83 |  |
+| 84 | Community 84 |  |
+| 85 | Community 85 |  |
+| 86 | Community 86 |  |
+| 87 | Community 87 |  |
+| 88 | Community 88 | Ensures that models are trained only on past data and evaluated on future data, preventing future information leakage in time-dependent datasets. |
+| 89 | Community 89 | Responsible for generating indices to sequentially split a dataset into training and validation subsets. |
+| 90 | Community 90 | Handles fitting scalers and samplers only on training data to prevent leakage into validation sets. |

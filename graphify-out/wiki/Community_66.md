@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [Quickly synthesize large-scale streaming NetFlow benchmark partition for Track B](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L114) (0 connections)
+- [test_sanitizer.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_sanitizer.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\test_sanitizer.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_sanitizer.py)
 
 ## Audit Trail
 

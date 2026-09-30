@@ -4,18 +4,18 @@
 
 ## Key Concepts
 
-- [references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (2 connections)
-- [validate_references()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L18) (2 connections)
-- [Academic Citation Integrity & Retraction Validator. Verifies DOI resolution via](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L1) (1 connections)
-- [Validate all references in the provided list for DOI resolution and retraction s](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py#L19) (1 connections)
+- [build_jitsi_docx.py](file:///D:/Codes/research_banks/is_ai-vuln/scripts/build_jitsi_docx.py#L1) (3 connections)
+- [build_docx()](file:///D:/Codes/research_banks/is_ai-vuln/scripts/build_jitsi_docx.py#L33) (1 connections)
+- [set_cell_margins()](file:///D:/Codes/research_banks/is_ai-vuln/scripts/build_jitsi_docx.py#L9) (1 connections)
+- [set_table_borders()](file:///D:/Codes/research_banks/is_ai-vuln/scripts/build_jitsi_docx.py#L19) (1 connections)
 
 ## Relationships
 
-- [[Community 15]] (2 shared connections)
+- No strong cross-community connections detected
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\references_validator.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/references_validator.py)
+- [D:\Codes\research_banks\is_ai-vuln\scripts\build_jitsi_docx.py](file:///D:/Codes/research_banks/is_ai-vuln/scripts/build_jitsi_docx.py)
 
 ## Audit Trail
 

@@ -13,44 +13,46 @@ sequenceDiagram
     participant P4 as prepare_dataset()
     participant P5 as code_cell()
     participant P6 as md_cell()
-    participant P7 as set_cell_source()
-    participant P8 as upgrade_nb04()
-    participant P9 as indent_block()
-    participant P10 as .split()
-    participant P11 as update_cell_2()
-    participant P12 as update_nb01()
-    participant P13 as update_nb02()
-    participant P14 as update_nb03()
-    participant P15 as update_nb04()
-    participant P16 as update_nb05()
-    participant P17 as update_nb06()
-    participant P18 as upgrade_nb01()
-    participant P19 as upgrade_nb02()
-    participant P20 as upgrade_nb04()
-    participant P21 as upgrade_nb05()
-    participant P22 as upgrade_nb06()
-    participant P23 as code_cell()
-    participant P24 as md_cell()
-    participant P25 as code_cell()
-    participant P26 as md_cell()
-    participant P27 as upgrade_nb02()
-    participant P28 as upgrade_nb03()
-    participant P29 as upgrade_nb04()
-    participant P30 as validate_notebooks()
-    participant P31 as AntiLeakageGroupKFold
-    participant P32 as .fit()
-    participant P33 as .predict()
-    participant P34 as get_model()
-    participant P35 as .profile_inference()
-    participant P36 as evaluate_fold_run()
-    participant P37 as flush_memory()
-    participant P38 as extract_subnet_mask()
-    participant P39 as .should_skip_model()
-    participant P40 as .should_skip_fold()
-    participant P41 as .transform()
-    participant P42 as .predict_proba()
-    participant P43 as calculate_ttf_utility()
-    participant P44 as safe_slice()
+    participant P7 as prepare_dataset()
+    participant P8 as set_cell_source()
+    participant P9 as upgrade_nb04()
+    participant P10 as indent_block()
+    participant P11 as .split()
+    participant P12 as update_cell_2()
+    participant P13 as update_nb01()
+    participant P14 as update_nb02()
+    participant P15 as update_nb03()
+    participant P16 as update_nb04()
+    participant P17 as update_nb05()
+    participant P18 as update_nb06()
+    participant P19 as upgrade_nb01()
+    participant P20 as upgrade_nb02()
+    participant P21 as upgrade_nb04()
+    participant P22 as upgrade_nb05()
+    participant P23 as upgrade_nb06()
+    participant P24 as code_cell()
+    participant P25 as md_cell()
+    participant P26 as code_cell()
+    participant P27 as md_cell()
+    participant P28 as upgrade_nb02()
+    participant P29 as upgrade_nb03()
+    participant P30 as upgrade_nb04()
+    participant P31 as validate_notebooks()
+    participant P32 as verify_latex()
+    participant P33 as AntiLeakageGroupKFold
+    participant P34 as .fit()
+    participant P35 as .predict()
+    participant P36 as flush_memory()
+    participant P37 as get_model()
+    participant P38 as .profile_inference()
+    participant P39 as evaluate_fold_run()
+    participant P40 as extract_subnet_mask()
+    participant P41 as .should_skip_model()
+    participant P42 as .should_skip_fold()
+    participant P43 as .transform()
+    participant P44 as .predict_proba()
+    participant P45 as calculate_ttf_utility()
+    participant P46 as safe_slice()
     P0->>+ P1: calls
     P1-->>- P0: return
     P1->>+ P2: calls
@@ -113,12 +115,12 @@ sequenceDiagram
     P29-->>- P2: return
     P2->>+ P30: calls
     P30-->>- P2: return
+    P2->>+ P31: calls
+    P31-->>- P2: return
+    P2->>+ P32: calls
+    P32-->>- P2: return
     P1->>+ P0: calls
     P0-->>- P1: return
-    P1->>+ P31: calls
-    P31-->>- P1: return
-    P1->>+ P32: calls
-    P32-->>- P1: return
     P1->>+ P33: calls
     P33-->>- P1: return
     P1->>+ P34: calls
@@ -143,6 +145,10 @@ sequenceDiagram
     P43-->>- P1: return
     P1->>+ P44: calls
     P44-->>- P1: return
+    P1->>+ P45: calls
+    P45-->>- P1: return
+    P1->>+ P46: calls
+    P46-->>- P1: return
 ```
 
 ## Connections by Relation

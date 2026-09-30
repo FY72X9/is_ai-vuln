@@ -1,30 +1,40 @@
 # Community 14
 
-> 8 nodes · cohesion 0.36
+> 6 nodes · cohesion 0.33
 
 ## Key Concepts
 
-- [clean_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L95) (5 connections)
-- [clean_column_names()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L17) (4 connections)
-- [decontaminate_cicids2017()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L23) (4 connections)
-- [cleaner.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L1) (4 connections)
-- [Data Cleaning & Decontamination Pipeline. Addresses known anomalies in intrusion](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L1) (1 connections)
-- [Strip extraneous whitespace and special characters from DataFrame column headers](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L18) (1 connections)
-- [Clean and decontaminate CICIDS2017 dataset according to SPW 2021 and TIFS 2022 f](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L24) (1 connections)
-- [Universal cleaning dispatcher for benchmark datasets.](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py#L96) (1 connections)
+- [ScalableModel](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L5) (5 connections)
+- [Production-grade scalable architectures for line-rate network streaming.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L6) (1 connections)
+- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L13) (1 connections)
+- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L7) (1 connections)
+- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L74) (1 connections)
+- [cell10_phase2b.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py#L1) (1 connections)
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class ScalableModel {
+        +cell10_phase2b.py()
+        +.__init__()
+        +.fit()
+        +.predict()
+    }
+```
 
 ## Relationships
 
-- [[Community 13]] (4 shared connections)
+- [[Community 15]] (1 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\src\data\cleaner.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/cleaner.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\cell10_phase2b.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell10_phase2b.py)
 
 ## Audit Trail
 
-- EXTRACTED: 20 (95%)
-- INFERRED: 1 (5%)
+- EXTRACTED: 10 (100%)
+- INFERRED: 0 (0%)
 - AMBIGUOUS: 0 (0%)
 
 ---

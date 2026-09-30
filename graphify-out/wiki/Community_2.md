@@ -1,74 +1,56 @@
 # Community 2
 
-> 40 nodes · cohesion 0.07
+> 51 nodes · cohesion 0.08
 
 ## Key Concepts
 
-- [run_track_a_benchmark()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase2a.py#L11) (18 connections)
-- [CheckpointManager](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L7) (11 connections)
-- [test_all_models()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_models.py#L19) (9 connections)
-- [.predict()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py#L74) (6 connections)
-- [.profile_inference()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L51) (5 connections)
-- [get_model()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/__init__.py#L25) (5 connections)
-- [evaluate_fold_run()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L53) (5 connections)
-- [._load_or_init()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L19) (4 connections)
-- [._persist_state()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L97) (4 connections)
-- [.should_skip_fold()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L52) (4 connections)
-- [.should_skip_model()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L48) (4 connections)
-- [metrics.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L1) (4 connections)
-- [.predict_proba()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py#L80) (4 connections)
-- [calculate_ttf_utility()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L71) (4 connections)
-- [safe_slice()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase2a.py#L5) (3 connections)
-- [.mark_completed()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L82) (3 connections)
-- [.record_fold_completion()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L60) (3 connections)
-- [.reset_state()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L89) (3 connections)
-- [evaluate_classification_metrics()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py#L22) (3 connections)
-- [.__init__()](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L10) (2 connections)
-- [cell14_phase2a.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase2a.py#L1) (2 connections)
-- [__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/__init__.py#L1) (2 connections)
-- [checkpoint_manager.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py#L1) (2 connections)
-- [Profile inference latency (ms/flow), throughput (flows/sec), and peak VRAM/RAM.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L57) (1 connections)
-- [Execute the full 8-model × N-fold Track A benchmark for ONE dataset.](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase2a.py#L12) (1 connections)
-- *... and 15 more nodes in this community*
-
-## Class Diagram
-
-```mermaid
-classDiagram
-    class CheckpointManager {
-        +checkpoint_manager.py()
-        +.__init__()
-        +._load_or_init()
-        +.should_skip_model()
-        +.should_skip_fold()
-        +.record_fold_completion()
-        +.mark_completed()
-        +.reset_state()
-        +._persist_state()
-    }
-```
+- [.split()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L121) (33 connections)
+- [upgrade_multi_dataset.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L1) (11 connections)
+- [apply_figure_enhancements.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L1) (9 connections)
+- [main()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L374) (8 connections)
+- [apply_full_pipeline_multi_dataset.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_full_pipeline_multi_dataset.py#L1) (7 connections)
+- [main()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L665) (7 connections)
+- [main()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_full_pipeline_multi_dataset.py#L686) (6 connections)
+- [upgrade_experiments_fidelity.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_experiments_fidelity.py#L1) (5 connections)
+- [find_code_cell()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L41) (5 connections)
+- [set_cell_source()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L51) (5 connections)
+- [upgrade_nb01()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L127) (5 connections)
+- [upgrade_nb02()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L444) (5 connections)
+- [upgrade_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L593) (5 connections)
+- [generate_notebook_01.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_notebook_01.py#L1) (4 connections)
+- [generate_notebook_02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_notebook_02.py#L1) (4 connections)
+- [main()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_experiments_fidelity.py#L1229) (4 connections)
+- [indent_block()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py#L57) (4 connections)
+- [update_cell_2()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L95) (3 connections)
+- [update_nb01()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L110) (3 connections)
+- [update_nb02()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L158) (3 connections)
+- [update_nb03()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L189) (3 connections)
+- [update_nb04()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L224) (3 connections)
+- [update_nb05()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L285) (3 connections)
+- [update_nb06()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py#L316) (3 connections)
+- [upgrade_nb01()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_full_pipeline_multi_dataset.py#L106) (3 connections)
+- *... and 26 more nodes in this community*
 
 ## Relationships
 
-- [[Community 5]] (9 shared connections)
-- [[Community 1]] (4 shared connections)
-- [[Community 0]] (2 shared connections)
-- [[Community 12]] (1 shared connections)
+- [[Community 5]] (6 shared connections)
+- [[Community 11]] (2 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\cell14_phase2a.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/cell14_phase2a.py)
-- [D:\Codes\research_banks\is_ai-vuln\scratch\test_models.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_models.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\metrics.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/metrics.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\models\__init__.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/__init__.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\models\graph_ids.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\utils\checkpoint_manager.py](file:///D:/Codes/research_banks/is_ai-vuln/src/utils/checkpoint_manager.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\apply_figure_enhancements.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_figure_enhancements.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\apply_full_pipeline_multi_dataset.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/apply_full_pipeline_multi_dataset.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_notebook_01.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_notebook_01.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\generate_notebook_02.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/generate_notebook_02.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\upgrade_experiments_fidelity.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_experiments_fidelity.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\upgrade_multi_dataset.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/upgrade_multi_dataset.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_latex.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_latex.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
 
 ## Audit Trail
 
-- EXTRACTED: 86 (68%)
-- INFERRED: 41 (32%)
+- EXTRACTED: 154 (74%)
+- INFERRED: 54 (26%)
 - AMBIGUOUS: 0 (0%)
 
 ---

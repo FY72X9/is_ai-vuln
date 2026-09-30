@@ -4,7 +4,7 @@
 
 ## Key Concepts
 
-- [verify_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_v2_notebooks.py#L1) (0 connections)
+- [inspect_c14.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_c14.py#L1) (0 connections)
 
 ## Relationships
 
@@ -12,7 +12,7 @@
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_v2_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_v2_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\inspect_c14.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/inspect_c14.py)
 
 ## Audit Trail
 

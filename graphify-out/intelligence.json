@@ -2,27 +2,27 @@
   "hotspots": [
     {
       "label": "prepare_benchmark_dataset()",
-      "risk": 0.508,
+      "risk": 0.504,
       "type": "FUNCTION"
     },
     {
       "label": "prepare_dataset()",
-      "risk": 0.403,
+      "risk": 0.401,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "prepare_dataset()",
+      "risk": 0.4,
+      "type": "FUNCTION"
+    },
+    {
+      "label": "build_docx()",
+      "risk": 0.357,
       "type": "FUNCTION"
     },
     {
       "label": "run_track_a_benchmark()",
-      "risk": 0.362,
-      "type": "FUNCTION"
-    },
-    {
-      "label": "BaseIDSModel",
-      "risk": 0.348,
-      "type": "CLASS"
-    },
-    {
-      "label": "run_preparation_pipeline()",
-      "risk": 0.316,
+      "risk": 0.355,
       "type": "FUNCTION"
     }
   ],

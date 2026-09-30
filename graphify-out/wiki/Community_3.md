@@ -1,68 +1,65 @@
 # Community 3
 
-> 38 nodes · cohesion 0.07
+> 49 nodes · cohesion 0.06
 
 ## Key Concepts
 
-- [run_tests()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py#L36) (16 connections)
-- [StreamingChunkLoader](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L21) (7 connections)
-- [.cleanup()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L111) (6 connections)
-- [.fit()](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py#L27) (6 connections)
-- [run_causal_triangulation()](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L104) (5 connections)
-- [robustness.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L1) (5 connections)
-- [evaluate_robustness_degradation_slope()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L39) (5 connections)
-- [run_component_ablation_sweep()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L73) (5 connections)
+- [run_preparation_pipeline()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/prep_pipeline.py#L39) (11 connections)
+- [prepare_benchmark_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L299) (10 connections)
+- [drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L1) (9 connections)
+- [AntiLeakageGroupKFold](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L69) (8 connections)
+- [resolve_track_b_dataset()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L154) (8 connections)
+- [is_synthetic_path()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L294) (7 connections)
+- [verify_all_updates.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py#L1) (6 connections)
+- [initialize_dataset_directories()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L279) (6 connections)
+- [scan_available_datasets()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L474) (5 connections)
+- [verify_all_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_notebooks.py#L1) (4 connections)
 - [streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L1) (4 connections)
-- [statistical_tests.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L1) (4 connections)
-- [inject_gaussian_noise()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L14) (4 connections)
 - [generate_scalable_synthetic_partition()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L121) (4 connections)
-- [.iter_chunks()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L36) (4 connections)
-- [export_benchmark_to_latex()](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L11) (3 connections)
-- [compute_friedman_test()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L33) (3 connections)
-- [compute_nemenyi_critical_difference()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py#L84) (3 connections)
-- [test_full_pipeline.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py#L1) (2 connections)
-- [latex_exporter.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L1) (2 connections)
-- [inject_feature_corruption()](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py#L27) (2 connections)
-- [._extract_features_and_target()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py#L103) (2 connections)
-- [Comprehensive Full-Pipeline Verification Test Suite. Verifies streaming data loa](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py#L1) (2 connections)
-- [Release weights and garbage collect GPU/CPU memory.](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py#L112) (1 connections)
-- [Run DirectLiNGAM causal discovery and calculate SHD against Fuzzy DEMATEL digrap](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py#L108) (1 connections)
-- [Automated LaTeX Table Generation for Q1 Journal Publication. Generates professio](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L1) (1 connections)
-- [Format DataFrame into publication-grade LaTeX table with booktabs.](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py#L18) (1 connections)
-- *... and 13 more nodes in this community*
+- [test_drive_folder_simulation()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_notebooks.py#L32) (4 connections)
+- [graph_builder.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L1) (3 connections)
+- [download_file()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L171) (3 connections)
+- [ensure_gitignore_safeguards()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L132) (3 connections)
+- [generate_synthetic_benchmark_sample()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L207) (3 connections)
+- [verify_file_sha256()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py#L151) (3 connections)
+- [build_networkx_flow_graph()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L17) (3 connections)
+- [export_to_pyg_tensors()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py#L66) (3 connections)
+- [.split()](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py#L77) (3 connections)
+- [test_drive_downloader_real_vs_synthetic()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py#L35) (3 connections)
+- [Execute complete ingestion, cleaning, anti-leakage splitting, and artifact gener](file:///D:/Codes/research_banks/is_ai-vuln/src/data/prep_pipeline.py#L49) (2 connections)
+- [test_streaming_loader_resolution()](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py#L59) (2 connections)
+- [prep_pipeline.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/prep_pipeline.py#L1) (1 connections)
+- *... and 24 more nodes in this community*
 
 ## Class Diagram
 
 ```mermaid
 classDiagram
-    class StreamingChunkLoader {
-        +streaming_loader.py()
+    class AntiLeakageGroupKFold {
+        +splitters.py()
         +.__init__()
-        +.iter_chunks()
-        +._extract_features_and_target()
+        +.split()
     }
 ```
 
 ## Relationships
 
-- [[Community 1]] (15 shared connections)
-- [[Community 8]] (3 shared connections)
+- [[Community 1]] (20 shared connections)
 
 ## Source Files
 
-- [D:\Codes\research_banks\is_ai-vuln\scratch\test_full_pipeline.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/test_full_pipeline.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_all_notebooks.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_notebooks.py)
+- [D:\Codes\research_banks\is_ai-vuln\scratch\verify_all_updates.py](file:///D:/Codes/research_banks/is_ai-vuln/scratch/verify_all_updates.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\drive_downloader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/drive_downloader.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\graph_builder.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/graph_builder.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\prep_pipeline.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/prep_pipeline.py)
+- [D:\Codes\research_banks\is_ai-vuln\src\data\splitters.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/splitters.py)
 - [D:\Codes\research_banks\is_ai-vuln\src\data\streaming_loader.py](file:///D:/Codes/research_banks/is_ai-vuln/src/data/streaming_loader.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\dematel\causal_validation.py](file:///D:/Codes/research_banks/is_ai-vuln/src/dematel/causal_validation.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\robustness.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/robustness.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\evaluation\statistical_tests.py](file:///D:/Codes/research_banks/is_ai-vuln/src/evaluation/statistical_tests.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\models\base.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/base.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\models\graph_ids.py](file:///D:/Codes/research_banks/is_ai-vuln/src/models/graph_ids.py)
-- [D:\Codes\research_banks\is_ai-vuln\src\visualization\latex_exporter.py](file:///D:/Codes/research_banks/is_ai-vuln/src/visualization/latex_exporter.py)
 
 ## Audit Trail
 
-- EXTRACTED: 71 (64%)
-- INFERRED: 40 (36%)
+- EXTRACTED: 103 (73%)
+- INFERRED: 39 (27%)
 - AMBIGUOUS: 0 (0%)
 
 ---
