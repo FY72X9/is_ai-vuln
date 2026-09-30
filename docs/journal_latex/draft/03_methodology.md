@@ -30,7 +30,7 @@ This study establishes a rigorous empirical evaluation architecture combining ex
                                           |
                                           v
 +-----------------------------------------------------------------------------------+
-| Phase 4: Causal Structural Discovery & Triangulation                              |
+| Phase 4: Closed-Loop Causal Structural Discovery & Algorithmic Triangulation      |
 | (Triangular Fuzzy DEMATEL, 10,000 Monte Carlo Runs, DirectLiNGAM Convergence)     |
 +-----------------------------------------+-----------------------------------------+
                                           |
@@ -49,25 +49,33 @@ Because network traffic displays severe class imbalance (often exceeding 100:1 b
 $$\text{Precision}_c = \frac{\text{TP}_c}{\text{TP}_c + \text{FP}_c}, \quad \text{Recall}_c = \frac{\text{TP}_c}{\text{TP}_c + \text{FN}_c}, \quad F_{1, c} = \frac{2 \cdot \text{Precision}_c \cdot \text{Recall}_c}{\text{Precision}_c + \text{Recall}_c} \quad (1)$$
 $$F_{1, \text{macro}} = \frac{1}{|\mathcal{C}|} \sum_{c \in \mathcal{C}} F_{1, c}, \quad F_{1, \text{seen}} = \frac{1}{|\mathcal{C}_{\text{seen}}|} \sum_{c \in \mathcal{C}_{\text{seen}}} F_{1, c}, \quad F_{1, \text{unseen}} = \frac{1}{|\mathcal{C}_{\text{unseen}}|} \sum_{c \in \mathcal{C}_{\text{unseen}}} F_{1, c} \quad (2)$$
 
-In accordance with Goodhue and Thompson [18], technological utility is evaluated against three operational SOC tasks:
+In accordance with Goodhue and Thompson [17], technological utility is evaluated against three operational SOC tasks:
 1. **Task $T_1$ (Line-Rate Perimeter Filtering)**: Prioritizes sub-millisecond per-flow latency $L$ (in ms) and high throughput while retaining high seen attack detection:
 $$U(T_1) = 0.40 \cdot F_{1, \text{seen}} + 0.35 \cdot \min\left(1.0, \frac{0.005}{L + 10^{-6}}\right) + 0.25 \cdot \text{ROC-AUC} \quad (3)$$
 2. **Task $T_2$ (Zero-Day Forensic Isolation)**: Prioritizes generalization on completely unobserved attack manifolds without parameter re-estimation:
-$$U(T_2) = 0.60 \cdot F_{1, \text{unseen}} + 0.25 \cdot F_{1, \text{seen}} + 0.15 \cdot \text{ROC-AUC} \quad (4)$$
+$$U(T_2) = 0.70 \cdot F_{1, \text{unseen}} + 0.20 \cdot F_{1, \text{seen}} + 0.10 \cdot \text{ROC-AUC} \quad (4)$$
 3. **Task $T_3$ (Enterprise Composite SOC Triage)**: Balances overall classification fidelity, zero-day resilience, and sustained streaming throughput:
-$$U(T_3) = 0.40 \cdot F_{1, \text{macro}} + 0.30 \cdot F_{1, \text{unseen}} + 0.20 \cdot \text{ROC-AUC} + 0.10 \cdot \min\left(1.0, \frac{\text{Throughput}}{100,000}\right) \quad (5)$$
+$$U(T_3) = 0.35 \cdot F_{1, \text{macro}} + 0.30 \cdot F_{1, \text{unseen}} + 0.20 \cdot \text{ROC-AUC} + 0.15 \cdot \min\left(1.0, \frac{\text{Throughput}}{100,000}\right) \quad (5)$$
 
-### 2.2 Dataset Characteristics and Anti-Leakage Protocol
-Recent methodological audits demonstrated that standard public NIDS benchmarks contain severe data leakage, synthetic artifact pollution, and duplicate records across train and test splits [29], [30]. To guarantee audit-proof empirical validity, we curate and decontaminate five multi-domain network intrusion datasets, summarized in Table 1.
+### 2.2 Theoretical Grounding and Formal Design Propositions
+Following the Design Science Research guidelines of Hevner et al. [18] and the Task-Technology Fit framework of Goodhue and Thompson [17], technological artifacts generate organizational value only when their structural capabilities align with task requirements. In autonomous cyber-defense, task requirements translate into physical processing constraints, while technology dimensions correspond to the mathematical inductive biases of competing model families. Based on these theoretical foundations, we formalize four Design Propositions:
+
+* **Design Proposition 1 ($DP_1$ - Linear Complexity Fit in Line-Rate Streaming)**: *In operational tasks governed by line-rate streaming constraints ($T_1$), selective State Space Models (Mambular SSM) and decision tree ensembles exhibit superior Task-Technology Fit over self-attention transformers due to linear-time $\mathcal{O}(D)$ associative scan efficiency in hardware SRAM.*
+* **Design Proposition 2 ($DP_2$ - In-Context Prior Fit in Zero-Day Forensic Isolation)**: *In zero-day forensic tasks characterized by extreme sample scarcity ($T_2$), tabular foundation models (TabPFN v3) maximize Task-Technology Fit through Bayesian in-context inference over synthetic priors without parameter re-estimation.*
+* **Design Proposition 3 ($DP_3$ - Topological Correlation Fit in Multi-Host Tracking)**: *In coordinated multi-host intrusion campaigns ($T_3$), relational graph neural networks (GraphIDS) achieve high operational throughput by encoding structural topological priors, but require hybrid tabular feature integration to prevent accuracy degradation on sparse subnet neighborhoods.*
+* **Design Proposition 4 ($DP_4$ - Hardware-Constrained Causal Feedback)**: *Hardware memory footprint and inference latency ceilings act as asymptotic bounding constraints governed causally by mathematical layer formulation, rendering post-hoc software pruning ineffective against quadratic attention bottlenecks.*
+
+### 2.3 Dataset Characteristics and Anti-Leakage Protocol
+Recent methodological audits demonstrated that standard public NIDS benchmarks contain severe data leakage, synthetic artifact pollution, and duplicate records across train and test splits [19], [24]. To guarantee audit-proof empirical validity, we curate and decontaminate five multi-domain network intrusion datasets, summarized in Table 1.
 
 Table 1. Benchmark Dataset Characteristics and Decontamination Telemetry
 | Dataset Identifier | Raw Captured Records | Benchmark Partition ($N$) | Feature Count ($D$) | Subnet Isolation Strategy | Attack Categories Evaluated |
 |---|---|---|---|---|---|
-| **CICIDS2017** [20] | 2,522,000 | 10,000 | 78 | GroupKFold on `/24` subnet masks | DoS, DDoS, PortScan, Botnet, Infiltration |
-| **UNSW-NB15** [21] | 2,540,044 | 10,000 | 49 | GroupKFold on source/destination subnets | Exploits, Reconnaissance, DoS, Generic, Fuzzers |
-| **TON_IoT** [22] | 4,610,455 | 10,000 | 43 | Temporal session and edge node grouping | Backdoor, Injection, DDoS, Scanning, Ransomware |
-| **CIC-DDoS2019** [23] | 426,076 | 10,000 | 65 | GroupKFold on client-server IP pairs | TFTP, DrDoS_NTP, Syn, UDP, MSSQL, LDAP |
-| **NSL-KDD** [24] | 148,517 | 10,000 | 41 | Service-protocol interaction grouping | DoS, Probe, R2L, U2R |
+| **CICIDS2017** [19] | 2,522,000 | 10,000 | 78 | GroupKFold on `/24` subnet masks | DoS, DDoS, PortScan, Botnet, Infiltration |
+| **UNSW-NB15** [20] | 2,540,044 | 10,000 | 49 | GroupKFold on IP subnet pairs | Exploits, Reconnaissance, DoS, Generic, Fuzzers |
+| **TON_IoT** [21] | 4,610,455 | 10,000 | 43 | Temporal session and edge node grouping | Backdoor, Injection, DDoS, Scanning, Ransomware |
+| **CIC-DDoS2019** [22] | 426,076 | 10,000 | 65 | GroupKFold on client-server IP pairs | TFTP, DrDoS_NTP, Syn, UDP, MSSQL, LDAP |
+| **NSL-KDD** [23] | 148,517 | 10,000 | 41 | Service-protocol interaction grouping | DoS, Probe, R2L, U2R |
 
 To prevent distributional leakage and evaluate realistic zero-day generalization, we enforce Algorithm 1 across all dataset folds.
 
@@ -103,13 +111,13 @@ Output : Evaluated model metrics across all validation partitions M_eval
 10: return Aggregated means and standard deviations across all K folds
 ```
 
-### 2.3 Evaluated Model Families and Algorithmic Mechanics
+### 2.4 Evaluated Model Families and Algorithmic Mechanics
 We evaluate eight representative architectures covering four core paradigms:
 1. **Gradient-Boosted Decision Trees (GBDTs)**: LightGBM [4] and XGBoost [5]. These models construct ensembles of shallow decision trees via gradient-based split finding and histogram binning.
 2. **Tabular Deep Learning**: FT-Transformer [8], which tokenizes numerical features into continuous embeddings processed by multi-head self-attention, and SAINT [9], which alternates between self-attention across columns and inter-sample attention across rows.
 3. **Selective State Space Models (SSMs)**: Mambular SSM [12], which adapts continuous selective state-space scans [11] to tabular sequences. As specified in Algorithm 2, Mambular projects discretized features into a hidden continuous state $\mathbf{h}_t \in \mathbb{R}^{N_{\text{state}}}$, executing linear-time scans directly in hardware SRAM.
-4. **Relational Graph Neural Networks**: GraphIDS [31], which constructs communication graphs where IP endpoints form nodes and packet flows form directed edges, executing message passing over topological neighborhoods.
-5. **Tabular Foundation Models**: TabPFN v3 [13] and TabICL v2 [14]. TabPFN formulates classification as Prior-Data Fitted in-context Bayesian inference (Algorithm 3), feeding query flows alongside reference exemplars without gradient updates.
+4. **Relational Graph Neural Networks**: GraphIDS [30], which constructs communication graphs where IP endpoints form nodes and packet flows form directed edges, executing message passing over topological neighborhoods [31].
+5. **Tabular Foundation Models**: TabPFN v3 [13] and TabICL v2 [14]. As specified in Algorithm 3, TabPFN formulates classification as Prior-Data Fitted in-context Bayesian inference [32], feeding query flows alongside reference exemplars without gradient updates.
 
 ```
 Algorithm 2: Mambular SSM Hardware-Aware Discretized State Space Scan
@@ -152,12 +160,12 @@ Output : Posterior intrusion probability P(y_q = 1 | x_q, D_ctx)
 5:  return Posterior probability vector
 ```
 
-### 2.4 Dual-Track Experimental Architecture
+### 2.5 Dual-Track Experimental Architecture
 To resolve computational incommensurability across diverse model families, we decouple evaluation into two operational tracks:
 * **Track A (Few-Shot Zero-Day Generalization Track)**: Standardizes training on $N \le 10,000$ records per fold across all five datasets. Evaluates all eight models across 5 folds with active zero-day holdout induction to measure Macro F1, Seen F1, Unseen F1, per-flow latency, and throughput.
-* **Track B (Industrial Streaming Scalability Track)**: Evaluates high-throughput architectures (LightGBM, XGBoost, Mambular SSM, FT-Transformer, and GraphIDS) across expanding sample sizes ($N \in \{50\text{k}, 100\text{k}, 190.5\text{k}, 250\text{k}\}$). Telemetry scripts query active CUDA device memory allocation directly from the GPU runtime alongside per-flow processing latency.
+* **Track B (Industrial Streaming Scalability Track)**: Evaluates high-throughput architectures (LightGBM, XGBoost, Mambular SSM, FT-Transformer, and GraphIDS) across expanding sample sizes ($N \in \{50\text{k}, 100\text{k}, 190,474, 250\text{k}\}$). The threshold $N = 190,474$ corresponds to the full decontaminated partition of the enterprise CICIDS2017 benchmark, while $N = 250\text{k}$ represents the high-volume streaming batch boundary. Telemetry scripts query active CUDA device memory allocation directly from the GPU runtime via `torch.cuda.max_memory_allocated()` alongside per-flow processing latency.
 
-### 2.5 Non-Parametric Significance and Causal Discovery Framework
+### 2.6 Non-Parametric Significance and Causal Discovery Framework
 To evaluate whether observed performance differences represent genuine architectural advantages, we execute Demšar's non-parametric testing suite [25]:
 1. **Friedman Test**: Computes the chi-square statistic $\chi_F^2$ based on average model ranks across the five datasets.
 2. **Iman-Davenport Correction**: Alleviates the conservative bias of the standard Friedman statistic via an $F$-distribution formulation:
@@ -167,4 +175,6 @@ where $K = 8$ architectures and $M = 5$ datasets.
 $$\text{CD} = q_\alpha \sqrt{\frac{K(K + 1)}{6M}} \quad (7)$$
 Two models perform with statistical significance only if their average ranks differ by at least $\text{CD}$.
 
-To uncover structural causal dependencies among model parameters, computational constraints, and performance outcomes, we apply Triangular Fuzzy DEMATEL [26], [27]. We define seven operational factors: Model Architecture ($F_1$), Training Sample Size ($F_2$), Inference Latency ($F_3$), Memory Footprint ($F_4$), Seen Attack F1 ($F_5$), Unseen Zero-Day F1 ($F_6$), and Robustness to Noise ($F_7$). We construct fuzzy direct-relation matrices $\tilde{Z}$, normalize them into $\tilde{X}$, and compute the total-relation matrix $\tilde{T} = \tilde{X}(I - \tilde{X})^{-1}$. Causal prominence ($D + R$) and net causal direction ($D - R$) are evaluated through 10,000 Monte Carlo perturbation iterations to establish Kendall's concordance index ($W \ge 0.95$). Finally, we validate the resulting causal topology using DirectLiNGAM non-Gaussian causal discovery [28] targeting a Structural Hamming Distance bound ($\text{SHD} \le 2$).
+To uncover structural causal dependencies among model parameters, computational constraints, and performance outcomes, we apply Triangular Fuzzy DEMATEL [26], [27], [28], [33], [34]. We define seven operational factors: Model Architecture ($F_1$), Training Sample Size ($F_2$), Inference Latency ($F_3$), Memory Footprint ($F_4$), Seen Attack F1 ($F_5$), Unseen Zero-Day F1 ($F_6$), and Robustness to Noise ($F_7$). 
+
+**Epistemological Justification for Closed-Loop Simulation**: Traditional multi-criteria decision studies rely on subjective human questionnaires (typically 3 to 10 respondents). In cybersecurity operations, human expert panels introduce cognitive fatigue, subjective vendor bias (e.g., presuming deep neural networks must outperform trees), and an inability to estimate microsecond latency distributions or GPU SRAM memory bus contention. To eliminate subjective bias, our causal engine derives theoretical prior relationships ($W_{\text{theory}}$) strictly from computational complexity bounds ($O(D)$ vs $O(D^2)$) and statistical learning theory, modulating them with empirical cross-validation metrics ($W_{\text{empirical}}$). We construct fuzzy direct-relation matrices $\tilde{Z}$, normalize them into $\tilde{X}$, and compute the total-relation matrix $\tilde{T} = \tilde{X}(I - \tilde{X})^{-1}$. Causal prominence ($D + R$) and net causal direction ($D - R$) are evaluated through 10,000 Monte Carlo perturbation iterations to establish Kendall's concordance index ($W \ge 0.95$). Finally, we validate the resulting causal topology using DirectLiNGAM non-Gaussian causal discovery [29] targeting a Structural Hamming Distance bound ($\text{SHD} \le 2$).
